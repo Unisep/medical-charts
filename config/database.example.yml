@@ -1,0 +1,22 @@
+# Rename this file to just database.yml, and configure as you need!
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  port: 5432
+  username: user
+  password: 'pwd'
+
+development:
+  <<: *default
+  database: db_development
+
+production:
+  <<: *default
+  database: db_production
+
+test:
+  <<: *default
+  database: db_test<%= ENV['TEST_ENV_NUMBER'] %>

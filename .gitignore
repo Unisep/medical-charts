@@ -1,36 +1,26 @@
-*.gem
+*.swp
 *.*~
-*.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/test/tmp/
-/test/version_tmp/
-/tmp/
+/.bundle
+/config/env/development.env
+/config/env/test.env
+/config/env/production.env
+/log/*.log
+/tmp
+db/*.sqlite3
+db/*.sqlite3-journal
+db/schema.rb
+config/database.yml
+config/unicorn.rb
+public/system/*
+public/upload/*
+public/assets/*
+coverage
+.DS_Store
+._.DS_Store
+*.mwb.baknode_modules
+node_modules
+stdout
 
-## Specific to RubyMotion:
-.dat*
-.repl_history
-build/
-
-## Documentation cache and generated files:
-/.yardoc/
-/_yardoc/
-/doc/
-/rdoc/
-
-## Environment normalisation:
-/.bundle/
-/vendor/bundle
-/lib/bundler/man/
-
-# for a library or gem, you might want to ignore these files since the code is
-# intended to run in multiple environments; otherwise, check them in:
-# Gemfile.lock
-# .ruby-version
-# .ruby-gemset
-
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
+### RubyMine ###
+## Directory-based project format:
+.idea/

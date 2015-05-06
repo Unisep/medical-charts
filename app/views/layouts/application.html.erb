@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="RailsStack">
+<head>
+  <title>Medical Charts</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="row">
+  <div class="col-xs-18 col-md-12">
+      <%= render 'layouts/header' %>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-xs-12 col-md-8 ">
+      <%= yield %>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application' %>
+</body>
+</html>

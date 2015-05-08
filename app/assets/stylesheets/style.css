@@ -3,6 +3,10 @@ nav .brand-logo {
     color: #444;
 }
 
+.icon-footer{
+    margin: 5px;
+}
+
 p {
     line-height: 2rem;
 }

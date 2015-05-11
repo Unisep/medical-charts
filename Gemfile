@@ -12,6 +12,7 @@ source 'https://rubygems.org' do
   gem 'responders', '~> 2.0.2'
   gem 'turbolinks'
   gem 'jbuilder', '~> 2.0'
+  gem 'jquery-rails'
   gem 'sass'
   gem 'cancancan', '~> 1.10'
   gem 'passenger'
@@ -41,6 +42,5 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-materialize', '0.95.3'
-  gem 'rails-assets-jquery', '2.1.3'
   gem 'rails-assets-font-awesome', '4.3.0'
 end

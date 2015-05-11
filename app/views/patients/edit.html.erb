@@ -1,6 +1,8 @@
-<h1>Editing Patient</h1>
+<div class="container">
+  <h3><%= t('.title') %></h3>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @patient %> |
-<%= link_to 'Back', patients_path %>
+  <%= link_to t('.show'), @patient %> |
+  <%= link_to t('.back'), patients_path %>
+</div>

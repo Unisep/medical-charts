@@ -1,19 +1,25 @@
 language: ruby
+
 rvm:
-- 2.2.1
+  - 2.2.1
+
 addons:
   code_climate:
     repo_token: a10923ef2813783e706d6f908250a3262291e8f6aa957a4865002bb5cbb938b7
-  postgresql: 9.3
+  postgresql: 9.4
+
 env:
-- DB=postgres
+  - DB=postgres
+
 script:
-- RAILS_ENV=test bundle exec rake db:migrate --trace
-- bundle exec rake db:test:prepare
-- bundle exec rspec spec/
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+
 before_script:
-- cp config/database.yml.travis config/database.yml
-- psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
+
 deploy:
   provider: heroku
   api_key:
@@ -21,3 +27,6 @@ deploy:
   app: odontounisep
   on:
     repo: Unisep/medical-charts
+  run:
+      - "rake db:create db:migrate"
+      - restart

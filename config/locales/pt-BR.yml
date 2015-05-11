@@ -10,7 +10,7 @@ pt-BR:
     - Sex
     - Sáb
     abbr_month_names:
-    - 
+    -
     - Jan
     - Fev
     - Mar
@@ -36,7 +36,7 @@ pt-BR:
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    - 
+    -
     - Janeiro
     - Fevereiro
     - Março
@@ -205,3 +205,21 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  # Some active Record models
+  activerecord:
+    models:
+      patient:
+        one: Paciente
+        other: Pacientes
+    attributes:
+      patient:
+        name: Nome
+        email: Email
+        address: Endereço
+        zip_code: CEP
+        state: UF
+        city: Cidade
+        number: Número
+        district: Bairro
+        phone: Celular
+        cellphone: Telefone

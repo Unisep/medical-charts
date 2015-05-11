@@ -1,0 +1,56 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong><%= ta(Patient, :name) %>:</strong>
+    <%= @patient.name %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :email) %>:</strong>
+    <%= @patient.email %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :address) %>:</strong>
+    <%= @patient.address %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :state) %>:</strong>
+    <%= @patient.state %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :city) %>:</strong>
+    <%= @patient.city %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :zip_code) %>:</strong>
+    <%= @patient.zip_code %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :district) %>:</strong>
+    <%= @patient.district %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :number) %>:</strong>
+    <%= @patient.number %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :phone) %>:</strong>
+    <%= @patient.phone %>
+  </p>
+
+  <p>
+    <strong><%= ta(Patient, :cellphone) %>:</strong>
+    <%= @patient.cellphone %>
+  </p>
+
+  <%= link_to 'Edit', edit_patient_path(@patient) %> |
+  <%= link_to 'Back', patients_path %>
+</div>

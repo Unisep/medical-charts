@@ -1,0 +1,8 @@
+pt-BR:
+  patients:
+    new:
+      title: Novo Paciente
+      back: Voltar
+    index:
+      title: Pacientes
+

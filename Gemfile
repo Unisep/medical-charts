@@ -31,7 +31,7 @@ source 'https://rubygems.org' do
     gem 'capybara'
     gem 'database_cleaner'
     gem 'simplecov', require: false
-    gem 'codeclimate-test-reporter', require: false
+    gem 'codeclimate-test-reporter', require: nil
   end
 
   group :production do

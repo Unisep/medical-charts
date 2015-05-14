@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin_basic_treatments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Common</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_basic_treatments.each do |admin_basic_treatment| %>
+      <tr>
+        <td><%= admin_basic_treatment.description %></td>
+        <td><%= admin_basic_treatment.common %></td>
+        <td><%= link_to 'Show', admin_basic_treatment %></td>
+        <td><%= link_to 'Edit', edit_admin_basic_treatment_path(admin_basic_treatment) %></td>
+        <td><%= link_to 'Destroy', admin_basic_treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Basic treatment', new_admin_basic_treatment_path %>

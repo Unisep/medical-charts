@@ -1,0 +1,25 @@
+<%= form_for(@admin_basic_treatment) do |f| %>
+  <% if @admin_basic_treatment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_basic_treatment.errors.count, "error") %> prohibited this admin_basic_treatment from being saved:</h2>
+
+      <ul>
+      <% @admin_basic_treatment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :common %><br>
+    <%= f.check_box :common %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

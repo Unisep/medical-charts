@@ -21,7 +21,7 @@ require 'rails_helper'
 RSpec.describe Admin::BasicTreatmentsController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Admin::BasicTreatment. As you add validations to Admin::BasicTreatment, be sure to
+  # BasicTreatment. As you add validations to BasicTreatment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,63 +38,64 @@ RSpec.describe Admin::BasicTreatmentsController, :type => :controller do
 
   describe "GET index" do
     it "assigns all admin_basic_treatments as @admin_basic_treatments" do
-      basic_treatment = Admin::BasicTreatment.create! valid_attributes
+      basic_treatment = BasicTreatment.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:admin_basic_treatments)).to eq([basic_treatment])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested admin_basic_treatment as @admin_basic_treatment" do
-      basic_treatment = Admin::BasicTreatment.create! valid_attributes
+    it "assigns the requested basic_treatment as @basic_treatment" do
+      basic_treatment = BasicTreatment.create! valid_attributes
       get :show, {:id => basic_treatment.to_param}, valid_session
-      expect(assigns(:admin_basic_treatment)).to eq(basic_treatment)
+      expect(assigns(:basic_treatment)).to eq(basic_treatment)
     end
   end
 
   describe "GET new" do
-    it "assigns a new admin_basic_treatment as @admin_basic_treatment" do
-      get :new, {}, valid_session
-      expect(assigns(:admin_basic_treatment)).to be_a_new(Admin::BasicTreatment)
+    it "assigns a new basic_treatment as @basic_treatment" do
+      get :new, {}
+
+      expect(assigns(:basic_treatment)).to be_a_new(BasicTreatment)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested admin_basic_treatment as @admin_basic_treatment" do
-      basic_treatment = Admin::BasicTreatment.create! valid_attributes
+    it "assigns the requested basic_treatment as @basic_treatment" do
+      basic_treatment = BasicTreatment.create! valid_attributes
       get :edit, {:id => basic_treatment.to_param}, valid_session
-      expect(assigns(:admin_basic_treatment)).to eq(basic_treatment)
+      expect(assigns(:basic_treatment)).to eq(basic_treatment)
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Admin::BasicTreatment" do
+      it "creates a new BasicTreatment" do
         expect {
-          post :create, {:admin_basic_treatment => valid_attributes}, valid_session
-        }.to change(Admin::BasicTreatment, :count).by(1)
+          post :create, {:basic_treatment => valid_attributes}, valid_session
+        }.to change(BasicTreatment, :count).by(1)
       end
 
-      it "assigns a newly created admin_basic_treatment as @admin_basic_treatment" do
-        post :create, {:admin_basic_treatment => valid_attributes}, valid_session
-        expect(assigns(:admin_basic_treatment)).to be_a(Admin::BasicTreatment)
-        expect(assigns(:admin_basic_treatment)).to be_persisted
+      it "assigns a newly created basic_treatment as @basic_treatment" do
+        post :create, {:basic_treatment => valid_attributes}, valid_session
+        expect(assigns(:basic_treatment)).to be_a(BasicTreatment)
+        expect(assigns(:basic_treatment)).to be_persisted
       end
 
-      it "redirects to the created admin_basic_treatment" do
-        post :create, {:admin_basic_treatment => valid_attributes}, valid_session
-        expect(response).to redirect_to(Admin::BasicTreatment.last)
+      it "redirects to the created basic_treatment" do
+        post :create, {:basic_treatment => valid_attributes}, valid_session
+        expect(response).to redirect_to(BasicTreatment.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved admin_basic_treatment as @admin_basic_treatment" do
-        post :create, {:admin_basic_treatment => invalid_attributes}, valid_session
-        expect(assigns(:admin_basic_treatment)).to be_a_new(Admin::BasicTreatment)
+      it "assigns a newly created but unsaved basic_treatment as @basic_treatment" do
+        post :create, {:basic_treatment => invalid_attributes}, valid_session
+        expect(assigns(:basic_treatment)).to be_a_new(BasicTreatment)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:admin_basic_treatment => invalid_attributes}, valid_session
+        post :create, {:basic_treatment => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -106,51 +107,51 @@ RSpec.describe Admin::BasicTreatmentsController, :type => :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested admin_basic_treatment" do
-        basic_treatment = Admin::BasicTreatment.create! valid_attributes
-        put :update, {:id => basic_treatment.to_param, :admin_basic_treatment => new_attributes}, valid_session
+      it "updates the requested basic_treatment" do
+        basic_treatment = BasicTreatment.create! valid_attributes
+        put :update, {:id => basic_treatment.to_param, :basic_treatment => new_attributes}, valid_session
         basic_treatment.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested admin_basic_treatment as @admin_basic_treatment" do
-        basic_treatment = Admin::BasicTreatment.create! valid_attributes
-        put :update, {:id => basic_treatment.to_param, :admin_basic_treatment => valid_attributes}, valid_session
-        expect(assigns(:admin_basic_treatment)).to eq(basic_treatment)
+      it "assigns the requested basic_treatment as @basic_treatment" do
+        basic_treatment = BasicTreatment.create! valid_attributes
+        put :update, {:id => basic_treatment.to_param, :basic_treatment => valid_attributes}, valid_session
+        expect(assigns(:basic_treatment)).to eq(basic_treatment)
       end
 
-      it "redirects to the admin_basic_treatment" do
-        basic_treatment = Admin::BasicTreatment.create! valid_attributes
-        put :update, {:id => basic_treatment.to_param, :admin_basic_treatment => valid_attributes}, valid_session
+      it "redirects to the basic_treatment" do
+        basic_treatment = BasicTreatment.create! valid_attributes
+        put :update, {:id => basic_treatment.to_param, :basic_treatment => valid_attributes}, valid_session
         expect(response).to redirect_to(basic_treatment)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the admin_basic_treatment as @admin_basic_treatment" do
-        basic_treatment = Admin::BasicTreatment.create! valid_attributes
-        put :update, {:id => basic_treatment.to_param, :admin_basic_treatment => invalid_attributes}, valid_session
-        expect(assigns(:admin_basic_treatment)).to eq(basic_treatment)
+      it "assigns the basic_treatment as @basic_treatment" do
+        basic_treatment = BasicTreatment.create! valid_attributes
+        put :update, {:id => basic_treatment.to_param, :basic_treatment => invalid_attributes}, valid_session
+        expect(assigns(:basic_treatment)).to eq(basic_treatment)
       end
 
       it "re-renders the 'edit' template" do
-        basic_treatment = Admin::BasicTreatment.create! valid_attributes
-        put :update, {:id => basic_treatment.to_param, :admin_basic_treatment => invalid_attributes}, valid_session
+        basic_treatment = BasicTreatment.create! valid_attributes
+        put :update, {:id => basic_treatment.to_param, :basic_treatment => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested admin_basic_treatment" do
-      basic_treatment = Admin::BasicTreatment.create! valid_attributes
+    it "destroys the requested basic_treatment" do
+      basic_treatment = BasicTreatment.create! valid_attributes
       expect {
         delete :destroy, {:id => basic_treatment.to_param}, valid_session
-      }.to change(Admin::BasicTreatment, :count).by(-1)
+      }.to change(BasicTreatment, :count).by(-1)
     end
 
     it "redirects to the admin_basic_treatments list" do
-      basic_treatment = Admin::BasicTreatment.create! valid_attributes
+      basic_treatment = BasicTreatment.create! valid_attributes
       delete :destroy, {:id => basic_treatment.to_param}, valid_session
       expect(response).to redirect_to(admin_basic_treatments_url)
     end

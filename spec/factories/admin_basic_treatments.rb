@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :admin_basic_treatment, :class => 'Admin::BasicTreatment' do
+  factory :admin_basic_treatment, class: 'Admin::BasicTreatment' do
     description "MyString"
-common false
+    common false
   end
 
 end

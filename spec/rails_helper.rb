@@ -42,10 +42,10 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
 
-  config.before(:each, type: :controller) do
-    @current_user = FactoryGirl.create(:user)
-    login_as @current_user
-  end
+  # config.before(:each, type: :controller) do
+  #   @current_user = FactoryGirl.create(:user)
+  #   login_as @current_user
+  # end
 
   config.infer_spec_type_from_file_location!
   config.raise_errors_for_deprecations!

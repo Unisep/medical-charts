@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Admin_basic_treatments</h1>
+<h1>Listing Tratamentos Básicos</h1>
 
 <table>
   <thead>
@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @basic_treatments.each do |admin_basic_treatment| %>
+    <% @basic_treatments.each do |basic_treatment| %>
       <tr>
-        <td><%= admin_basic_treatment.description %></td>
-        <td><%= admin_basic_treatment.common %></td>
-        <td><%= link_to 'Show', admin_basic_treatment %></td>
-        <td><%= link_to 'Edit', edit_admin_basic_treatment_path(admin_basic_treatment) %></td>
-        <td><%= link_to 'Destroy', admin_basic_treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= basic_treatment.description %></td>
+        <td><%= basic_treatment.common %></td>
+        <td><%= link_to 'Show', admin_basic_treatment_path([:admin, basic_treatment]) %></td>
+        <td><%= link_to 'Edit', edit_admin_basic_treatment_path(basic_treatment) %></td>
+        <td><%= link_to 'Destroy', admin_basic_treatment_path([:admin, basic_treatment]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

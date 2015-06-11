@@ -15,3 +15,17 @@ pt-BR:
     show:
       back: Voltar
       edit: Editar
+  admin:
+    basic_treatments:
+      edit:
+        title: Editar Tratamento
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Novo Tratamento Básico
+        back: Voltar
+      index:
+        title: Tratamentos Básicos
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar

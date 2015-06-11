@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h4><%= t('.title') %> <%= link_to raw('<i class="mdi-social-plus-one"></i>'), new_admin_basic_treatment_path %> </h4>
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Tratamentos Básicos</h1>
-
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
-      <th>Description</th>
-      <th>Common</th>
+      <th><%= ta(BasicTreatment, :description) %></th>
+      <th><%= ta(BasicTreatment, :common) %></th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @basic_treatments.each do |basic_treatment| %>
       <tr>
         <td><%= basic_treatment.description %></td>
-        <td><%= basic_treatment.common %></td>
-        <td><%= link_to 'Show', admin_basic_treatment_path([:admin, basic_treatment]) %></td>
-        <td><%= link_to 'Edit', edit_admin_basic_treatment_path(basic_treatment) %></td>
-        <td><%= link_to 'Destroy', admin_basic_treatment_path([:admin, basic_treatment]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= to_icon(basic_treatment.common) %></td>
+
+        <td class=""><%= link_to t('.edit'), edit_admin_basic_treatment_path(basic_treatment) %></td>
+        <td><%= link_to t('.destroy'), admin_basic_treatment_path([:admin, basic_treatment]),
+                        method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Basic treatment', new_admin_basic_treatment_path %>
+    </tbody>
+  </table>
+</div>

@@ -14,4 +14,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+//= require say-cheese
 //= require_tree .

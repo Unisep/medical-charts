@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# basic treatments!
+BasicTreatment.create!(description: 'Periodontia')
+BasicTreatment.create!(description: 'Dentística')
+BasicTreatment.create!(description: 'Endodontia')
+BasicTreatment.create!(description: 'Ortodontia')
+BasicTreatment.create!(description: 'Prótese Total')
+BasicTreatment.create!(description: 'Prótese Parcial Removível')
+BasicTreatment.create!(description: 'Prótese Fixa')
+BasicTreatment.create!(description: 'Odontopediatria')
+BasicTreatment.create!(description: 'Cirurgia I')
+BasicTreatment.create!(description: 'Cirurgia II')
+BasicTreatment.create!(description: 'Outros')
+BasicTreatment.create!(description: 'Especialização - Implantodontia')

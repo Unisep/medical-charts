@@ -51,6 +51,15 @@
     <%= @patient.cellphone %>
   </p>
 
+
+  <p>
+    <strong><%= ta(Patient, :treatments) %>:</strong>
+
+    <% @patient.treatments.map(&:basic_treatment).each do |desc| %>
+      <span><%= desc.description %></span>
+    <% end %>
+  </p>
+
   <%= link_to t('.edit'), edit_patient_path(@patient) %> |
   <%= link_to t('.back'), patients_path %>
 </div>

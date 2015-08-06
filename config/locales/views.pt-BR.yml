@@ -29,3 +29,16 @@ pt-BR:
         show: Visualizar
         destroy: Apagar
         edit: Editar
+    basic_questions:
+      edit:
+        title: Editar Questão Básica
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Nova Questão Básica
+        back: Voltar
+      index:
+        title: Questões Básicas
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar

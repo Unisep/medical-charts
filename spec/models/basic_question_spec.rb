@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BasicQuestion, type: :model do
+RSpec.xdescribe BasicQuestion, type: :model do
   context 'associations' do
     it { is_expected.to belong_to(:questionable) }
   end

@@ -1,0 +1,7 @@
+pt-BR:
+  enumerations:
+    answer_kind:
+      check_box: "CheckBox (caixa de marcação)"
+      radio_button: "RadioButton (uma seleção, várias escolhas)"
+      text_field: "TextField (campo de texto)"
+      switch_button: "SwitchButton (sim ou não)"

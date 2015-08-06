@@ -2,9 +2,9 @@
  * Created by bruno on 10/05/15.
  */
 
-$(document).ready(function() {
-    $('select').material_select();
-});
+//$(document).ready(function() {
+//    $('select').material_select();
+//});
 
 $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month

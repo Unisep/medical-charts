@@ -17,6 +17,7 @@ source 'https://rubygems.org' do
   gem 'cancancan', '~> 1.10'
   gem 'passenger'
   gem 'brazilian-rails'
+  gem 'awesome_nested_set'
 
   group :development, :test do
     gem 'parallel_tests'

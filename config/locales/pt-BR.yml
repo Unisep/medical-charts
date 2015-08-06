@@ -211,6 +211,9 @@ pt-BR:
       patient:
         one: Paciente
         other: Pacientes
+      basic_question:
+        one: Questão Básica
+        other: Questões Básicas
     attributes:
       patient:
         name: Nome
@@ -223,3 +226,7 @@ pt-BR:
         district: Bairro
         phone: Telefone
         cellphone: Celular
+      basic_question:
+        description: Descrição
+        kind: Tipo de Resposta
+        parent_id: Anterior

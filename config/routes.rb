@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :basic_treatments, except: :show
+    resources :basic_questions
   end
 
   resources :patients

@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    event_kind:
+      graduation: Graduação
+      wedding: Casamento
+      social_event: Evento Social
+      fair: Feira
+      birthday: Aniversário

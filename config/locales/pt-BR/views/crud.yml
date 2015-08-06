@@ -1,0 +1,9 @@
+pt-BR:
+  views:
+    crud:
+      delete: Tem certeza que deseja excluir?
+      new: 'Adicionar %{name}'
+      edit: 'Editar %{name}'
+      cancel: Cancelar
+      edit_link: Editar
+      delete_link: Deletar

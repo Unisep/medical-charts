@@ -1,0 +1,6 @@
+pt-BR:
+  views:
+    users:
+      no_times_logged: Número de vezes logado
+      last_logged_in: Visto por último em
+      joined_on: Entrou em

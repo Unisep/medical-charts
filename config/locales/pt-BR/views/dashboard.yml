@@ -1,0 +1,10 @@
+pt-BR:
+  views:
+    dashboard:
+      name: Dashboard
+      rolling_now: Acontecendo Agora
+      monitoring: Monitoramento
+      event: Eventos
+      user: Usuários
+      role: Permissões
+      contact: Interessados

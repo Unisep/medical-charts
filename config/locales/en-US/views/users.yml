@@ -1,0 +1,6 @@
+en-US:
+  views:
+    users:
+      no_times_logged: No. Times Logged In
+      last_logged_in: Last Logged In On
+      joined_on: Joined On

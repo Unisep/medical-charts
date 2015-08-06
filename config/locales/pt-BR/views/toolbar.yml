@@ -1,0 +1,5 @@
+pt-BR:
+  views:
+    toolbar:
+      profile: Perfil
+      dashboard: Dashboard

@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    item_status:
+      approved: Aprovado
+      removed: Removido

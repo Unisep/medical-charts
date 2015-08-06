@@ -1,0 +1,5 @@
+en-US:
+  enumerations:
+    item_status:
+      approved: Approved
+      removed: Removed

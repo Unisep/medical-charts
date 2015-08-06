@@ -1,0 +1,8 @@
+en-US:
+  enumerations:
+    event_kind:
+      graduation: Graduation
+      wedding: Wedding
+      social_event: Social Event
+      fair: Fair
+      birthday: Birthday

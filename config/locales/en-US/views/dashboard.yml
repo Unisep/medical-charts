@@ -1,0 +1,10 @@
+en-US:
+  views:
+    dashboard:
+      name: Dashboard
+      rolling_now: Rolling Now
+      monitoring: Monitoring
+      event: Events
+      user: Users
+      role: Roles
+      contact: Contacts

@@ -1,0 +1,20 @@
+pt-BR:
+  views:
+    monitorings:
+      button: Monitorar
+      title: Monitoramento
+      approveds: Aprovados
+      candidates: Candidatos
+      initial_page: Página inicial de monitoramentos
+      present: Ver no Telão!
+      buttons:
+        remove: Remover
+        approve: Aprovar
+      no_approved_items: Você está rigoroso(a) hoje, ainda não aprovou nenhum item!
+      no_candidates_items: "Humm, que coisa! agita isso aí %{name} e poste algo com %{tag} !!"
+
+      actions:
+        approve:
+          approved: "%{spawn} aprovado(a) com sucesso."
+        remove:
+          removed: "%{spawn} removido(a) com sucesso."

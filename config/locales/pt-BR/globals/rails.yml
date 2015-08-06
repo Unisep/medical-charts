@@ -1,4 +1,3 @@
----
 pt-BR:
   date:
     abbr_day_names:
@@ -204,29 +203,21 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      pickdate: '%d %b, %Y'
     pm: ''
-  # Some active Record models
-  activerecord:
-    models:
-      patient:
-        one: Paciente
-        other: Pacientes
-      basic_question:
-        one: Questão Básica
-        other: Questões Básicas
-    attributes:
-      patient:
-        name: Nome
-        email: Email
-        address: Endereço
-        zip_code: CEP
-        state: UF
-        city: Cidade
-        number: Número
-        district: Bairro
-        phone: Telefone
-        cellphone: Celular
-      basic_question:
-        description: Descrição
-        kind: Tipo de Resposta
-        parent_id: Anterior
+  views:
+    pagination:
+      first: "First"
+      last: "Last"
+      previous: "Prev"
+      next: "Next"
+      truncate: "..."
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

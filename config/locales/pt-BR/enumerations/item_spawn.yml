@@ -1,0 +1,6 @@
+pt-BR:
+  enumerations:
+    item_spawn:
+      tweet: Tweet
+      media: Foto
+      post: Post

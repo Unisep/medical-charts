@@ -1,0 +1,41 @@
+pt-BR:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'required'
+      mark: '*'
+
+    error_notification:
+      default_message: "Por favor revise os seguintes problemas abaixo:"
+
+    mask:
+      date:
+        format: '00/00/0000'
+        placeholder: '__/__/____'
+
+      time:
+        format: '00:00:00'
+        placeholder: '__:__:__'
+
+      datetime:
+        format: '00 00/0000 00:00:00'
+        placeholder: '__/__/____ __:__:__'
+
+      cellphone:
+        format: '(00) #0000-0000'
+        placeholder: '(__) _____-____'
+
+      phone:
+        format: '(00) 0000-0000'
+        placeholder: '(__) ____-____'
+
+      zipcode:
+        format: '00000-000'
+        placeholder: '_____-___'
+
+      currency:
+        format: '000.000.000.000.000,00'
+
+      percent:
+        format: '##0,00%'

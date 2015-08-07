@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      patient:
+        one: Paciente
+        other: Pacientes
+      basic_question:
+        one: Questão Básica
+        other: Questões Básicas
+    attributes:
+      patient:
+        name: Nome
+        email: Email
+        address: Endereço
+        zip_code: CEP
+        state: UF
+        city: Cidade
+        number: Número
+        district: Bairro
+        phone: Telefone
+        cellphone: Celular
+      basic_question:
+        description: Descrição
+        kind: Tipo de Resposta
+        parent_id: Anterior

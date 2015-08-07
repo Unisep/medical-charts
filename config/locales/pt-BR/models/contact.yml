@@ -1,9 +1,0 @@
-pt-BR:
-  activerecord:
-    models:
-      contact:
-        one: Interessado
-        other: Interessados
-    attributes:
-      contact:
-        email: Email

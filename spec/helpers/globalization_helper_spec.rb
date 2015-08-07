@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe TranslationHelper, type: :helper do
+describe GlobalizationHelper, type: :helper do
   describe '.translate_model_name' do
     it { expect(tm Patient).to eq('Paciente') }
     it { expect(tm Patient, count: 2).to eq('Pacientes') }

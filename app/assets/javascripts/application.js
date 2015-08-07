@@ -10,9 +10,24 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_self
 //= require jquery
 //= require jquery_ujs
 //= require materialize
-//= require say-cheese
+//= require_self
 //= require_tree .
+
+
+$(document).ready(function() {
+    function setHeight() {
+        var top = $('nav').outerHeight();
+        var bottom = $('footer').outerHeight();
+        var totHeight = $(window).height();
+        $('.min-content-height').css({
+            'min-height': totHeight - top - bottom - 20 + 'px'
+        });
+    }
+
+    $(window).on('resize', function() { setHeight(); });
+
+    setHeight();
+});

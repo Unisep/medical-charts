@@ -51,13 +51,8 @@
                         label_method: :description, item_wrapper_class: 'col s3',
                         label: false, checked: @patient.basic_treatment_ids %>
     </div>
-    <div class="col s12">
-      <br/>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Salvar
-        <i class="mdi-content-save right"></i>
-      </button>
-    </div>
   </div>
 
+  <%= fab_to_save back_url: patients_path %>
 <% end %>
 

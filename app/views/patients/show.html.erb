@@ -1,6 +1,4 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
   <p>
     <strong><%= ta(Patient, :name) %>:</strong>
     <%= @patient.name %>
@@ -51,7 +49,6 @@
     <%= @patient.cellphone %>
   </p>
 
-
   <p>
     <strong><%= ta(Patient, :treatments) %>:</strong>
 
@@ -60,6 +57,5 @@
     <% end %>
   </p>
 
-  <%= link_to t('.edit'), edit_patient_path(@patient) %> |
-  <%= link_to t('.back'), patients_path %>
+  <%= fab_to_edit url: edit_patient_path(@patient), back_url: patients_path %>
 </div>

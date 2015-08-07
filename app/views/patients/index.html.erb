@@ -1,7 +1,5 @@
 <div class="container">
-  <h4><%= t('.title') %> <%= link_to raw('<i class="mdi-social-plus-one"></i>'), new_patient_path %> </h4>
-  <p id="notice"><%= notice %></p>
-
+  <h4><%= t('.title') %></h4>
   <table>
     <thead>
     <tr>
@@ -31,3 +29,5 @@
     </tbody>
   </table>
 </div>
+
+<%= fab_to_new(new_patient_path) %>

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :basic_questions
   end
 
-  resources :patients
+  resources :patients do
+    get 'find_address/:zip_code', action: :find_address, on: :collection
+  end
 
   root 'home#index'
 end

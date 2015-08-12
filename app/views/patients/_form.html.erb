@@ -1,55 +1,53 @@
 <%= simple_form_for @patient do |f| %>
   <div class="row">
     <div class="input-field col s12">
-      <%= f.input :name, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+      <%= f.input :name %>
+    </div>
+
+    <div class="input-field col s6">
+      <%= f.input :cellphone %>
+    </div>
+
+    <div class="input-field col s6">
+      <%= f.input :phone %>
     </div>
 
     <div class="input-field col s12">
-      <%= f.input :address, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+      <%= f.input :email %>
     </div>
   </div>
+
   <div class="row">
-    <div class="input-field col s6">
-      <%= f.input :state, as: :select, collection: [['Paraná', 1], ['São Paulo', 2]],
-                  input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+    <div class="input-field col s4">
+      <%= f.input :zip_code, input_html: { onblur: 'loadCEP()' } %>
+    </div>
+
+    <div class="input-field col s4">
+      <%= f.input :state %>
+    </div>
+
+    <div class="input-field col s4">
+      <%= f.input :city %>
     </div>
 
     <div class="input-field col s6">
-      <%= f.input :city, as: :select, collection: [['Fco Beltrão', 1], ['Marmeleiro', 2]],
-                  input_html: { class: 'validate' }, label_input: { class: 'active' } %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s3">
-      <%= f.input :zip_code, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+      <%= f.input :address %>
     </div>
 
-    <div class="input-field col s3">
-      <%= f.input :number, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+    <div class="input-field col s4">
+      <%= f.input :district %>
     </div>
 
-    <div class="input-field col s6">
-      <%= f.input :district, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
+    <div class="input-field col s2">
+      <%= f.input :number %>
     </div>
 
     <div class="input-field col s12">
-      <%= f.input :email, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
-    </div>
+      <br />
 
-    <div class="input-field col s6">
-      <%= f.input :phone, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
-    </div>
-
-    <div class="input-field col s6">
-      <%= f.input :cellphone, input_html: { class: 'validate' }, label_input: { class: 'active' } %>
-    </div>
-
-    <div class="input-field col s12">
-      <p><label>Tratamentos: </label></p>
-      <br/>
       <%= f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
-                        label_method: :description, item_wrapper_class: 'col s3',
-                        label: false, checked: @patient.basic_treatment_ids %>
+                        label_method: :description, item_wrapper_class: 'col l4 s12',
+                        checked: @patient.basic_treatment_ids %>
     </div>
   </div>
 

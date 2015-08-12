@@ -15,8 +15,7 @@ class PatientsController < ApplicationController
     respond_with(@patient)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @patient = Patient.new(patient_params)
@@ -33,7 +32,14 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
+
     respond_with(@patient)
+  end
+
+  def find_address
+    @address = BuscaEndereco.cep(params[:zip_code])
+
+    respond_with(@address)
   end
 
   private

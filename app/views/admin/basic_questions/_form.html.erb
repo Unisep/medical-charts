@@ -1,27 +1,37 @@
 <%= simple_form_for([:admin, @basic_question]) do |f| %>
-  <% if @basic_question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@basic_question.errors.count, 'error') %> prohibited this basic question from being saved:</h2>
+  <%= f.error_notification %>
 
-      <ul>
-        <% @basic_question.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.input :description, as: :text, input_html: { class: 'materialize-textarea' } %>
     </div>
-  <% end %>
-
-  <div class="input-field">
-    <%= f.input :description %>
-  </div>
-  <div class="input-field">
-    <%= f.input :kind, collection: AnswerKind.to_a, input_html: { class: 'browser-default' } %>
-  </div>
-  <div class="input-field">
-    <%= f.input :parent_id, collection: BasicQuestion.all, label: false %>
   </div>
 
-  <div class="input-field">
-    <%= f.submit %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.input :parent_id, collection: BasicQuestion.all, label: false, include_blank: 'Anterior',
+                  input_html: { class: 'browser-default' }  %>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.input :kind, collection: AnswerKind.to_a, label: false, include_blank: 'Tipo de questão',
+                  input_html: { class: 'browser-default' } %>
+    </div>
+  </div>
+
+  <!--<div class="row">-->
+    <!--<div id="tasks">-->
+      <!--< f.simple_fields_for :tasks do |task| %>-->
+        <!--< render 'option_fields', f: task %>-->
+
+        <!--<div class="links">-->
+          <!--< link_to_add_association 'add task', f, :tasks %>-->
+        <!--</div>-->
+      <!--< end %>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <%= fab_to_save back_url: admin_basic_questions_url %>
 <% end %>

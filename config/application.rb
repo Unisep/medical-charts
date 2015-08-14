@@ -19,6 +19,8 @@ module MedicalCharts
     config.generators do |g|
       g.assets false
       g.helper false
+      g.view_specs false
+      g.route_specs false
     end
   end
 end

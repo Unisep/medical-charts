@@ -1,0 +1,15 @@
+<%= simple_form_for([:admin, @basic_question]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.input :description %>
+    </div>
+  </div>
+
+  <!--<div class="row">-->
+  <!--<div class="input-field col s12">-->
+  <!--<%# f.input :checked,  %>-->
+  <!--</div>-->
+  <!--</div>-->
+<% end %>

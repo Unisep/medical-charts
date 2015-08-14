@@ -12,7 +12,6 @@ BasicTreatment.create!(description: 'Cirurgia II')
 BasicTreatment.create!(description: 'Outros')
 BasicTreatment.create!(description: 'Especialização - Implantodontia')
 
-
 # basic questions!
 BasicQuestion.create!(description: 'Quando foi sua útima visita ao dentista?', kind: AnswerKind::TEXT_FIELD)
 Answer::TextField.create!(description: ' Ano passado!')

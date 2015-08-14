@@ -6,28 +6,19 @@ module Admin
       @basic_questions = BasicQuestion.all
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @basic_question = BasicQuestion.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @basic_question = BasicQuestion.new(basic_question_params)
+      @basic_question.save
 
-      respond_to do |format|
-        if @basic_question.save
-          format.html { redirect_to @basic_question, notice: 'Basic question was successfully created.' }
-          format.json { render :show, status: :created, location: @basic_question }
-        else
-          format.html { render :new }
-          format.json { render json: @basic_question.errors, status: :unprocessable_entity }
-        end
-      end
+      respond_with(@basic_question, location: new_admin_basic_question_basic_question_option_path(@basic_question))
     end
 
     def update
@@ -56,7 +47,7 @@ module Admin
     end
 
     def basic_question_params
-      params[:basic_question]
+      params.require(:basic_question).permit(:description, :parent_id, :kind)
     end
   end
 end

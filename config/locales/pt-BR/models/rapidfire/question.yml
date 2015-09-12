@@ -1,9 +1,11 @@
 pt-BR:
   activerecord:
     models:
-      rapidfire/question_group:
-        one: Grupo de Questões
-        other: Grupos de Questões
+      rapidfire/question:
+        one: Questão
+        other: Questões
     attributes:
-      rapidfire/question_group:
-        name: Nome
+      rapidfire/question:
+        type: Tipo
+        question_text: Descrição
+        answer_options: 'Opções da Questão (items)'

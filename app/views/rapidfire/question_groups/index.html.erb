@@ -1,23 +1,20 @@
-<h2>
-  Question Groups
-  <% if can_administer? %>
-    <%= link_to "New Group", new_question_group_path %>
-  <% end %>
-</h2>
-<hr/>
+<div class="container">
+  <h4><%= t('.title') %></h4>
 
-<table>
-  <colgroup>
-    <col>
-    <col width="250">
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Question Group</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: "question_group", collection: @question_groups %>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th><%= ta(Rapidfire::QuestionGroup, :name) %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render partial: "question_group", collection: @question_groups %>
+    </tbody>
+  </table>
+</div>
+
+<% if can_administer? %>
+  <%= fab_to_new(new_question_group_url) %>
+<% end %>

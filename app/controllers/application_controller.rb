@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user = if current_page?(controller: 'patients', action: 'edit')
-      Patient.find_by(id: params[:id])
+    @current_user = if true
+                      Patient.find_by(id: params[:id])
                     else
                       Patient.new
                     end

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  mount Rapidfire::Engine => 'rapidfire'
   get 'database/index'
 
   namespace :admin do
     resources :basic_treatments, except: :show
-    mount Rapidfire::Engine => 'basic_questions'
   end
 
   resources :patients do

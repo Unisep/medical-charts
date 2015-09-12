@@ -1,40 +1,44 @@
-<h3>Question</h3>
+<%= simple_form_for form, as: :question, url: url, method: method do |f| %>
+  <%= f.error_notification %>
 
-<%= form_for form, as: :question, url: url, method: method do |f| %>
-  <%- unless form.errors.empty? %>
-    <ul>
-      <%- form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.input :type, as: :select, label: false, collection: ::Rapidfire::QuestionForm::QUESTION_TYPES,
+                  input_html: { id: 'question_type', class: 'browser-default' }%>
+    </div>
 
-  <%= f.label :type %>
-  <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
+    <div class="input-field col s12">
+      <%= f.input :question_text %>
+    </div>
 
-  <%= f.label :question_text %>
-  <%= f.text_field :question_text %>
-
-  <%= f.label :answer_options %>
-  <%= f.text_area :answer_options, rows: 5 %>
+    <div class="input-field col s12">
+      <%= f.input :answer_options, as: :text, input_html: { class: 'materialize-textarea' } %>
+    </div>
+  </div>
 
   <h4>Other options</h4>
-  <hr/>
 
-  <%= f.label :answer_presence %>
-  <%= f.check_box :answer_presence %>
+  <div class="row">
+    <div class="input-field col s4">
+      <%= f.input :answer_presence, as: :boolean %>
+    </div>
 
-  <%= f.label :answer_minimum_length %>
-  <%= f.text_field :answer_minimum_length %>
+    <div class="input-field col s4">
+      <%= f.input :answer_minimum_length, as: :integer %>
+    </div>
 
-  <%= f.label :answer_maximum_length %>
-  <%= f.text_field :answer_maximum_length %>
+    <div class="input-field col s4">
+      <%= f.input :answer_maximum_length, as: :integer %>
+    </div>
 
-  <%= f.label :answer_greater_than_or_equal_to %>
-  <%= f.text_field :answer_greater_than_or_equal_to %>
+    <div class="input-field col s4">
+      <%= f.input :answer_greater_than_or_equal_to, as: :integer %>
+    </div>
 
-  <%= f.label :answer_less_than_or_equal_to %>
-  <%= f.text_field :answer_less_than_or_equal_to %>
+    <div class="input-field col s4">
+      <%= f.input :answer_less_than_or_equal_to, as: :integer %>
+    </div>
+  </div>
 
-  <%= f.submit submit_text %>
+  <%= fab_to_save(back_url: question_group_questions_url) %>
 <% end %>

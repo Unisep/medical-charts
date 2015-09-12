@@ -49,20 +49,6 @@
                         checked: @patient.basic_treatment_ids %>
     </div>
   </div>
-  <div class="row">
-    <% BasicQuestion.all.each do |question| %>
-      <%= f.simple_fields_for :historical_questions do |ff| %>
-        <div class="input-field col s12">
-          <% if question.string? %>
-            <%= ff.input question.description, as: AnswerKind.key_for(question.kind).to_sym %>
-          <% elsif question.radio_buttons? %>
-            <%= ff.collection_radio_buttons question.description, question.radio_buttons, :description, :description %>
-          <% end %>
-          <br />
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 
   <%= fab_to_save back_url: patients_path %>
 <% end %>

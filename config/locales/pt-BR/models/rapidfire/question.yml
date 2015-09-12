@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      rapidfire/question_group:
+        one: Grupo de Questões
+        other: Grupos de Questões
+    attributes:
+      rapidfire/question_group:
+        name: Nome

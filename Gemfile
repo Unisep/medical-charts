@@ -19,6 +19,7 @@ source 'https://rubygems.org' do
   gem 'passenger'
   gem 'brazilian-rails'
   gem 'awesome_nested_set'
+  gem 'rapidfire'
 
   group :development, :test do
     gem 'parallel_tests'

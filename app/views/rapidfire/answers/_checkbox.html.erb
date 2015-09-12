@@ -1,11 +1,9 @@
-<%= render partial: "rapidfire/answers/errors", locals: {answer: answer} %>
+<%= render partial: 'rapidfire/answers/errors', locals: {answer: answer} %>
 
-<%= f.label :answer_text, answer.question.question_text %>
-<%= f.fields_for :answer_text do |af| %>
-  <%- answer.question.options.each do |option| %>
-    <%= af.label option do %>
-      <%= af.check_box nil, { id: nil, checked: checkbox_checked?(answer, option) }, option %>
-      <%= option %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="input-field col s12">
+    <br />
+    <%= f.input :answer_text, as: :check_boxes, collection: answer.question.options, label: answer.question.question_text,
+                checked: answer.answer_text.try(:split, ','), item_wrapper_class: 'col s12' %>
+  </div>
+</div>

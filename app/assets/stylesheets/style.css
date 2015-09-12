@@ -36,3 +36,7 @@ main {
 .max-width{
     width: 100% !important;
 }
+
+.wrapper-pad{
+    margin-top: 10px;
+}

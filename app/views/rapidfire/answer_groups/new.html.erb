@@ -1,11 +1,13 @@
-<h2>Please answer these Questions</h2>
-<hr/>
+<div class="container">
+  <h4>Please answer these Questions</h4>
 
-<%= form_for([@question_group, @answer_group_builder]) do |f| %>
-  <%- @answer_group_builder.answers.each do |answer| %>
-    <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
-      <%= render_answer_form_helper(answer, answer_form) %>
+  <%= simple_form_for([@question_group, @answer_group_builder]) do |f| %>
+    <%- @answer_group_builder.answers.each do |answer| %>
+      <%= f.simple_fields_for("#{answer.question.id}", answer) do |answer_form| %>
+        <%= render_answer_form_helper(answer, answer_form) %>
+      <% end %>
     <% end %>
+
+    <%= fab_to_save(back_url: '/rapidfire') %>
   <% end %>
-  <%= f.submit "Save" %>
-<% end %>
+</div>

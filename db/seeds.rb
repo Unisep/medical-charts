@@ -55,10 +55,10 @@ OPT
   yes_or_no = "Sim\r\nNão"
   lft_or_rgt = "Esquerdo\r\nDireito"
   check_options = "Frio\r\nCalor\r\nMastigação\r\nDoce\r\nEscovação\r\nFio Dental"
-  yes_or_no_night = "Sim\r\nNão\r\nsó a noite\r\ndia inteiro"
-  yes_or_no_brush = "Sim\r\nNão\r\nquando escova\r\nespontanamente"
-  brush_types = "suave\r\nforte\r\nmediana"
-  teeth_brush = "macia\r\nmédia\r\ndura"
+  yes_or_no_night = "Sim\r\nNão\r\nSó a Noite\r\nDia Inteiro"
+  yes_or_no_brush = "Sim\r\nNão\r\nQuando escova\r\nEspontanamente"
+  brush_types = "Suave\r\nForte\r\nMediana"
+  teeth_brush = "Macia\r\nMédia\r\nDura"
 
   qg3.questions << Question.create(question_text: 'Quantas vezes ao ano vai ao dentista:', type: 'Rapidfire::Questions::Numeric')
   qg3.questions << Question.create(question_text: 'Quando foi sua última visita ao dentista:', type: 'Rapidfire::Questions::Date')
@@ -128,13 +128,15 @@ OPT
   qg6.questions << Question.create(question_text: 'Glândulas Salivares Maiores', type: 'Rapidfire::Questions::Long')
   qg6.questions << Question.create(question_text: 'Ossos, Músculos, Inervação', type: 'Rapidfire::Questions::Long')
 
+
   qg7 = QuestionGroup.create(name: 'Exame Físico Regional - "Intrabucal"')
 
   qg7.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 
   qg8 = QuestionGroup.create(name: 'Local e Data')
 
-  qg8.questions << Question.create(question_text: 'Local', type: 'Rapidfire::Questions::Short', answer_options: 'Francisco Beltrão')
+  qg8.questions << Question.create(question_text: 'Local', type: 'Rapidfire::Questions::Short')
   qg8.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
   qg8.questions << Question.create(question_text: 'Operador', type: 'Rapidfire::Questions::Short')
+  qg8.questions << Question.create(question_text: 'Assinatura Paciente (ou Responsável)', type: 'Rapidfire::Questions::Short')
 end

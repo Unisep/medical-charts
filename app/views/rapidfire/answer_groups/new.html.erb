@@ -1,6 +1,4 @@
 <div class="container">
-  <h4>Please answer these Questions</h4>
-
   <%= simple_form_for([@question_group, @answer_group_builder]) do |f| %>
     <%- @answer_group_builder.answers.each do |answer| %>
       <%= f.simple_fields_for("#{answer.question.id}", answer) do |answer_form| %>

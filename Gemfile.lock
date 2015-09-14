@@ -159,6 +159,7 @@ GEM
       railties (= 4.2.0)
       sprockets-rails
     rails-assets-font-awesome (4.3.0)
+    rails-assets-jQuery-Mask-Plugin (1.8.0)
     rails-assets-jquery (2.1.4)
     rails-assets-materialize (0.95.3)
       rails-assets-jquery (>= 2.1.1)
@@ -260,6 +261,7 @@ DEPENDENCIES
   pg!
   rails (= 4.2.0)!
   rails-assets-font-awesome (= 4.3.0)!
+  rails-assets-jQuery-Mask-Plugin (~> 1.8.0)!
   rails-assets-materialize (= 0.95.3)!
   rails_12factor!
   rapidfire!

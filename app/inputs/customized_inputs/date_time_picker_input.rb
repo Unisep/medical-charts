@@ -14,8 +14,10 @@ module CustomizedInputs
 
       convert_html_options super_options: super,
                            options: {
-                             class: 'datepicker',
-                             value: value
+                               data: {
+                                   mask_format: I18n.t('simple_form.mask.date.format'),
+                               }, class: 'mask',
+                               value: value
                            }
     end
   end

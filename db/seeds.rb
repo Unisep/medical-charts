@@ -55,6 +55,10 @@ OPT
   yes_or_no = "Sim\r\nNão"
   lft_or_rgt = "Esquerdo\r\nDireito"
   check_options = "Frio\r\nCalor\r\nMastigação\r\nDoce\r\nEscovação\r\nFio Dental"
+  yes_or_no_night = "Sim\r\nNão\r\nsó a noite\r\ndia inteiro"
+  yes_or_no_brush = "Sim\r\nNão\r\nquando escova\r\nespontanamente"
+  brush_types = "suave\r\nforte\r\nmediana"
+  teeth_brush = "macia\r\nmédia\r\ndura"
 
   qg3.questions << Question.create(question_text: 'Quantas vezes ao ano vai ao dentista:', type: 'Rapidfire::Questions::Numeric')
   qg3.questions << Question.create(question_text: 'Quando foi sua última visita ao dentista:', type: 'Rapidfire::Questions::Date')
@@ -75,5 +79,62 @@ OPT
   qg3.questions << Question.create(question_text: 'Sente retenção de alimentos nos dentes?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Mastiga dos dois lados da boca?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Se não, qual lado prefere?', type: 'Rapidfire::Questions::Radio', answer_options: lft_or_rgt)
-  qg3.questions << Question.create(question_text: 'Tem ou teve aftas frequentes?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Sente dor ou estalido na ATM quando mastiga?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Usa prótese?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Se sim, qual?', type: 'Rapidfire::Questions::Short')
+  qg3.questions << Question.create(question_text: 'Sente a boca seca frequentemente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Sente a boca cheia de saliva frequentemente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Costuma respirar pela boca?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Costuma ranger ou apertar os dentes?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no_night)
+  qg3.questions << Question.create(question_text: 'Tem o hábito de roer as unhas ou outro objeto?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Tem o hábito de morder o lábio ou a parte interna da bochecha?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Sua gengiva sangra facilmente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no_brush)
+  qg3.questions << Question.create(question_text: 'Quantas vezes por dia você escova os dentes?', type: 'Rapidfire::Questions::Short')
+  qg3.questions << Question.create(question_text: 'Escova os dentes de forma:', type: 'Rapidfire::Questions::Radio', answer_options: brush_types)
+  qg3.questions << Question.create(question_text: 'Usa escova:', type: 'Rapidfire::Questions::Radio', answer_options: teeth_brush)
+  qg3.questions << Question.create(question_text: 'Já recebeu alguma vez, instruções sobre escovação dentária e uso do fio dental?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Usa o fio dental diariamente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Tem algum dente que lhe parece ser amolecido ou móvel?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Tem mal hálito?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Tem cáries com frequência?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Já teve "ínguas" na região da cabeça e pescoço?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Já teve paralisia facial?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Já operou algum tumor na boca?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
+  qg3.questions << Question.create(question_text: 'Se sim, a quanto tempo?', type: 'Rapidfire::Questions::Short')
+  qg3.questions << Question.create(question_text: 'E Qual foi o diagnóstico?', type: 'Rapidfire::Questions::Short')
+
+  qg4 = QuestionGroup.create(name: 'Hábitos & Vícios')
+
+  addictions = "Etilismo\r\nTabagismo\r\nCanabismo\r\nUso de drogas ilícitas"
+
+  qg4.questions << Question.create(question_text: 'Marque todos os que já teve/tem:', type: 'Rapidfire::Questions::Radio', answer_options: addictions)
+  qg4.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
+
+  qg5 = QuestionGroup.create(name: 'Exame Físico Geral')
+
+  qg5.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
+  qg5.questions << Question.create(question_text: 'P.A', type: 'Rapidfire::Questions::Short')
+  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
+  qg5.questions << Question.create(question_text: 'Pulso', type: 'Rapidfire::Questions::Numeric')
+  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
+  qg5.questions << Question.create(question_text: 'Temperatura', type: 'Rapidfire::Questions::Numeric')
+  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
+
+  qg6 = QuestionGroup.create(name: 'Exame Físico Regional - "Extrabucal"')
+
+  qg6.questions << Question.create(question_text: 'Fácies', type: 'Rapidfire::Questions::Long')
+  qg6.questions << Question.create(question_text: 'Cadeias ganglionares', type: 'Rapidfire::Questions::Long')
+  qg6.questions << Question.create(question_text: 'Articulação Têmporo-Mandibular', type: 'Rapidfire::Questions::Long')
+  qg6.questions << Question.create(question_text: 'Glândulas Salivares Maiores', type: 'Rapidfire::Questions::Long')
+  qg6.questions << Question.create(question_text: 'Ossos, Músculos, Inervação', type: 'Rapidfire::Questions::Long')
+
+  qg7 = QuestionGroup.create(name: 'Exame Físico Regional - "Intrabucal"')
+
+  qg7.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
+
+  qg8 = QuestionGroup.create(name: 'Local e Data')
+
+  qg8.questions << Question.create(question_text: 'Local', type: 'Rapidfire::Questions::Short', answer_options: 'Francisco Beltrão')
+  qg8.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
+  qg8.questions << Question.create(question_text: 'Operador', type: 'Rapidfire::Questions::Short')
 end

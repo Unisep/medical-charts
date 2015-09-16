@@ -1,0 +1,5 @@
+en:
+  enumerations:
+    consultation_kind:
+      treatment: "Treatment"
+      forwarding_visit: "Forwarding_visit"

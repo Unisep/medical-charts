@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount Rapidfire::Engine => 'rapidfire'
+
   get 'database/index'
 
   namespace :admin do

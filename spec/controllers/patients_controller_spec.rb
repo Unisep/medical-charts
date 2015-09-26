@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PatientsController, type: :controller do
-
   let(:valid_attributes) { attributes_for(:patient_with_treatments) }
   let(:invalid_attributes) { attributes_for(:invalid_patient) }
 
-  describe 'GET index' do
+  describe 'GET #index' do
     it 'assigns all patients as @patients' do
       patient = create :patient
 
@@ -15,7 +14,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'GET show' do
+  describe 'GET #show' do
     it 'assigns the requested patient as @patient' do
       patient = create :patient
 
@@ -25,7 +24,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'GET new' do
+  describe 'GET #new' do
     it 'assigns a new patient as @patient' do
       get :new
 
@@ -33,7 +32,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'GET edit' do
+  describe 'GET #edit' do
     it 'assigns the requested patient as @patient' do
       patient = create :patient
 
@@ -43,7 +42,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'POST create' do
+  describe 'POST #create' do
     before do
       Rails.application.load_seed
     end
@@ -84,7 +83,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'PUT update' do
+  describe 'PUT #update' do
     after do
       Rails.application.load_seed
     end
@@ -137,7 +136,7 @@ RSpec.describe PatientsController, type: :controller do
     end
   end
 
-  describe 'DELETE destroy' do
+  describe 'DELETE #destroy' do
     it 'destroys the requested patient' do
       patient = Patient.create! valid_attributes
       expect {

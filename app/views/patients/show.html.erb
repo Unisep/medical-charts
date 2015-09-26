@@ -52,7 +52,7 @@
   <p>
     <strong><%= ta(Patient, :treatments) %>:</strong>
 
-    <% @patient.treatments.map(&:basic_treatment).each do |desc| %>
+    <% @patient.treatments.each do |desc| %>
       <span><%= desc.description %></span>
     <% end %>
   </p>

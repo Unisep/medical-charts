@@ -12,6 +12,8 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
+    @patient.consultations.new
+
     respond_with(@patient)
   end
 

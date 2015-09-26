@@ -12,6 +12,8 @@ class CreateSchema < ActiveRecord::Migration
       t.string :phone
       t.string :cellphone
 
+      t.string :steps
+
       t.timestamps null: false
     end
 

@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.input :name %>
+  </div>
+
+  <div class="input-field col s6">
+    <%= f.input :cellphone %>
+  </div>
+
+  <div class="input-field col s6">
+    <%= f.input :phone %>
+  </div>
+
+  <div class="input-field col s12">
+    <%= f.input :email %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s4">
+    <%= f.input :zip_code, input_html: { onblur: 'loadCEP()' } %>
+  </div>
+
+  <div class="input-field col s4">
+    <%= f.input :state %>
+  </div>
+
+  <div class="input-field col s4">
+    <%= f.input :city %>
+  </div>
+
+  <div class="input-field col s6">
+    <%= f.input :address %>
+  </div>
+
+  <div class="input-field col s4">
+    <%= f.input :district %>
+  </div>
+
+  <div class="input-field col s2">
+    <%= f.input :number %>
+  </div>
+
+  <div class="input-field col s12">
+    <br />
+
+    <%= f.association :treatments, collection: BasicTreatment.all, as: :check_boxes,
+                      label_method: :description, item_wrapper_class: 'col l4 s12',
+                      checked: @patient.treatment_ids %>
+  </div>
+</div>
+<br/>
+<h3>Próxima Consulta</h3>
+<div class="row">
+  <%= f.simple_fields_for :consultations do |c| %>
+    <div class="input-field col s2">
+      <%= c.input :attend_at, as: :date_time_picker %>
+      <%= c.input :kind, as: :hidden, input_html: { value: ConsultationKind::FORWARDING_VISIT } %>
+    </div>
+  <% end if step.eql? 1 %>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <h3>Fichas</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s10 offset-s1">
+    <div class="col l5 m8 s12">
+      <div class="col s12 m12">
+        <%= link_to new_patient_url do %>
+          <div class="card-panel green waves-effect waves-light max-width">
+            <h4 class="white-text flow-text">Novo Encaminhamento
+              <i class="mdi-social-plus-one right"></i>
+            </h4>
+          </div>
+        <% end -%>
+      </div>
+    </div>
+
+    <div class="col l5 m8 s12">
+      <div class="col s12 m12">
+        <%= link_to rapidfire_url do %>
+          <div class="card-panel pink waves-effect waves-light max-width">
+            <h4 class="white-text flow-text">Fichas de Exames Clínicos
+              <i class="mdi-action-history right"></i>
+            </h4>
+          </div>
+        <% end -%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   mount Rapidfire::Engine => 'rapidfire'
 
-  get 'database/index'
+  resources :chips, only: :index
+  resources :database, only: :index
+  resources :consultations
 
   namespace :admin do
     resources :basic_treatments, except: :show

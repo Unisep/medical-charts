@@ -29,16 +29,30 @@ pt-BR:
         show: Visualizar
         destroy: Apagar
         edit: Editar
-    basic_questions:
+  rapidfire:
+    question_groups:
       edit:
-        title: Editar Questão Básica
+        title: Editar Grupo de Questões
         back: Voltar
         show: Visualizar
       new:
-        title: Nova Questão Básica
+        title: Novo Grupo de Questões
         back: Voltar
       index:
-        title: Questões Básicas
+        title: Grupos de Questões Básicas
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar
+    questions:
+      edit:
+        title: Editar Questão
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Nova Questão
+        back: Voltar
+      index:
+        title: Questões
         show: Visualizar
         destroy: Apagar
         edit: Editar

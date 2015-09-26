@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      rapidfire/question:
+        one: Questão
+        other: Questões
+    attributes:
+      rapidfire/question:
+        type: Tipo
+        question_text: Descrição
+        answer_options: 'Opções da Questão (items)'

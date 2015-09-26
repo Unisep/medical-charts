@@ -1,0 +1,14 @@
+.container
+  h4
+    = t('.title')
+  table
+    thead
+      tr
+        th
+          = ta(Rapidfire::Question, :question_text)
+        th
+          = ta(Rapidfire::Question, :type)
+        th[colspan="2"]
+    tbody
+      = render partial: 'question', collection: @questions
+= fab_to_new(new_question_group_question_path(@question_group))

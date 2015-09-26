@@ -1,0 +1,27 @@
+h1
+  | Results
+- @question_group_results.each do |result|
+  div
+    h4
+      = result.question.question_text
+    p
+      - if result.results.is_a?(Array)
+        ol
+          - result.results.each do |answer|
+            li
+              = answer
+      - elsif result.results.is_a?(Hash)
+        table
+          thead
+            tr
+              th
+                | Option
+              th
+                | Count
+          tbody
+            - result.results.each do |option, count|
+              tr
+                td
+                  = option
+                td
+                  = count

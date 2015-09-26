@@ -1,0 +1,24 @@
+.container
+  h4
+    = t('.title')
+  table
+    thead
+      tr
+        th
+          = ta(BasicTreatment, :description)
+        th
+          = ta(BasicTreatment, :common)
+        th[colspan="3"]
+    tbody
+      - @basic_treatments.each do |basic_treatment|
+        tr
+          td
+            = basic_treatment.description
+          td
+            = to_icon(basic_treatment.common)
+          td
+            = link_to t('.edit'), edit_admin_basic_treatment_path(basic_treatment)
+          td
+            = link_to t('.destroy'), admin_basic_treatment_path([:admin, basic_treatment]),
+            -                         method: :delete, data: { confirm: 'Você tem certeza?' }
+= fab_to_new(new_admin_basic_treatment_url)

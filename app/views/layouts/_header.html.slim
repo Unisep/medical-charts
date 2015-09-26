@@ -1,0 +1,20 @@
+nav#navTop.cyan.lighten-1[role="navigation"]
+  .nav-wrapper.container
+    a#logo-container.brand-logo[href="#!"]
+      i.mdi-action-assignment
+    ul.right.hide-on-med-and-down
+      li
+        = link_to :back do
+          i.mdi-navigation-arrow-back
+      li
+        a[href="#"]
+          i.mdi-action-search
+      li
+        = link_to '/' do
+          i.mdi-action-view-module
+      li
+        = link_to url_for(params) do
+          i.mdi-navigation-refresh
+      li
+        a[href="#"]
+          i.mdi-navigation-more-vert

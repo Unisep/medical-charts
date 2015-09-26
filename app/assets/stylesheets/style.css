@@ -36,3 +36,11 @@ main {
 .max-width{
     width: 100% !important;
 }
+
+.wrapper-pad{
+    margin-top: 10px;
+}
+
+.radio-margin{
+    margin-right: 15px;
+}

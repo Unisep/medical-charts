@@ -12,6 +12,8 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
+    @patient.consultations.new
+
     respond_with(@patient)
   end
 
@@ -50,7 +52,7 @@ class PatientsController < ApplicationController
 
   def patient_params
     params.require(:patient).permit(:name, :email, :address, :state, :city,
-                                    :zip_code, :district, :number, :phone,
-                                    :cellphone, basic_treatment_ids: [])
+                                    :zip_code, :district, :number, :phone, :current_step,
+                                    :cellphone, basic_treatment_ids: [], consultations_attributes: [:attend_at])
   end
 end

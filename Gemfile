@@ -14,16 +14,21 @@ source 'https://rubygems.org' do
   gem 'jbuilder', '~> 2.0'
   gem 'jquery-rails'
   gem 'sass'
+  gem 'cocoon'
   gem 'cancancan', '~> 1.10'
   gem 'passenger'
   gem 'brazilian-rails'
   gem 'awesome_nested_set'
+  gem 'rapidfire'
+
+  gem 'slim-rails'
 
   group :development, :test do
     gem 'parallel_tests'
 
+    gem 'quiet_assets'
     gem 'dotenv'
-    gem 'byebug'
+    gem 'pry-rails'
     gem 'rspec-rails', '~> 3.1.0'
     gem 'factory_girl_rails', '~> 4.0'
     gem 'forgery'
@@ -44,4 +49,5 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-materialize', '0.95.3'
   gem 'rails-assets-font-awesome', '4.3.0'
+  gem 'rails-assets-jQuery-Mask-Plugin', '~> 1.8.0'
 end

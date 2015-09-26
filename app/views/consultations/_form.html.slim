@@ -1,0 +1,12 @@
+= form_for(@consultation) do |f|
+  - if @consultation.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@consultation.errors.count, "error")
+        |  prohibited this consultation from being saved:
+      ul
+        - @consultation.errors.full_messages.each do |message|
+          li
+            = message
+  .actions
+    = f.submit

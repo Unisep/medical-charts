@@ -1,0 +1,37 @@
+.container
+  h4
+    = t('.title')
+  table
+    thead
+      tr
+        th
+          = ta(Patient, :name)
+        th
+          = ta(Patient, :cellphone)
+        th
+          = ta(Patient, :email)
+        th
+          = ta(Patient, :zip_code)
+        th
+          = ta(Patient, :address)
+        th[colspan="3"]
+    tbody
+      - @patients.each do |patient|
+        tr
+          td
+            = patient.name
+          td
+            = patient.cellphone
+          td
+            = patient.email
+          td
+            = patient.zip_code
+          td
+            = patient.address
+          td
+            = link_to t('.show'), patient
+          td
+            = link_to t('.edit'), edit_patient_path(patient)
+          td
+            = link_to t('.destroy'), patient, method: :delete, data: { confirm: 'Você tem certeza?' }
+= fab_to_new(new_patient_path)

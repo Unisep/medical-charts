@@ -1,9 +1,9 @@
 class Patient < ActiveRecord::Base
   include MultiStepModel
 
-  has_many :basic_treatments
+  has_many :basic_treatments, through: :treatments
   has_many :historical_answers, class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all
-  has_many :treatments, through: :basic_treatments, dependent: :delete_all
+  has_many :treatments, dependent: :delete_all
   has_many :consultations
 
   accepts_nested_attributes_for :consultations, reject_if: :all_blank, allow_destroy: true

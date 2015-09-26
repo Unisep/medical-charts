@@ -21,9 +21,12 @@ source 'https://rubygems.org' do
   gem 'awesome_nested_set'
   gem 'rapidfire'
 
+  gem 'slim-rails'
+
   group :development, :test do
     gem 'parallel_tests'
 
+    gem 'quiet_assets'
     gem 'dotenv'
     gem 'byebug'
     gem 'rspec-rails', '~> 3.1.0'

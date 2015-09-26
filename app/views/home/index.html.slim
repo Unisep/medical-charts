@@ -1,0 +1,51 @@
+.container
+  .row
+    h3
+      = t('views.project.name')
+.row
+  .col.s10.offset-s1
+    .col.l4.m6.s12
+      .col.s12.m12
+        = link_to chips_path do
+          .card-panel.grey.waves-effect.waves-light.max-width
+            h4.white-text.flow-text
+              | Fichas 
+              i.mdi-action-view-week.right
+    .col.l4.m6.s12
+      .col.s12.m12
+        a[href="#"]
+
+        .card-panel.yellow.waves-effect.waves-light.max-width
+          h4.white-text.flow-text
+            | Acadêmicos 
+            i.mdi-social-school.right
+    .col.l4.m6.s12
+      .col.s12.m12
+        = link_to database_index_path do
+          .waves-effect.waves-light.card-panel.blue.max-width
+            h4.white-text.flow-text
+              | Database 
+              i.mdi-file-cloud.right
+    .col.l4.m6.s12
+      .col.s12.m12
+        = link_to patients_url do
+          .waves-effect.waves-light.card-panel.red.max-width
+            h4.white-text.flow-text
+              | Pacientes 
+              i.mdi-social-people.right
+    .col.l4.m6.s12
+      .col.s12.m12
+        a[href="#"]
+
+        .waves-effect.waves-light.card-panel.teal.max-width
+          h4.white-text.flow-text
+            | Prontuários 
+            i.mdi-action-assignment.right
+    .col.l4.m6.s12
+      .col.s12.m12
+        a[href="#"]
+
+        .waves-effect.waves-light.card-panel.black.max-width
+          h4.white-text.flow-text
+            | Configurações 
+            i.mdi-action-settings.right

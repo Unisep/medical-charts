@@ -1,0 +1,19 @@
+doctype html
+html[lang="en"]
+  head
+    title
+      = t('views.project.name')
+      |  | UNISEP
+    meta[http-equiv="Content-Type" content="text/html; charset=UTF-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"]
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    div
+      = render 'layouts/header'
+    .min-content-height
+      = yield
+    div
+      = render 'layouts/sidebar'
+    = javascript_include_tag 'application'
+    = notices 6000

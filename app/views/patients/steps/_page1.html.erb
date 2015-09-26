@@ -43,13 +43,15 @@
   <div class="input-field col s12">
     <br />
 
-    <%= f.association :treatments, collection: BasicTreatment.all, as: :check_boxes,
+    <%= f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
                       label_method: :description, item_wrapper_class: 'col l4 s12',
-                      checked: @patient.treatment_ids %>
+                      checked: @patient.treatments.map(&:basic_treatment_id) %>
   </div>
 </div>
 <br/>
+
 <h3>Próxima Consulta</h3>
+
 <div class="row">
   <%= f.simple_fields_for :consultations do |c| %>
     <div class="input-field col s2">

@@ -1,0 +1,6 @@
+= simple_form_for(question_group) do |f|
+  = f.error_notification
+  .row
+    .input-field.col.s12
+      = f.input :name
+  = fab_to_save(back_url: question_groups_url)

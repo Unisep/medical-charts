@@ -3,4 +3,4 @@
   .input-field.col.s12
     br
     = f.input :answer_text, as: :check_boxes, collection: answer.question.options, label: answer.question.question_text,
-    -                 checked: answer.answer_text.try(:split, ','), item_wrapper_class: 'col s12'
+              checked: answer.answer_text.try(:split, ','), item_wrapper_class: 'col s12'

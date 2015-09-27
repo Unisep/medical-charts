@@ -3,10 +3,17 @@ function loadCEP(){
 
     $.getJSON('/patients/find_address/' + cep + '.json',
         function (data) {
-            $("#patient_address").val(data.tipo_logradouro + ' ' + data.logradouro);
-            $("#patient_district").val(data.bairro);
-            $("#patient_city").val(data.cidade);
-            $("#patient_state").val(data.uf);
+            ids = {
+                patient_address: data.tipo_logradouro + ' ' + data.logradouro,
+                patient_district: data.bairro,
+                patient_city: data.cidade,
+                patient_state: data.uf
+            };
+
+            $.each(ids, function(key, value) {
+                $("#" + key).val(value).addClass('valid');
+                $('label[for='+ key +']').addClass('active');
+            });
         }
     );
 }

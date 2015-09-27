@@ -7,7 +7,6 @@
     = f.input :phone
   .input-field.col.s12
     = f.input :email
-.row
   .input-field.col.s4
     = f.input :zip_code, input_html: { onblur: 'loadCEP()' }
   .input-field.col.s4
@@ -23,14 +22,13 @@
   .input-field.col.s12
     br
     = f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
-    -                       label_method: :description, item_wrapper_class: 'col l4 s12',
-    -                       checked: @patient.treatments.map(&:basic_treatment_id)
+                    label_method: :description, item_wrapper_class: 'col l4 s12',
+                    checked: @patient.treatments.map(&:basic_treatment_id)
 br
-h3
-  | Próxima Consulta
+h3 Próxima Consulta
 .row
+  = if step.eql? 1
   = f.simple_fields_for :consultations do |c|
     .input-field.col.s2
       = c.input :attend_at, as: :date_time_picker
       = c.input :kind, as: :hidden, input_html: { value: ConsultationKind::FORWARDING_VISIT }
-    - end if step.eql? 1

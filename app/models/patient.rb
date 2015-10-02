@@ -5,7 +5,7 @@ class Patient < ActiveRecord::Base
   has_many :historical_answers, class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all,
            foreign_key: :user_id
   has_many :treatments, dependent: :delete_all
-  has_many :consultations
+  has_many :consultations, inverse_of: :patient
 
   accepts_nested_attributes_for :consultations, reject_if: :all_blank, allow_destroy: true
 

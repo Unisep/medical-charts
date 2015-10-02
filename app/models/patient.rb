@@ -2,8 +2,8 @@ class Patient < ActiveRecord::Base
   include MultiStepModel
 
   has_many :basic_treatments, through: :treatments
-  has_many :historical_answers, class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all,
-           foreign_key: :user_id
+  has_many :historical_answers,
+           class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all, foreign_key: :user_id
   has_many :treatments, dependent: :delete_all
   has_many :consultations, inverse_of: :patient
 

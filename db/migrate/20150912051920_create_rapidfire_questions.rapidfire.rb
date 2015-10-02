@@ -9,8 +9,9 @@ class CreateRapidfireQuestions < ActiveRecord::Migration
       t.text :answer_options
       t.text :validation_rules
 
-      t.timestamps
+      t.timestamps null: false
     end
+
     add_index :rapidfire_questions, :question_group_id
   end
 end

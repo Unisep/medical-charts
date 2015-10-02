@@ -9,6 +9,7 @@ class CreateConsultations < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
     add_foreign_key :consultations, :patients
     add_foreign_key :consultations, :treatments
   end

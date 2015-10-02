@@ -6,8 +6,9 @@ class CreateRapidfireAnswers < ActiveRecord::Migration
       t.references :question
       t.text :answer_text
 
-      t.timestamps
+      t.timestamps null: false
     end
+
     add_index :rapidfire_answers, :answer_group_id
     add_index :rapidfire_answers, :question_id
   end

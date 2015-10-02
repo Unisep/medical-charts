@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      consultation:
+        one: Consulta
+        other: Consultas
+    attributes:
+      consultation:
+        attend_at: 'Comparecer em'
+        kind: Tipo
+        status: Situação

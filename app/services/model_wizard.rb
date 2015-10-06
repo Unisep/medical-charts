@@ -14,18 +14,15 @@ class ModelWizard
   end
 
   def process
-    @session[@session_params].deep_merge!(@params) if @params
+    @session[@session_params].deep_merge!(@params) if @params and @session[@session_params]
     set_object
     @object.assign_attributes(@session[@session_params]) unless class?
   end
 
   def save
-    binding.pry
     if @params[:back_button]
-      binding.pry
       @object.step_back
     elsif @object.current_step_valid?
-      binding.pry
       return process_save
     end
     false
@@ -42,17 +39,13 @@ class ModelWizard
   end
 
   def process_save
-    binding.pry
     if @object.last_step?
-      binding.pry
       if @object.all_steps_valid?
-        binding.pry
         success = @object.save
         @session[@session_params] = nil
         return success
       end
     else
-      binding.pry
       @object.step_forward
     end
     false

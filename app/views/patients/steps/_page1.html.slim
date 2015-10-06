@@ -28,7 +28,7 @@ br
 h3 Próxima Consulta
 - if step.eql? 1
   .row
-    = f.simple_fields_for :consultations do |c|
+    = f.simple_fields_for :appointments do |c|
       .input-field.col.s2
         = c.input :attend_at, as: :date_time_picker
-        = c.input :kind, as: :hidden, input_html: { value: ConsultationKind::FORWARDING_VISIT }
+        = c.input :kind, as: :hidden, input_html: { value: AppointmentKind::FORWARDING_VISIT }

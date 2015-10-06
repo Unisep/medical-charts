@@ -19,6 +19,7 @@ pt-BR:
         district: Bairro
         phone: Telefone
         cellphone: Celular
+        basic_treatments: Tratamentos Básicos
       basic_question:
         description: Descrição
         kind: Tipo de Resposta

@@ -1,0 +1,5 @@
+en:
+  enumerations:
+    appointment_kind:
+      evaluation: Avaliação
+      execution: Em Tratamento

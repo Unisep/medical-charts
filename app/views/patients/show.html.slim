@@ -1,59 +1,58 @@
-.container
-  p
-    strong
-      = ta(Patient, :name)
-      | :
-    = @patient.name
-  p
-    strong
-      = ta(Patient, :email)
-      | :
-    = @patient.email
-  p
-    strong
-      = ta(Patient, :address)
-      | :
-    = @patient.address
-  p
-    strong
-      = ta(Patient, :state)
-      | :
-    = @patient.state
-  p
-    strong
-      = ta(Patient, :city)
-      | :
-    = @patient.city
-  p
-    strong
-      = ta(Patient, :zip_code)
-      | :
-    = @patient.zip_code
-  p
-    strong
-      = ta(Patient, :district)
-      | :
-    = @patient.district
-  p
-    strong
-      = ta(Patient, :number)
-      | :
-    = @patient.number
-  p
-    strong
-      = ta(Patient, :phone)
-      | :
-    = @patient.phone
-  p
-    strong
-      = ta(Patient, :cellphone)
-      | :
-    = @patient.cellphone
-  p
-    strong
-      = ta(Patient, :treatments)
-      | :
-    - @patient.treatments.each do |desc|
-      span
-        = desc.basic_treatment.description
-  = fab_to_edit url: edit_patient_path(@patient), back_url: patients_path
+p
+  strong
+    = ta(Patient, :name)
+    | :
+  = @patient.name
+p
+  strong
+    = ta(Patient, :email)
+    | :
+  = @patient.email
+p
+  strong
+    = ta(Patient, :address)
+    | :
+  = @patient.address
+p
+  strong
+    = ta(Patient, :state)
+    | :
+  = @patient.state
+p
+  strong
+    = ta(Patient, :city)
+    | :
+  = @patient.city
+p
+  strong
+    = ta(Patient, :zip_code)
+    | :
+  = @patient.zip_code
+p
+  strong
+    = ta(Patient, :district)
+    | :
+  = @patient.district
+p
+  strong
+    = ta(Patient, :number)
+    | :
+  = @patient.number
+p
+  strong
+    = ta(Patient, :phone)
+    | :
+  = @patient.phone
+p
+  strong
+    = ta(Patient, :cellphone)
+    | :
+  = @patient.cellphone
+p
+  strong
+    = ta(Patient, :treatments)
+    | :
+  - @patient.treatments.each do |desc|
+    span
+      = desc.basic_treatment.description
+= fab_to_edit url: edit_patient_path(@patient), back_url: patients_path

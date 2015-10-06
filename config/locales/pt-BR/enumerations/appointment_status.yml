@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    consultation_status:
+      active: Ativo
+      canceled: Cancelado
+      attended: Finalizado

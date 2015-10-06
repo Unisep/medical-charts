@@ -18,10 +18,10 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe ConsultationsController, :type => :controller do
+RSpec.describe AppointmentsController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Consultation. As you add validations to Consultation, be sure to
+  # Appointment. As you add validations to Appointment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -33,35 +33,35 @@ RSpec.describe ConsultationsController, :type => :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # ConsultationsController. Be sure to keep this updated too.
+  # AppointmentsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all consultations as @consultations" do
-      consultation = Consultation.create! valid_attributes
+    it "assigns all appointments as @appointments" do
+      consultation = Appointment.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:consultations)).to eq([consultation])
+      expect(assigns(:appointments)).to eq([consultation])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested consultation as @consultation" do
-      consultation = Consultation.create! valid_attributes
+    it "assigns the requested consultation as @appointment" do
+      consultation = Appointment.create! valid_attributes
       get :show, {:id => consultation.to_param}, valid_session
       expect(assigns(:consultation)).to eq(consultation)
     end
   end
 
   describe "GET new" do
-    it "assigns a new consultation as @consultation" do
+    it "assigns a new consultation as @appointment" do
       get :new, {}, valid_session
-      expect(assigns(:consultation)).to be_a_new(Consultation)
+      expect(assigns(:consultation)).to be_a_new(Appointment)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested consultation as @consultation" do
-      consultation = Consultation.create! valid_attributes
+    it "assigns the requested consultation as @appointment" do
+      consultation = Appointment.create! valid_attributes
       get :edit, {:id => consultation.to_param}, valid_session
       expect(assigns(:consultation)).to eq(consultation)
     end
@@ -69,28 +69,28 @@ RSpec.describe ConsultationsController, :type => :controller do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Consultation" do
+      it "creates a new Appointment" do
         expect {
           post :create, {:consultation => valid_attributes}, valid_session
-        }.to change(Consultation, :count).by(1)
+        }.to change(Appointment, :count).by(1)
       end
 
-      it "assigns a newly created consultation as @consultation" do
+      it "assigns a newly created consultation as @appointment" do
         post :create, {:consultation => valid_attributes}, valid_session
-        expect(assigns(:consultation)).to be_a(Consultation)
+        expect(assigns(:consultation)).to be_a(Appointment)
         expect(assigns(:consultation)).to be_persisted
       end
 
       it "redirects to the created consultation" do
         post :create, {:consultation => valid_attributes}, valid_session
-        expect(response).to redirect_to(Consultation.last)
+        expect(response).to redirect_to(Appointment.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved consultation as @consultation" do
+      it "assigns a newly created but unsaved consultation as @appointment" do
         post :create, {:consultation => invalid_attributes}, valid_session
-        expect(assigns(:consultation)).to be_a_new(Consultation)
+        expect(assigns(:consultation)).to be_a_new(Appointment)
       end
 
       it "re-renders the 'new' template" do
@@ -107,34 +107,34 @@ RSpec.describe ConsultationsController, :type => :controller do
       }
 
       it "updates the requested consultation" do
-        consultation = Consultation.create! valid_attributes
+        consultation = Appointment.create! valid_attributes
         put :update, {:id => consultation.to_param, :consultation => new_attributes}, valid_session
         consultation.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested consultation as @consultation" do
-        consultation = Consultation.create! valid_attributes
+      it "assigns the requested consultation as @appointment" do
+        consultation = Appointment.create! valid_attributes
         put :update, {:id => consultation.to_param, :consultation => valid_attributes}, valid_session
         expect(assigns(:consultation)).to eq(consultation)
       end
 
       it "redirects to the consultation" do
-        consultation = Consultation.create! valid_attributes
+        consultation = Appointment.create! valid_attributes
         put :update, {:id => consultation.to_param, :consultation => valid_attributes}, valid_session
         expect(response).to redirect_to(consultation)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the consultation as @consultation" do
-        consultation = Consultation.create! valid_attributes
+      it "assigns the consultation as @appointment" do
+        consultation = Appointment.create! valid_attributes
         put :update, {:id => consultation.to_param, :consultation => invalid_attributes}, valid_session
         expect(assigns(:consultation)).to eq(consultation)
       end
 
       it "re-renders the 'edit' template" do
-        consultation = Consultation.create! valid_attributes
+        consultation = Appointment.create! valid_attributes
         put :update, {:id => consultation.to_param, :consultation => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -143,14 +143,14 @@ RSpec.describe ConsultationsController, :type => :controller do
 
   describe "DELETE destroy" do
     it "destroys the requested consultation" do
-      consultation = Consultation.create! valid_attributes
+      consultation = Appointment.create! valid_attributes
       expect {
         delete :destroy, {:id => consultation.to_param}, valid_session
-      }.to change(Consultation, :count).by(-1)
+      }.to change(Appointment, :count).by(-1)
     end
 
-    it "redirects to the consultations list" do
-      consultation = Consultation.create! valid_attributes
+    it "redirects to the appointments list" do
+      consultation = Appointment.create! valid_attributes
       delete :destroy, {:id => consultation.to_param}, valid_session
       expect(response).to redirect_to(consultations_url)
     end

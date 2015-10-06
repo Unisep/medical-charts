@@ -1,20 +1,20 @@
-.container
-  .row
-    h3
-      | Fichas
 .row
-  .col.s10.offset-s1
-    .col.l5.m8.s12
-      .col.s12.m12
+  h3
+    | Fichas
+.row
+  .col.s12
+    .col.l6.m8.s12
+      .col.s12
         = link_to new_patient_url do
           .card-panel.green.waves-effect.waves-light.max-width
             h4.white-text.flow-text
-              | Novo Encaminhamento 
+              | Novo Encaminhamento
               i.mdi-social-plus-one.right
-    .col.l5.m8.s12
-      .col.s12.m12
-        = link_to rapidfire_url do
+
+    .col.l6.m8.s12
+      .col.s12
+        = link_to appointments_url do
           .card-panel.pink.waves-effect.waves-light.max-width
             h4.white-text.flow-text
-              | Fichas de Exames Clínicos 
+              | Agendamentos
               i.mdi-action-history.right

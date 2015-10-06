@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :chips, only: :index
   resources :database, only: :index
-  resources :consultations
+  resources :appointments
 
   namespace :admin do
     resources :basic_treatments, except: :show

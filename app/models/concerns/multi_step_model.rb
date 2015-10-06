@@ -10,7 +10,7 @@ module MultiStepModel
   end
 
   def all_steps_valid?
-    (0...self.class.total_steps).all? do |step|
+    (1...self.class.total_steps).all? do |step|
       @current_step = step
       current_step_valid?
     end

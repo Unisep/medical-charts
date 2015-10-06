@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PatientsController, type: :controller do
+  render_views
+
   let(:valid_attributes) { attributes_for(:patient_with_treatments) }
   let(:invalid_attributes) { attributes_for(:invalid_patient) }
 
@@ -30,6 +32,12 @@ RSpec.describe PatientsController, type: :controller do
 
       expect(assigns(:patient)).to be_a_new(Patient)
     end
+
+    it 'need to render the first step' do
+      get :new
+
+      expect(response).to render_template(partial: 'patients/steps/_page1')
+    end
   end
 
   describe 'GET #edit' do
@@ -43,10 +51,6 @@ RSpec.describe PatientsController, type: :controller do
   end
 
   describe 'POST #create' do
-    before do
-      Rails.application.load_seed
-    end
-
     describe 'with valid params' do
       it 'creates a new Patient' do
         expect {
@@ -64,7 +68,7 @@ RSpec.describe PatientsController, type: :controller do
       it 'redirects to the created patient' do
         post :create, { patient: valid_attributes }
 
-        expect(response).to redirect_to(Patient.last)
+        expect(response).to redirect_to(patients_url)
       end
     end
 
@@ -113,7 +117,7 @@ RSpec.describe PatientsController, type: :controller do
 
         put :update, {id: patient.to_param, patient: valid_attributes}
 
-        expect(response).to redirect_to(patient)
+        expect(response).to redirect_to(patients_url)
       end
     end
 

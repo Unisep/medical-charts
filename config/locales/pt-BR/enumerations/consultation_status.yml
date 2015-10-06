@@ -1,6 +1,0 @@
-en:
-  enumerations:
-    consultation_status:
-      terminated: "Terminated"
-      canceled: "Canceled"
-      hold: "Hold"

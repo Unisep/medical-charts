@@ -1,13 +1,13 @@
 p#notice
   = notice
 h1
-  | Listing Consultations
+  | Listing Appointments
 table
   thead
     tr
       th[colspan="3"]
   tbody
-    - @consultations.each do |consultation|
+    - @appointments.each do |consultation|
       tr
         td
           = link_to 'Show', consultation
@@ -16,4 +16,4 @@ table
         td
           = link_to 'Destroy', consultation, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Consultation', new_consultation_path
+= link_to 'New Appointment', new_consultation_path

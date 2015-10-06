@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
-  before_action :load_wizard, only: [:new, :edit, :create, :update]
+  # before_action :load_wizard, only: [:new, :edit, :create, :update]
 
   def index
     @patients = Patient.all
@@ -12,8 +12,7 @@ class PatientsController < ApplicationController
   end
 
   def new
-    @patient = @wizard.object
-    @patient.consultations.new
+    @patient = Patient.new
 
     respond_with(@patient)
   end
@@ -21,20 +20,24 @@ class PatientsController < ApplicationController
   def edit; end
 
   def create
-    @patient = @wizard.object
-    if @wizard.save
-      redirect_to @patient, notice: "Product saved!"
-    else
-      render :new
-    end
+    @patient = Patient.new(patient_params)
+    @patient.save
+
+    respond_with(@patient, location: patients_url)
+    # redirect_to @patient, notice: "Product saved!"
+    # else
+    # render :new
+    # end
   end
 
   def update
-    if @wizard.save
-      redirect_to @patient, notice: 'Product was successfully updated.'
-    else
-      render action: 'edit'
-    end
+    @patient.update(patient_params)
+
+    respond_with(@patient, location: patients_url)
+    #   redirect_to @patient, notice: 'Product was successfully updated.'
+    # else
+    #   render action: 'edit'
+    # end
   end
 
   def destroy
@@ -51,15 +54,15 @@ class PatientsController < ApplicationController
 
   private
 
-  def load_wizard
-    @wizard = ModelWizard.new(@patient || Patient, session, patient_params, :patient)
-
-    if self.action_name.in? %w[new edit]
-      @wizard.start
-    elsif self.action_name.in? %w[create update]
-      @wizard.process
-    end
-  end
+  # def load_wizard
+  #   @wizard = ModelWizard.new(@patient || Patient, session, patient_params, :patient)
+  #
+  #   if self.action_name.in? %w[new edit]
+  #     @wizard.start
+  #   elsif self.action_name.in? %w[create update]
+  #     @wizard.process
+  #   end
+  # end
 
   def set_patient
     @patient = Patient.find(params[:id])
@@ -69,6 +72,6 @@ class PatientsController < ApplicationController
     params.require(:patient).permit(:name, :email, :address, :state, :city, :id,
                                     :zip_code, :district, :number, :phone, :current_step,
                                     :cellphone, basic_treatment_ids: [],
-                                    consultations_attributes: [:attend_at, :kind, :id]) if params.has_key? :patient
+                                    consultations_attributes: [:attend_at, :kind, :id]) # if params.has_key? :patient
   end
 end

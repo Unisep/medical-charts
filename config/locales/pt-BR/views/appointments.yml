@@ -1,0 +1,7 @@
+pt-BR:
+  appointments:
+    index:
+      title: Agendamentos
+
+    new:
+      title: Novo Agendamento

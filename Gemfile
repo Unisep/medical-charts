@@ -20,6 +20,7 @@ source 'https://rubygems.org' do
   gem 'brazilian-rails'
   gem 'awesome_nested_set'
   gem 'rapidfire'
+  gem 'kaminari'
 
   gem 'slim-rails'
 
@@ -47,7 +48,7 @@ source 'https://rubygems.org' do
 end
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-materialize', '0.95.3'
+  gem 'rails-assets-materialize', '0.97.1'
   gem 'rails-assets-font-awesome', '4.3.0'
   gem 'rails-assets-jQuery-Mask-Plugin', '~> 1.8.0'
 end

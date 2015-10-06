@@ -72,6 +72,6 @@ class PatientsController < ApplicationController
     params.require(:patient).permit(:name, :email, :address, :state, :city, :id,
                                     :zip_code, :district, :number, :phone, :current_step,
                                     :cellphone, basic_treatment_ids: [],
-                                    appointments_attributes: [:attend_at, :kind, :id]) # if params.has_key? :patient
+                                    appointments_attributes: [:attend_at, :kind, :id, :status]) # if params.has_key? :patient
   end
 end

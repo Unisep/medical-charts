@@ -2,10 +2,12 @@ pt-BR:
   activerecord:
     models:
       appointment:
-        one: Consulta
-        other: Consultas
+        one: Agendamento
+        other: Agendamentos
     attributes:
       appointment:
-        attend_at: 'Comparecer em'
+        attend_at: Comparecer em
         kind: Tipo
         status: Situação
+        patient: Paciente
+        treatment: Tratamento

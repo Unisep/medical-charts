@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.active.evaluation.page(params[:page])
+
     respond_with(@appointments)
   end
 
@@ -16,6 +17,12 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @appointments = Appointment.active.evaluation.search(params[:q]).page(params[:page])
+
+    render :index
   end
 
   def create

@@ -5,9 +5,9 @@ class Patient < ActiveRecord::Base
   has_many :historical_answers,
            class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all, foreign_key: :user_id
   has_many :treatments, dependent: :delete_all
-  has_many :consultations, inverse_of: :patient
+  has_many :appointments, inverse_of: :patient
 
-  accepts_nested_attributes_for :consultations, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :appointments, reject_if: :all_blank, allow_destroy: true
 
   validates :name, presence: true, if: :step1?
   validates :cellphone, presence: true, if: :step1?

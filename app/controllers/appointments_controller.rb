@@ -19,13 +19,13 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(consultation_params)
+    @appointment = Appointment.new(appointment_params)
     @appointment.save
     respond_with(@appointment, location: appointments_path)
   end
 
   def update
-    @appointment.update(consultation_params)
+    @appointment.update(appointment_params)
     respond_with(@appointment, location: appointments_path)
   end
 
@@ -40,7 +40,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def consultation_params
+  def appointment_params
     params.require(:appointment).permit()
   end
 end

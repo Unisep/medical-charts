@@ -32,5 +32,18 @@ class CreateSchema < ActiveRecord::Migration
     add_foreign_key :treatments, :patients
 
     add_index :treatments, [:basic_treatment_id, :patient_id], unique: true
+
+    create_table :appointments do |t|
+      t.references :patient, index: true
+      t.datetime :attend_at
+      t.integer :status
+      t.references :treatment, index: true
+      t.integer :kind
+
+      t.timestamps null: false
+    end
+
+    add_foreign_key :appointments, :patients
+    add_foreign_key :appointments, :treatments
   end
 end

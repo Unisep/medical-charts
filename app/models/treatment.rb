@@ -1,5 +1,5 @@
 # a ideia é que um tratamento seja feito em um paciente.
-# e que a cada dia que a pessoa for ser atendida ela precise de um agendamento(consultation)
+# e que a cada dia que a pessoa for ser atendida ela precise de um agendamento(appointment)
 # e quando ela foi atendida além do próprio tratamento ela tenha devolvido algum feedback, observações que o
 # acadêmico acabou repassando.
 #

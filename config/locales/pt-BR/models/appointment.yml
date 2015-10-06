@@ -1,11 +1,11 @@
 pt-BR:
   activerecord:
     models:
-      consultation:
+      appointment:
         one: Consulta
         other: Consultas
     attributes:
-      consultation:
+      appointment:
         attend_at: 'Comparecer em'
         kind: Tipo
         status: Situação

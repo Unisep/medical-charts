@@ -15,6 +15,11 @@ pt-BR:
     show:
       back: Voltar
       edit: Editar
+  historical_infos:
+    edit:
+      title: Continuar Preenchimento de dados do Paciente
+      back: Voltar
+      show: Visualizar
   admin:
     basic_treatments:
       edit:

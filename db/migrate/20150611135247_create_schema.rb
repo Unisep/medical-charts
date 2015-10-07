@@ -3,6 +3,11 @@ class CreateSchema < ActiveRecord::Migration
     execute 'CREATE EXTENSION IF NOT EXISTS unaccent;'
 
     create_table :patients do |t|
+      t.date :birthday
+      t.string :nationality
+      t.string :naturalness
+      t.string :profession
+      t.string :primary_document
       t.string :name
       t.string :email
       t.string :address
@@ -15,6 +20,9 @@ class CreateSchema < ActiveRecord::Migration
       t.string :cellphone
       t.integer :steps, default: 1
       t.integer :curr_step, default: 1
+      t.integer :sex, index: true
+      t.integer :ethnicity, index: true
+      t.integer :marital_status, index: true
 
       t.timestamps null: false
     end

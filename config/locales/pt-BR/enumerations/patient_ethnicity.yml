@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    patient_ethnicity:
+      yellow: Amarelo
+      white: Branco
+      black: Negro
+      brown: Pardo
+      other: Outro

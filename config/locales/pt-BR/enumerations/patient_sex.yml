@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    patient_sex:
+      male: Homem
+      female: Mulher

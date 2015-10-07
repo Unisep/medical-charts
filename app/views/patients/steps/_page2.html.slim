@@ -1,0 +1,15 @@
+.row
+  .input-field.col.l2.s12
+    = f.input :birthday, as: :date_picker
+.row
+  .input-field.col.l3.s12
+    br
+    = f.input :sex, collection: PatientSex.to_a, as: :radio_buttons, item_wrapper_class: 'col l6 s6'
+
+  .input-field.col.l6.s12
+    br
+    = f.input :ethnicity, collection: PatientEthnicity.to_a, as: :radio_buttons, item_wrapper_class: 'col l2 s6'
+
+  .input-field.col.l3.s12
+    br
+    = f.input :marital_status, collection: PatientMaritalStatus.to_a, input_html: { class: 'browser-default' }

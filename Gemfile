@@ -22,6 +22,7 @@ source 'https://rubygems.org' do
   gem 'rapidfire'
   gem 'kaminari'
 
+  gem 'pg_search'
   gem 'slim-rails'
 
   group :development, :test do

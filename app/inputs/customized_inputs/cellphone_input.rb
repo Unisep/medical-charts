@@ -13,7 +13,7 @@ module CustomizedInputs
         super_options: super,
         options: {
           data: { mask: I18n.t('simple_form.mask.cellphone.format') },
-          class: 'validate'
+          class: 'validate mask-cellphone'
         }
       )
     end

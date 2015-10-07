@@ -1,5 +1,7 @@
 class CreateSchema < ActiveRecord::Migration
   def change
+    execute 'CREATE EXTENSION IF NOT EXISTS unaccent;'
+
     create_table :patients do |t|
       t.string :name
       t.string :email

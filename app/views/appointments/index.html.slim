@@ -5,7 +5,7 @@
   .col.l4.s10
     = render 'search'
 
-table
+table.highlight.responsive-table
   thead
     tr
       th = ta(Appointment, :patient)
@@ -16,13 +16,9 @@ table
     - @appointments.each do |appointment|
       tr
         / melhorar essa view, adicionar css e botões de "confimar presença/dar continuidade", destroy continua?
-
-        td
-          = appointment.patient.name
-        td
-          = appointment.patient.cellphone
-        td
-          = l appointment.attend_at, format: :long
+        td = appointment.patient.name
+        td = appointment.patient.cellphone
+        td = l appointment.attend_at, format: :long
         td
           = link_to_edit '#'
           = link_to_destroy appointment

@@ -8,4 +8,8 @@ module AppRoutesHelper
 
     true
   end
+
+  def normalized_current_path
+    "#{request.env['PATH_INFO']}".gsub('/search', '').concat '/search'
+  end
 end

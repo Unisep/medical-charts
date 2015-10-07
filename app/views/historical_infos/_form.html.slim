@@ -1,4 +1,4 @@
-= simple_form_for @patient do |f|
+= simple_form_for @patient, html: { class: 'col s12' } do |f|
   = f.input :current_step, as: :hidden, value: @patient.current_step
 
   = render "patients/steps/page#{@patient.current_step}", f: f, step: @patient.current_step

@@ -1,15 +1,34 @@
 .row
-  .input-field.col.l2.s12
-    = f.input :birthday, as: :date_picker
-.row
-  .input-field.col.l3.s12
-    br
-    = f.input :sex, collection: PatientSex.to_a, as: :radio_buttons, item_wrapper_class: 'col l6 s6'
+  .col.s5
+    .input-field.col.s11
+      br
+      = f.input :birthday, as: :date_picker
+  .col.s7
+    .input-field.col.s12
+      = f.label :sex
+    .input-field.col.s12
+      = f.input :sex, collection: PatientSex.to_a, as: :radio_buttons, item_wrapper_class: 'col s4', label: false
+  .col.s12
+  .col.s5
+    .input-field.col.s12
+      br
+      = f.label :marital_status
+    .input-field.col.s11
+      = f.input :marital_status, collection: PatientMaritalStatus.to_a, input_html: { class: 'browser-default' }, label: false
+  .col.s7
+    .input-field.col.s12
+      = f.label :ethnicity
+    .input-field.col.s12
+      = f.input :ethnicity, collection: PatientEthnicity.to_a, as: :radio_buttons, item_wrapper_class: 'col s2 center-align', label: false
 
-  .input-field.col.l6.s12
-    br
-    = f.input :ethnicity, collection: PatientEthnicity.to_a, as: :radio_buttons, item_wrapper_class: 'col l2 s6'
+  .col.s11
+    .input-field.col.s4
+      = f.input :naturalness
+    .input-field.col.s4
+      = f.input :nationality
+    .input-field.col.s4
+      = f.input :primary_document
 
-  .input-field.col.l3.s12
-    br
-    = f.input :marital_status, collection: PatientMaritalStatus.to_a, input_html: { class: 'browser-default' }
+  .col.s11
+    .input-field.col.l12.s12
+      = f.input :profession

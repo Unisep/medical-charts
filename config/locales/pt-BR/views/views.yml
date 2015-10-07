@@ -17,7 +17,7 @@ pt-BR:
       edit: Editar
   historical_infos:
     edit:
-      title: Continuar Preenchimento de dados do Paciente
+      title: "Continuar cadastramento sobre o(a) paciente: %{patient}"
       back: Voltar
       show: Visualizar
   admin:

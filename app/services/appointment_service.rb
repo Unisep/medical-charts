@@ -12,6 +12,8 @@ class AppointmentService
 
   def attend!
     @appointment.attended!
+    @appointment.patient.update_attributes(curr_step: 2)
+
     @appointment.save!
   end
 end

@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     get 'find_address/:zip_code', action: :find_address, on: :collection
   end
 
+  resources :historical_infos, only: [:show, :edit, :update]
+
   root 'home#index'
 end

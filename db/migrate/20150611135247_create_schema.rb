@@ -14,6 +14,7 @@ class CreateSchema < ActiveRecord::Migration
       t.string :phone
       t.string :cellphone
       t.integer :steps, default: 1
+      t.integer :curr_step, default: 1
 
       t.timestamps null: false
     end

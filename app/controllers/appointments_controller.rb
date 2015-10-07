@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
     service = AppointmentService.new(@appointment)
     service.attend!
 
-    respond_with(@appointments, location: appointments_url)
+    respond_with(@appointment.patient, location: edit_historical_info_url(@appointment.patient))
   end
 
   def search

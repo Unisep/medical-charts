@@ -6,8 +6,8 @@ class Appointment < ActiveRecord::Base
 
   validates :patient, presence: true, associated: true
 
-  has_enumeration_for :status, with: AppointmentKind, create_scopes: true
-  has_enumeration_for :kind, with: AppointmentStatus, create_scopes: true
+  has_enumeration_for :kind, with: AppointmentKind, create_scopes: true
+  has_enumeration_for :status, with: AppointmentStatus, create_scopes: true, create_helpers: true
 
   pg_search_scope :full_text_search, against: [:kind, :status, :attend_at],
                   associated_against: {

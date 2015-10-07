@@ -44,3 +44,9 @@ main {
 .radio-margin{
     margin-right: 15px;
 }
+
+.center-btn { text-align: center }
+
+.center-btn > a {
+    margin-left: 0.3em;
+}

@@ -11,14 +11,21 @@ table.highlight.responsive-table
       th = ta(Appointment, :patient)
       th = ta(Patient, :cellphone)
       th = ta(Appointment, :attend_at)
-      th[colspan="2"]
+      th
   tbody
     - @appointments.each do |appointment|
       tr
-        / melhorar essa view, adicionar css e botões de "confimar presença/dar continuidade", destroy continua?
         td = appointment.patient.name
         td = appointment.patient.cellphone
         td = l appointment.attend_at, format: :long
+
+        td.center-btn
+          = link_to_edit edit_appointment_url(appointment), class: 'waves-effect waves-light btn-flat'
+          = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post, class: 'waves-effect waves-red btn-flat'
+          = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post, class: 'waves-effect waves-light btn blue'
+
+    - if @appointments.empty?
+      th[colspan="2"]
         td
-          = link_to_edit '#'
-          = link_to_destroy appointment
+          span.red-text.lighten-2
+            = params[:q].present? ? t('.messages.search_no_items_html', q: params[:q]) : t('.messages.no_items')

@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   resources :chips, only: :index
   resources :database, only: :index
-  resources :appointments do
-    post :search, on: :collection
+  resources :appointments, except: [:show, :destroy] do
+    get :search, on: :collection
+    post :cancel, on: :member
+    post :attend, on: :member
   end
 
   namespace :admin do

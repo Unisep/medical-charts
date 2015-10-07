@@ -15,14 +15,14 @@ table
   tbody
     - @appointments.each do |appointment|
       tr
-        melhorar essa view, adicionar css e botões de "confimar presença/dar continuidade", destroy continua?
+        / melhorar essa view, adicionar css e botões de "confimar presença/dar continuidade", destroy continua?
 
         td
           = appointment.patient.name
         td
           = appointment.patient.cellphone
         td
-          = appointment.attend_at localize
+          = l appointment.attend_at, format: :long
         td
           = link_to_edit '#'
           = link_to_destroy appointment

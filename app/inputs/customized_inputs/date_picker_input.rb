@@ -1,5 +1,5 @@
 module CustomizedInputs
-  class DateTimePickerInput < SimpleForm::Inputs::Base
+  class DatePickerInput < SimpleForm::Inputs::Base
     include OptionsConverter
 
     def input(_wrapper_options)
@@ -10,12 +10,12 @@ module CustomizedInputs
 
     def input_html_options
       value = @builder.object.send attribute_name
-      value = I18n.l value.to_datetime, format: :pickdatetime if value.present?
+      value = I18n.localize value.to_date, format: :default if value.present?
 
       convert_html_options super_options: super,
                            options: {
                                data: {
-                                   mask_format: I18n.t('simple_form.mask.datetime.format'),
+                                   mask_format: I18n.t('simple_form.mask.date.format'),
                                }, class: 'mask',
                                value: value
                            }

@@ -14,8 +14,9 @@ class Patient < ActiveRecord::Base
   validates :zip_code, presence: true, if: :step1?
   validates :address, presence: true, if: :step1?
 
-  # validates :birthday, presence: true, if: :step2?
-  # validates :address, presence: true, if: :step2?
+  validates :birthday, presence: true, if: :step2?
+  validates :sex, presence: true, if: :step2?
+  validates :primary_document, presence: true, if: :step2?
 
   has_enumeration_for :marital_status, with: PatientMaritalStatus
   has_enumeration_for :sex, with: PatientSex

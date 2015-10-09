@@ -120,7 +120,7 @@ OPT
   qg5.questions << Question.create(question_text: 'Temperatura', type: 'Rapidfire::Questions::Numeric')
   qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
 
-  qg6 = QuestionGroup.create(name: 'Exame Físico Regional - "Extrabucal"')
+  qg6 = QuestionGroup.create(name: 'Exame - "Extrabucal"')
 
   qg6.questions << Question.create(question_text: 'Fácies', type: 'Rapidfire::Questions::Long')
   qg6.questions << Question.create(question_text: 'Cadeias ganglionares', type: 'Rapidfire::Questions::Long')
@@ -129,7 +129,7 @@ OPT
   qg6.questions << Question.create(question_text: 'Ossos, Músculos, Inervação', type: 'Rapidfire::Questions::Long')
 
 
-  qg7 = QuestionGroup.create(name: 'Exame Físico Regional - "Intrabucal"')
+  qg7 = QuestionGroup.create(name: 'Exame - "Intrabucal"')
 
   qg7.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 

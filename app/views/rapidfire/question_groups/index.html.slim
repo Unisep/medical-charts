@@ -1,13 +1,22 @@
-.container
-  h4
-    = t('.title')
-  table
-    thead
-      tr
-        th
-          = ta(Rapidfire::QuestionGroup, :name)
-        th[colspan="3"]
-    tbody
-      = render partial: 'question_group', collection: @question_groups
+h4
+  = t('.title')
+table
+  thead
+    tr
+      th
+        = ta(Rapidfire::QuestionGroup, :name)
+      th[colspan="2"]
+  tbody
+    = render partial: 'question_group', collection: @question_groups
 - if can_administer?
   = fab_to_new(new_question_group_url)
+
+br
+.row
+  ul.collapsible.popout data-collapsible="accordion"
+    - @question_groups.each do |question_group|
+      li
+        .collapsible-header
+          = link_to question_group.name, question_group_questions_path(question_group)
+        .collapsible-body
+          = render template: 'rapidfire/answer_groups/new', 

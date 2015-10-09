@@ -20,12 +20,13 @@
       = f.label :ethnicity
     .input-field.col.s12
       = f.input :ethnicity, collection: PatientEthnicity.to_a, as: :radio_buttons, item_wrapper_class: 'col s2 center-align', label: false
-
+  .col.s12
+    br
   .col.s11
     .input-field.col.s4
-      = f.input :naturalness
-    .input-field.col.s4
       = f.input :nationality
+    .input-field.col.s4
+      = f.input :naturalness
     .input-field.col.s4
       = f.input :primary_document
 

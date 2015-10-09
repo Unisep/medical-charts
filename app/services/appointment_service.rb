@@ -12,8 +12,9 @@ class AppointmentService
 
   def attend!
     @appointment.attended!
-    @appointment.patient.update_attributes(curr_step: 2)
+    @appointment.patient.curr_step = 2
 
+    @appointment.patient.save!(validates: false)
     @appointment.save!
   end
 end

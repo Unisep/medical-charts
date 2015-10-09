@@ -5,8 +5,8 @@ class HistoricalInfosController < ApplicationController
   def edit; end
 
   def update
-    if @patient.update(patient_params)
-      redirect_to @patient, notice: 'Patient was successfully updated.'
+    if @wizard.save
+      redirect_to @patient, location: historical_info_url, notice: 'Patient was successfully updated.'
     else
       render action: 'edit'
     end
@@ -29,9 +29,7 @@ class HistoricalInfosController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:name, :email, :address, :state, :city, :id,
-                                    :zip_code, :district, :number, :phone, :current_step,
-                                    :cellphone, basic_treatment_ids: [],
-                                    appointments_attributes: [:attend_at, :kind, :id, :status]) if params.has_key? :patient
+    params.require(:patient).permit(:birthday, :sex, :marital_status, :ethnicity, :nationality, :curr_step,
+                                    :naturalness, :primary_document, :profession) if params.has_key? :patient
   end
 end

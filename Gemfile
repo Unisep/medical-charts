@@ -1,7 +1,7 @@
-ruby '2.2.1'
+ruby '2.2.3'
 
 source 'https://rubygems.org' do
-  gem 'rails', '4.2.0'
+  gem 'rails', '4.2.4'
 
   gem 'pg'
   gem 'uglifier', '>= 1.3.0'
@@ -47,7 +47,7 @@ source 'https://rubygems.org' do
 end
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-materialize', '0.95.3'
+  gem 'rails-assets-materialize', '0.97.0'
   gem 'rails-assets-font-awesome', '4.3.0'
   gem 'rails-assets-jQuery-Mask-Plugin', '~> 1.8.0'
 end

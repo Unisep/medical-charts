@@ -19,6 +19,6 @@
           td
             = link_to t('.edit'), edit_admin_basic_treatment_path(basic_treatment)
           td
-            = link_to t('.destroy'), admin_basic_treatment_path([:admin, basic_treatment]),
-            -                         method: :delete, data: { confirm: 'Você tem certeza?' }
+            = link_to t('.destroy'), admin_basic_treatment_path([:admin, basic_treatment]), method: :delete, data: { confirm: 'Você tem certeza?' }
+
 = fab_to_new(new_admin_basic_treatment_url)

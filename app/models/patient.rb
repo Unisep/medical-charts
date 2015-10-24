@@ -9,14 +9,14 @@ class Patient < ActiveRecord::Base
 
   accepts_nested_attributes_for :appointments, reject_if: :all_blank, allow_destroy: true
 
-  validates :name, presence: true, if: :step1?
-  validates :cellphone, presence: true, if: :step1?
-  validates :zip_code, presence: true, if: :step1?
-  validates :address, presence: true, if: :step1?
-
-  validates :birthday, presence: true, if: :step2?
-  validates :sex, presence: true, if: :step2?
-  validates :primary_document, presence: true, if: :step2?
+  # validates :name, presence: true, if: :step1?
+  # validates :cellphone, presence: true, if: :step1?
+  # validates :zip_code, presence: true, if: :step1?
+  # validates :address, presence: true, if: :step1?
+  #
+  # validates :birthday, presence: true, if: :step2?
+  # validates :sex, presence: true, if: :step2?
+  # validates :primary_document, presence: true, if: :step2?
 
   has_enumeration_for :marital_status, with: PatientMaritalStatus
   has_enumeration_for :sex, with: PatientSex

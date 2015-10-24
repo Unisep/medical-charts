@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Rapidfire::Engine => 'rapidfire'
+  mount Rapidfire::Engine => 'database/rapidfire', as: 'rapidfire'
 
   resources :chips, only: :index
   resources :database, only: :index

@@ -6,7 +6,7 @@ class HistoricalInfosController < ApplicationController
 
   def update
     if @wizard.save
-      redirect_to @patient, location: historical_info_url, notice: 'Patient was successfully updated.'
+      redirect_to rapidfire.new_question_group_answer_group_path(Rapidfire::QuestionGroup.first)
     else
       render action: 'edit'
     end

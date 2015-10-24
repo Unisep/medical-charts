@@ -6,15 +6,12 @@ class ApplicationController < ActionController::Base
   respond_to :html, :json
 
   def can_administer?
-    true
+    false
   end
 
   def current_user
-    @current_user = if true
-                      Patient.find_by(id: params[:id])
-                    else
-                      Patient.new
-                    end
+    @current_user = Patient.find_by(id: params[:id]) if params.key? :id
   end
+
   helper_method :current_user
 end

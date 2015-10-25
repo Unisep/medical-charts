@@ -6,6 +6,7 @@ class HistoricalInfosController < ApplicationController
 
   def update
     if @wizard.save
+      session[:current_patient_id] = @patient.id
       redirect_to rapidfire.new_question_group_answer_group_path(Rapidfire::QuestionGroup.first)
     else
       render action: 'edit'
@@ -29,7 +30,8 @@ class HistoricalInfosController < ApplicationController
   end
 
   def patient_params
-    params.require(:patient).permit(:birthday, :sex, :marital_status, :ethnicity, :nationality, :curr_step,
-                                    :naturalness, :primary_document, :profession) if params.has_key? :patient
+    params.require(:patient).permit(:birthday, :sex, :marital_status, :ethnicity,
+                                    :nationality, :curr_step, :naturalness,
+                                    :primary_document, :profession) if params.has_key? :patient
   end
 end

@@ -1,5 +1,8 @@
-= render partial: 'rapidfire/answers/errors', locals: {answer: answer}
+- if answer.errors.any?
+  = render partial: 'rapidfire/answers/errors', locals: { answer: answer }
+
 .row
-  .input-field.col.s12
-    = f.input :answer_text, as: :radio_buttons, collection: answer.question.options,
-              label: answer.question.question_text, item_wrapper_class: 'radio-margin'
+  .col.s12
+    = f.label answer.question.question_text
+    = f.input :answer_text, as: :radio_buttons, collection: answer.question.options, input_html: { class: 'with-gap' },
+              label: false, item_wrapper_class: 'radio-margin'

@@ -1,11 +1,10 @@
 class Patient < ActiveRecord::Base
   include MultiStepModel
 
-  has_many :basic_treatments, through: :treatments
-  has_many :historical_answers,
-           class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all, foreign_key: :user_id
-  has_many :treatments, dependent: :delete_all
   has_many :appointments, inverse_of: :patient, dependent: :delete_all
+  has_many :basic_treatments, through: :treatments
+  has_many :historical_answers, class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all, foreign_key: :user_id
+  has_many :treatments, dependent: :delete_all
 
   accepts_nested_attributes_for :appointments, reject_if: :all_blank, allow_destroy: true
 

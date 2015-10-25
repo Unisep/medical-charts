@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user = Patient.find_by(id: params[:id]) if params.key? :id
+    @current_user ||= Patient.find_by(id: session[:current_patient_id])
   end
 
   helper_method :current_user

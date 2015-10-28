@@ -12,9 +12,9 @@ class AppointmentService
 
   def attend!
     @appointment.attended!
-    @appointment.patient.curr_step = 2
+    @appointment.patient.step = 2
 
-    @appointment.patient.save!(validates: false)
+    @appointment.patient.save!(validate: false)
     @appointment.save!
   end
 end

@@ -1,36 +1,31 @@
 h4
   = t('.title')
-table
-  thead
-    tr
-      th
-        = ta(Patient, :name)
-      th
-        = ta(Patient, :cellphone)
-      th
-        = ta(Patient, :email)
-      th
-        = ta(Patient, :zip_code)
-      th
-        = ta(Patient, :address)
-      th[colspan="3"]
-  tbody
-    - @patients.each do |patient|
-      tr
-        td
-          = patient.name
-        td
-          = patient.cellphone
-        td
-          = patient.email
-        td
-          = patient.zip_code
-        td
-          = patient.address
-        td
-          = link_to t('.show'), patient
-        td
-          = link_to t('.edit'), edit_patient_path(patient)
-        td
-          = link_to t('.destroy'), patient, method: :delete, data: { confirm: 'Você tem certeza?' }
-= fab_to_new(new_patient_path)
+/table
+
+
+/
+/= fab_to_new(new_patient_path)
+.row
+  - @patients.each do |patient|
+    .col.s12.l3
+      .card
+        .card-image.waves-effect.waves-block.waves-light
+          = link_to patient, title: t('.show') do
+            = image_tag patient.profile_image_url(:big), class: 'img-responsive'
+        .card-content
+          span.card-title.activator.grey-text.text-darken-4
+            = truncate(patient.name, length: 15, separator: ' ').gsub('...', '')
+            i.material-icons.right.mdi-navigation-more-vert
+          p = t('.short_infos_html', age: patient.age, naturalness: patient.naturalness) if patient.step2?
+        .card-reveal
+          span.card-title.grey-text.text-darken-4
+            | Informações
+            i.material-icons.right.mdi-navigation-close
+          p = t('.bio_html', name: patient.name, city: patient.city, state: patient.state, cellphone: patient.cellphone, treatments: patient.treatments.map(&:basic_treatment).map(&:description).join(', '))
+
+
+          .row
+            .col.s4.text-left
+              = link_to t('.edit'), edit_patient_path(patient), class: 'waves-effect waves-blue btn-flat'
+            .col.s4.text-right
+              = link_to t('.destroy'), patient, method: :delete, class: 'waves-effect waves-red btn-flat', data: { confirm: 'Você tem certeza?' }

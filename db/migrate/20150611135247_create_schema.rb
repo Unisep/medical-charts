@@ -6,6 +6,7 @@ class CreateSchema < ActiveRecord::Migration
       t.date :birthday
       t.string :nationality
       t.string :naturalness
+      t.string :profile_image
       t.string :profession
       t.string :primary_document
       t.string :name
@@ -18,8 +19,7 @@ class CreateSchema < ActiveRecord::Migration
       t.string :number
       t.string :phone
       t.string :cellphone
-      t.integer :steps, default: 1
-      t.integer :curr_step, default: 1
+      t.integer :step, default: 1
       t.integer :sex, index: true
       t.integer :ethnicity, index: true
       t.integer :marital_status, index: true

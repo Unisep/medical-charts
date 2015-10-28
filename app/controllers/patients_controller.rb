@@ -13,6 +13,7 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
+    @patient.appointments.build if @patient.appointments.empty?
 
     respond_with(@patient)
   end
@@ -23,7 +24,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
     @patient.save
 
-    respond_with(@patient, location: patients_url)
+    respond_with(@patient, location: appointments_url)
   end
 
   def update
@@ -52,7 +53,7 @@ class PatientsController < ApplicationController
 
   def patient_params
     params.require(:patient).permit(:name, :email, :address, :state, :city, :id,
-                                    :zip_code, :district, :number, :phone, :current_step,
+                                    :zip_code, :district, :number, :phone, :profile_image,
                                     :cellphone, basic_treatment_ids: [],
                                     appointments_attributes: [:attend_at, :kind, :id, :status])
   end

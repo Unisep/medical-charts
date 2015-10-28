@@ -1,5 +1,12 @@
 .row
   .input-field.col.l6.s12
+    #my_camera
+    #results Your captured image will appear here... PLACE INSIDE A CARD
+    input onclick="take_snapshot()" type="button" value=("Take Snapshot") /
+
+    = f.input :profile_image, as: :hidden
+    = f.label :profile_image
+  .input-field.col.l6.s12
     = f.input :name
   .input-field.col.l6.s12
     = f.input :email
@@ -24,8 +31,8 @@
     = f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
                     label_method: :description, item_wrapper_class: 'col l4 s12',
                     checked: @patient.treatments.map(&:basic_treatment_id)
-- if step.eql? 1
-  br
+- if @patient.new_record?
+  br /
   h3 Próxima Consulta
 
   .row

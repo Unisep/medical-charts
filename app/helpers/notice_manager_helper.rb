@@ -5,7 +5,7 @@ module NoticeManagerHelper
         concat msg
         concat content_tag(:i, '', class: "icon-toast #{alert_class_finder(key)}")
       end
-      javascript_tag("toast('#{message}', #{timeout});")
+      javascript_tag("Materialize.toast('#{message}', #{timeout});")
     end.join.html_safe
   end
 

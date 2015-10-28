@@ -1,0 +1,19 @@
+pt-BR:
+  patients:
+    edit:
+      title: Editar Paciente
+      back: Voltar
+      show: Visualizar
+    new:
+      title: Novo Paciente
+      back: Voltar
+    index:
+      title: Pacientes
+      bio_html: "<em>%{name}</em>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}. <br/> E passará por: <b>%{treatments}</b>"
+      show: Clique para visualizar +
+      short_infos_html: "%{naturalness}, %{age} anos"
+      destroy: Apagar
+      edit: Editar
+    show:
+      back: Voltar
+      edit: Editar

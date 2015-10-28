@@ -14,8 +14,6 @@ source 'https://rubygems.org' do
   gem 'jbuilder', '~> 2.0'
   gem 'jquery-rails'
   gem 'sass'
-  gem 'cocoon'
-  gem 'cancancan', '~> 1.10'
   gem 'passenger'
   gem 'brazilian-rails'
   gem 'awesome_nested_set'
@@ -24,6 +22,10 @@ source 'https://rubygems.org' do
 
   gem 'pg_search'
   gem 'slim-rails'
+
+  gem 'carrierwave'
+  gem 'carrierwave-base64'
+  gem 'rmagick'
 
   group :development, :test do
     gem 'parallel_tests'

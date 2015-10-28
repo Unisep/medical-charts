@@ -1,20 +1,4 @@
 pt-BR:
-  patients:
-    edit:
-      title: Editar Paciente
-      back: Voltar
-      show: Visualizar
-    new:
-      title: Novo Paciente
-      back: Voltar
-    index:
-      title: Pacientes
-      show: Visualizar
-      destroy: Apagar
-      edit: Editar
-    show:
-      back: Voltar
-      edit: Editar
   historical_infos:
     edit:
       title_html: "Continuar cadastramento sobre o(a) paciente: <b>%{patient}</b>"

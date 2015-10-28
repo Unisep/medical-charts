@@ -1,31 +1,20 @@
 h4
   = t('.title')
-/table
 
-
-/
-/= fab_to_new(new_patient_path)
 .row
   - @patients.each do |patient|
-    .col.s12.l3
+    .col.l3.s12
       .card
         .card-image.waves-effect.waves-block.waves-light
           = link_to patient, title: t('.show') do
             = image_tag patient.profile_image_url(:big), class: 'img-responsive'
         .card-content
           span.card-title.activator.grey-text.text-darken-4
-            = truncate(patient.name, length: 15, separator: ' ').gsub('...', '')
+            = truncate(patient.name, length: 14, separator: ' ').gsub('...', '')
             i.material-icons.right.mdi-navigation-more-vert
-          p = t('.short_infos_html', age: patient.age, naturalness: patient.naturalness) if patient.step2?
+          p = patient.step2? ? t('.short_infos_html', age: patient.age, naturalness: patient.naturalness) : t('.waiting_step_html')
         .card-reveal
           span.card-title.grey-text.text-darken-4
             | Informações
             i.material-icons.right.mdi-navigation-close
-          p = t('.bio_html', name: patient.name, city: patient.city, state: patient.state, cellphone: patient.cellphone, treatments: patient.treatments.map(&:basic_treatment).map(&:description).join(', '))
-
-
-          .row
-            .col.s4.text-left
-              = link_to t('.edit'), edit_patient_path(patient), class: 'waves-effect waves-blue btn-flat'
-            .col.s4.text-right
-              = link_to t('.destroy'), patient, method: :delete, class: 'waves-effect waves-red btn-flat', data: { confirm: 'Você tem certeza?' }
+          p = t('.bio_html', name: patient.name, city: patient.city, state: patient.state, cellphone: patient.cellphone, email: patient.email)

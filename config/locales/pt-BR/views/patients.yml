@@ -9,9 +9,10 @@ pt-BR:
       back: Voltar
     index:
       title: Pacientes
-      bio_html: "<em>%{name}</em>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}. <br/> E passará por: <b>%{treatments}</b>"
+      bio_html: "<em>%{name}</em>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}, e email: <b>%{email}</b>."
       show: Clique para visualizar +
       short_infos_html: "%{naturalness}, %{age} anos"
+      waiting_step_html: '<span class="red-text">Aguardando avaliação</span>'
       destroy: Apagar
       edit: Editar
     show:

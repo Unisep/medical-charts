@@ -15,7 +15,7 @@
   .input-field.col.l6.s12
     = f.input :phone, as: :cellphone
   .input-field.col.l4.s12
-    = f.input :zip_code, input_html: { onblur: 'loadCEP()' }
+    = f.input :zip_code, as: :zip_code, input_html: { onblur: 'loadCEP()' }
   .input-field.col.l4.s12
     = f.input :state
   .input-field.col.l4.s12

@@ -1,0 +1,9 @@
+.card-header-custom {
+    position: relative;
+    min-height: 150px;
+}
+
+.card-content-custom {
+    position: absolute;
+    bottom: 10px;
+}

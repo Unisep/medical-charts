@@ -1,5 +1,4 @@
-h4
-  = t('.title')
+h4 = t('.title')
 
 .row
   - @patients.each do |patient|
@@ -12,7 +11,7 @@ h4
           span.card-title.activator.grey-text.text-darken-4
             = truncate(patient.name, length: 14, separator: ' ').gsub('...', '')
             i.material-icons.right.mdi-navigation-more-vert
-          p = patient.step2? ? t('.short_infos_html', age: patient.age, naturalness: patient.naturalness) : t('.waiting_step_html')
+          p = patient.step2? ? truncate(t('.short_infos_html', age: patient.age, naturalness: patient.naturalness), length: 25) : t('.waiting_step_html')
         .card-reveal
           span.card-title.grey-text.text-darken-4
             | Informações

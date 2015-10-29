@@ -15,9 +15,9 @@ table.highlight.responsive-table
   tbody
     - @appointments.each do |appointment|
       tr
-        td = appointment.patient.name
+        td = truncate(appointment.patient.name, length: 15)
         td = appointment.patient.cellphone
-        td = l appointment.attend_at, format: :long
+        td = l appointment.attend_at, format: :short
 
         td.center-btn
           = link_to_edit edit_appointment_url(appointment), class: 'waves-effect waves-light btn-flat'

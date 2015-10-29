@@ -1,65 +1,60 @@
-p
-  strong
-    = ta(Patient, :name)
-    | :
-  = @patient.name
-p
-  strong
-    = ta(Patient, :email)
-    | :
-  = @patient.email
-p
-  strong
-    = ta(Patient, :address)
-    | :
-  = @patient.address
-p
-  strong
-    = ta(Patient, :state)
-    | :
-  = @patient.state
-p
-  strong
-    = ta(Patient, :city)
-    | :
-  = @patient.city
-p
-  strong
-    = ta(Patient, :zip_code)
-    | :
-  = @patient.zip_code
-p
-  strong
-    = ta(Patient, :district)
-    | :
-  = @patient.district
-p
-  strong
-    = ta(Patient, :number)
-    | :
-  = @patient.number
-p
-  strong
-    = ta(Patient, :birthday)
-    | :
-  = @patient.birthday
-p
-  strong
-    = ta(Patient, :phone)
-    | :
-  = @patient.phone
-p
-  strong
-    = ta(Patient, :cellphone)
-    | :
-  = @patient.cellphone
-p
-  strong
-    = ta(Patient, :treatments)
-    | :
-  - @patient.treatments.each do |desc|
-    span
-      = desc.basic_treatment.description
+h3 = tm(Patient)
+
+.row
+  .col.s12.m7.l4
+    .card
+      .card-image
+        = image_tag @patient.profile_image_url(:big)
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :name)}: "
+    = @patient.name
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :email)}: "
+    = @patient.email
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :address)}: "
+    = @patient.address
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :state)}: "
+    = @patient.state
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :city)}: "
+    = @patient.city
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :zip_code)}: "
+    = @patient.zip_code
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :district)}: "
+    = @patient.district
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :number)}: "
+    = @patient.number
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :birthday)}: "
+    = @patient.birthday
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :phone)}: "
+    = @patient.phone
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :cellphone)}: "
+    = @patient.cellphone
+
+  .col.s12.l8
+    strong = "#{ta(Patient, :treatments)}: "
+    - @patient.treatments.map(&:basic_treatment).map(&:description).each do |item|
+      .chip
+        = item
 
 
 - @patient.historical_answers.each do |answer_group|
@@ -70,8 +65,6 @@ p
     br /
   .divider
   br /
-
-
 
 
 = fab_to_edit url: edit_patient_path(@patient), back_url: patients_path

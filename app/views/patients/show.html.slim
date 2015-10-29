@@ -1,10 +1,30 @@
-h3 = tm(Patient)
+h3 = "#{tm(Patient)} ##{@patient.id}"
 
 .row
   .col.s12.m7.l4
     .card
       .card-image
         = image_tag @patient.profile_image_url(:big)
+
+  .col.s12.l8
+    h5 = 'Avaliação Médica'
+    .divider
+
+    ul.collapsible.popout data-collapsible="accordion"
+      - @patient.historical_answers.each do |answer_group|
+        li
+          .collapsible-header
+            = answer_group.question_group.name
+          .collapsible-body
+            p
+              - answer_group.question_group.questions.each do |question|
+                b = "#{question.question_text}: "
+                = "#{question.answers.first.answer_text}"
+                br /
+.row
+  .col.s12.l6
+    h5 = 'Informações Básicas'
+    .divider
 
   .col.s12.l8
     strong = "#{ta(Patient, :name)}: "
@@ -40,7 +60,8 @@ h3 = tm(Patient)
 
   .col.s12.l8
     strong = "#{ta(Patient, :birthday)}: "
-    = @patient.birthday
+    = l @patient.birthday, format: :default
+    = ", #{@patient.age} anos"
 
   .col.s12.l8
     strong = "#{ta(Patient, :phone)}: "
@@ -56,15 +77,6 @@ h3 = tm(Patient)
       .chip
         = item
 
-
-- @patient.historical_answers.each do |answer_group|
-  h5 = answer_group.question_group.name
-  - answer_group.question_group.questions.each do |question|
-    b = "#{question.question_text}: "
-    = "#{question.answers.first.answer_text}"
-    br /
-  .divider
-  br /
 
 
 = fab_to_edit url: edit_patient_path(@patient), back_url: patients_path

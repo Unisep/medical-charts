@@ -15,14 +15,14 @@ table.highlight.responsive-table
   tbody
     - @appointments.each do |appointment|
       tr
-        td = truncate(appointment.patient.name, length: 15)
+        td = truncate(appointment.patient.name, length: 25)
         td = appointment.patient.cellphone
         td = l appointment.attend_at, format: :short
 
         td.center-btn
-          = link_to_edit edit_appointment_url(appointment), class: 'waves-effect waves-light btn-flat'
-          = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post, class: 'waves-effect waves-red btn-flat'
-          = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post, class: 'waves-effect waves-light btn blue'
+          = link_to_edit edit_appointment_url(appointment)
+          = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post
+          = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post
 
     - if @appointments.empty?
       th[colspan="2"]

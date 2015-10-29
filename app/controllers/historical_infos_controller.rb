@@ -7,7 +7,7 @@ class HistoricalInfosController < ApplicationController
     @patient.update(patient_params)
     session[:current_patient_id] = @patient.id
 
-    respond_with(@patient, url: rapidfire.new_question_group_answer_group_path(Rapidfire::QuestionGroup.first))
+    respond_with(@patient, location: rapidfire.new_question_group_answer_group_path(Rapidfire::QuestionGroup.first))
   end
 
   private

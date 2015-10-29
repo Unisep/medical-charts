@@ -1,7 +1,7 @@
 pt-BR:
   historical_infos:
     edit:
-      title_html: "Continuar cadastramento sobre o(a) paciente: <b>%{patient}</b>"
+      title_html: "Continuar cadastro sobre o(a): <b>%{patient}</b>"
       back: Voltar
       show: Visualizar
   admin:

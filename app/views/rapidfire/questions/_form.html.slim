@@ -1,9 +1,10 @@
 = simple_form_for form, as: :question, url: url, method: method do |f|
   = f.error_notification
   .row
+    br /
     .input-field.col.s12
-      = f.input :type, as: :select, label: false, collection: ::Rapidfire::QuestionForm::QUESTION_TYPES,
-                input_html: { id: 'question_type', class: 'browser-default' }
+      = f.input :type, collection: QuestionType.to_a, label_html: { style: 'margin-top: -35px;' }, input_html: { id: 'question_type', class: 'browser-default' }
+
     .input-field.col.s12
       = f.input :question_text
     .input-field.col.s12

@@ -54,7 +54,7 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(:name, :email, :address, :state, :city, :id,
                                     :zip_code, :district, :number, :phone, :profile_image,
-                                    :cellphone, basic_treatment_ids: [],
+                                    :cellphone, :profile_image_cache, basic_treatment_ids: [],
                                     appointments_attributes: [:attend_at, :kind, :id, :status])
   end
 end

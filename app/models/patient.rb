@@ -10,7 +10,8 @@ class Patient < ActiveRecord::Base
 
   # TODO: Move to Form Objects
 
-  # validates :name, presence: true, if: :step1?
+  validates :profile_image, presence: true
+  validates :name, presence: true, if: :step1?
   # validates :cellphone, presence: true, if: :step1?
   # validates :zip_code, presence: true, if: :step1?
   # validates :address, presence: true, if: :step1?

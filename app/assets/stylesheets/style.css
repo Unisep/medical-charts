@@ -54,3 +54,22 @@ main {
 .center-btn > a {
     margin-left: 0.3em;
 }
+
+.clickable {
+    cursor: pointer;
+    position: absolute;
+    left: 8px;
+    bottom: 0;
+}
+
+.clickable-2 {
+    cursor: pointer;
+    position: absolute;
+    left: 1.2em;
+    bottom: 0;
+}
+
+.relative-card {
+    position: relative;
+    height: 187px;
+}

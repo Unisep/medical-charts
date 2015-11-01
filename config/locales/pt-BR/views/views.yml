@@ -32,6 +32,9 @@ pt-BR:
         show: Visualizar
         destroy: Apagar
         edit: Editar
+    notices:
+      sucess: Todas as questões foram respondidas!
+      error: Algum problema ocorreu, verifique!
     questions:
       edit:
         title: Editar Questão

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   responders :flash
 
   def can_administer?
-    false
+    true
   end
 
   def current_user

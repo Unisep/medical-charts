@@ -11,3 +11,5 @@ pt-BR:
 
     new:
       title: Novo Agendamento
+    edit:
+      title: Editar Agendamento

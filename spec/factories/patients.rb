@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :patient do
     name { Forgery('name').full_name }
+    profile_image { Forgery('name').full_name }
     email { Forgery('email').address }
     address { Forgery('address').street_address }
     state { Forgery('address').state }
@@ -20,6 +21,7 @@ FactoryGirl.define do
 
   factory :invalid_patient, parent: :patient do
     name nil
+    profile_image nil
     email nil
     address nil
     state nil

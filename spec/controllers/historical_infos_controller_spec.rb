@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HistoricalInfosController, :type => :controller do
+RSpec.xdescribe HistoricalInfosController, :type => :controller do
 
   describe "GET edit" do
     it "returns http success" do

@@ -4,12 +4,10 @@ pt-BR:
       patient:
         one: Paciente
         other: Pacientes
-      basic_question:
-        one: Questão Básica
-        other: Questões Básicas
     attributes:
       patient:
         name: Nome
+        profile_image: Avatar
         email: Email
         address: Endereço
         zip_code: CEP
@@ -19,8 +17,14 @@ pt-BR:
         district: Bairro
         phone: Telefone
         cellphone: Celular
+        birthday: Data de Nascimento
+        nationality: Nacionalidade
+        naturalness: Naturalidade
+        profession: Profissão
+        primary_document: CPF/RG
         basic_treatments: Tratamentos Básicos
-      basic_question:
-        description: Descrição
-        kind: Tipo de Resposta
-        parent_id: Anterior
+        treatments: Tratamentos
+        sex: Gênero
+        age: Idade
+        ethnicity: Etnia
+        marital_status: Estado Civil

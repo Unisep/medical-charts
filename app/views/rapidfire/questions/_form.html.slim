@@ -1,24 +1,29 @@
 = simple_form_for form, as: :question, url: url, method: method do |f|
   = f.error_notification
   .row
+    br /
     .input-field.col.s12
-      = f.input :type, as: :select, label: false, collection: ::Rapidfire::QuestionForm::QUESTION_TYPES,
-      -                   input_html: { id: 'question_type', class: 'browser-default' }
+      = f.input :type, collection: QuestionType.to_a, label_html: { style: 'margin-top: -35px;' },
+                input_html: { id: 'question_type', class: 'browser-default' }, label: ta(Rapidfire::Question, :type)
+
+  .row
     .input-field.col.s12
-      = f.input :question_text
+      = f.input :question_text, label: ta(Rapidfire::Question, :question_text)
     .input-field.col.s12
-      = f.input :answer_options, as: :text, input_html: { class: 'materialize-textarea' }
+      = f.input :answer_options, as: :text, label: ta(Rapidfire::Question, :answer_options),
+                input_html: { placeholder: "opção 01.\nopção 02.\nopção n.", class: 'materialize-textarea' }
   h4
-    | Other options
+    = t('.other_options')
   .row
     .input-field.col.s4
-      = f.input :answer_presence, as: :boolean
+      = f.input :answer_presence, as: :boolean, label: ta(Rapidfire::Question, :answer_presence)
     .input-field.col.s4
-      = f.input :answer_minimum_length, as: :integer
+      = f.input :answer_minimum_length, as: :integer, label: ta(Rapidfire::Question, :answer_minimum_length)
     .input-field.col.s4
-      = f.input :answer_maximum_length, as: :integer
-    .input-field.col.s4
-      = f.input :answer_greater_than_or_equal_to, as: :integer
-    .input-field.col.s4
-      = f.input :answer_less_than_or_equal_to, as: :integer
+      = f.input :answer_maximum_length, as: :integer, label: ta(Rapidfire::Question, :answer_maximum_length)
+    /.input-field.col.s4
+      = f.input :answer_greater_than_or_equal_to, as: :integer, label: ta(Rapidfire::Question, :answer_greater_than_or_equal_to)
+    /.input-field.col.s4
+      = f.input :answer_less_than_or_equal_to, as: :integer, label: ta(Rapidfire::Question, :answer_less_than_or_equal_to)
+
   = fab_to_save(back_url: question_group_questions_url)

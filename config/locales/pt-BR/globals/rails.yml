@@ -204,6 +204,7 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
       pickdate: '%d %b, %Y'
+      pickdatetime: '%d/%m/%Y %H:%M'
     pm: ''
   views:
     pagination:

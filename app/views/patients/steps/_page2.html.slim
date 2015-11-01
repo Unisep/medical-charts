@@ -1,0 +1,23 @@
+.row
+  .col.s12
+    .row
+      .input-field.col.l3.s12
+        = f.input :birthday, as: :date_picker
+      .input-field.col.l9.s12
+        = f.input :ethnicity, collection: PatientEthnicity.to_a, as: :radio_buttons, item_wrapper_class: 'col s3 l2', input_html: { class: 'with-gap' }, label_html: { style: 'margin-top: -15px;' }
+    .row
+      br /
+      .input-field.col.s4
+        = f.input :marital_status, collection: PatientMaritalStatus.to_a, input_html: { class: 'browser-default' }, label_html: { style: 'margin-top: -35px;' }
+      .input-field.col.s7.right
+        = f.input :sex, collection: PatientSex.to_a, as: :radio_buttons, item_wrapper_class: 'col l4 s6', input_html: { class: 'with-gap' }, label_html: { style: 'margin-top: -15px;' }
+
+    .row
+      .input-field.col.s12.l4
+        = f.input :nationality
+      .input-field.col.s12.l4
+        = f.input :naturalness
+      .input-field.col.s12.l4
+        = f.input :primary_document
+      .input-field.col.l12.s12
+        = f.input :profession

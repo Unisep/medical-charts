@@ -8,4 +8,9 @@ pt-BR:
       rapidfire/question:
         type: Tipo
         question_text: Descrição
-        answer_options: 'Opções da Questão (items)'
+        answer_options: 'Opções da Questão (cada linha "ENTER" é uma opção diferente)'
+        answer_presence: Obrigatória?
+        answer_minimum_length: Quantidade mín. de letras
+        answer_maximum_length: Quantidade máx. de letras
+        answer_greater_than_or_equal_to:
+        answer_less_than_or_equal_to:

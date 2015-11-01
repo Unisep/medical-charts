@@ -1,3 +1,5 @@
-= render partial: "rapidfire/answers/errors", locals: {answer: answer}
+- if answer.errors.any?
+  = render partial: 'rapidfire/answers/errors', locals: { answer: answer }
+
 = f.label :answer_text, answer.question.question_text
 = f.select :answer_text, answer.question.options, include_blank: true

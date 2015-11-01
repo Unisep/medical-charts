@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require materialize
 //= require jQuery-Mask-Plugin
+//= require webcam.min
 //= require_tree ./helpers
 //= require_self

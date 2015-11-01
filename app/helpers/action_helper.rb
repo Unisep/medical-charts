@@ -30,6 +30,19 @@ module ActionHelper
     end
   end
 
+  def fab_to_save_answer
+    content_tag :div, class: 'fixed-action-btn fab-position' do
+      button_tag(type: :submit, class: 'btn-floating btn-large red') do
+        content_tag(:i, nil, class: 'mdi-navigation-check')
+      end +
+        content_tag(:ul) do
+          content_tag(:li) do
+            fab_to_back(:back)
+          end
+        end
+    end
+  end
+
   def fab_to_back(url)
     link_to raw('<i class="large mdi-navigation-arrow-back"></i>'), url, class: 'btn-floating blue'
   end

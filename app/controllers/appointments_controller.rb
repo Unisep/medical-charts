@@ -1,8 +1,9 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_action :set_appointment, only: [:edit, :update, :cancel, :attend]
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.active.evaluation.page(params[:page])
+
     respond_with(@appointments)
   end
 
@@ -15,22 +16,36 @@ class AppointmentsController < ApplicationController
     respond_with(@appointment)
   end
 
-  def edit
+  def edit; end
+
+  def cancel
+    service = AppointmentService.new(@appointment)
+    service.cancel!
+
+    respond_with(@appointments, location: appointments_url)
+  end
+
+  def attend
+    service = AppointmentService.new(@appointment)
+    service.attend!
+
+    respond_with(@appointment.patient, location: edit_historical_info_url(@appointment.patient))
+  end
+
+  def search
+    @appointments = Appointment.active.evaluation.search(params[:q]).page(params[:page])
+
+    render :index
   end
 
   def create
-    @appointment = Appointment.new(consultation_params)
+    @appointment = Appointment.new(appointment_params)
     @appointment.save
     respond_with(@appointment, location: appointments_path)
   end
 
   def update
-    @appointment.update(consultation_params)
-    respond_with(@appointment, location: appointments_path)
-  end
-
-  def destroy
-    @appointment.destroy
+    @appointment.update(appointment_params)
     respond_with(@appointment, location: appointments_path)
   end
 
@@ -40,7 +55,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def consultation_params
+  def appointment_params
     params.require(:appointment).permit()
   end
 end

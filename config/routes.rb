@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  mount Rapidfire::Engine => 'rapidfire'
+  mount Rapidfire::Engine => 'database/rapidfire', as: 'rapidfire'
 
   resources :chips, only: :index
   resources :database, only: :index
-  resources :appointments
+  resources :appointments, except: [:show, :destroy] do
+    get :search, on: :collection
+    post :cancel, on: :member
+    post :attend, on: :member
+  end
 
   namespace :admin do
     resources :basic_treatments, except: :show
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
   resources :patients do
     get 'find_address/:zip_code', action: :find_address, on: :collection
   end
+
+  resources :historical_infos, only: [:show, :edit, :update]
 
   root 'home#index'
 end

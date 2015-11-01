@@ -1,34 +1,51 @@
+.col.s12
+  = f.label :profile_image
+  = f.input :profile_image, as: :hidden
+  = f.input :profile_image_cache, as: :hidden
+  .row
+    .col.s10.l5.offset-l2
+      #my_camera.card.z-depth-2
+    .col
+      .card.z-depth-2.relative-card
+        = image_tag 'user.jpg', id: 'results', class: 'card-image'
+        i.mdi-image-photo-camera.small.clickable onclick="take_snapshot()" title="Nova Foto!"
+
 .row
-  .input-field.col.s12
+  .input-field.col.l6.s12
     = f.input :name
-  .input-field.col.s6
-    = f.input :cellphone
-  .input-field.col.s6
-    = f.input :phone
-  .input-field.col.s12
+  .input-field.col.l6.s12
     = f.input :email
-  .input-field.col.s4
-    = f.input :zip_code, input_html: { onblur: 'loadCEP()' }
-  .input-field.col.s4
+.row
+  .input-field.col.l6.s12
+    = f.input :cellphone, as: :cellphone
+  .input-field.col.l6.s12
+    = f.input :phone, as: :cellphone
+.row
+  .input-field.col.l4.s12
+    = f.input :zip_code, as: :zip_code, input_html: { onblur: 'loadCEP()' }
+  .input-field.col.l4.s12
     = f.input :state
-  .input-field.col.s4
+  .input-field.col.l4.s12
     = f.input :city
-  .input-field.col.s6
+.row
+  .input-field.col.l6.s12
     = f.input :address
-  .input-field.col.s4
+  .input-field.col.l4.s12
     = f.input :district
-  .input-field.col.s2
+  .input-field.col.l2.s12
     = f.input :number
   .input-field.col.s12
     br
     = f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
                     label_method: :description, item_wrapper_class: 'col l4 s12',
                     checked: @patient.treatments.map(&:basic_treatment_id)
-br
-h3 Próxima Consulta
-- if step.eql? 1
+- if @patient.new_record?
+  br /
+  h3 Próxima Consulta
+
   .row
     = f.simple_fields_for :appointments do |c|
-      .input-field.col.s2
+      .input-field.col.l2.s12
         = c.input :attend_at, as: :date_time_picker
-        = c.input :kind, as: :hidden, input_html: { value: AppointmentKind::FORWARDING_VISIT }
+        = c.input :kind, as: :hidden, input_html: { value: AppointmentKind::EVALUATION }
+        = c.input :status, as: :hidden, input_html: { value: AppointmentStatus::ACTIVE }

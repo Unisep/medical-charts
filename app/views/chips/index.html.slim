@@ -1,20 +1,18 @@
-.row
-  h3
-    | Fichas
-.row
-  .col.s12
-    .col.l6.m8.s12
-      .col.s12
-        = link_to new_patient_url do
-          .card-panel.green.waves-effect.waves-light.max-width
-            h4.white-text.flow-text
-              | Novo Encaminhamento
-              i.mdi-social-plus-one.right
+h3 Fichas
 
-    .col.l6.m8.s12
-      .col.s12
-        = link_to appointments_url do
-          .card-panel.pink.waves-effect.waves-light.max-width
-            h4.white-text.flow-text
-              | Agendamentos
-              i.mdi-action-history.right
+.row
+  .col.l6.m8.s12
+    .col.s12
+      = link_to new_patient_url do
+        .card-panel.green.waves-effect.waves-light.max-width
+          h4.white-text.flow-text
+            | Novo Encaminhamento
+            i.mdi-social-plus-one.right
+
+  .col.l6.m8.s12
+    .col.s12
+      = link_to appointments_url do
+        .card-panel.pink.waves-effect.waves-light.max-width
+          h4.white-text.flow-text
+            | Agendamentos
+            i.mdi-action-history.right

@@ -1,5 +1,4 @@
-= simple_form_for build_patient(@patient) do |f|
-  = f.input :current_step, as: :hidden, value: @patient.current_step
-  = render 'patients/steps/page1', f: f, step: @patient.current_step
+= simple_form_for @patient do |f|
+  = render 'patients/steps/page1', f: f
 
   = fab_to_save back_url: patients_path

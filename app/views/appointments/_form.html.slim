@@ -1,12 +1,8 @@
-= form_for(@appointment) do |f|
-  - if @appointment.errors.any?
-    #error_explanation
-      h2
-        = pluralize(@appointment.errors.count, "error")
-        |  prohibited this consultation from being saved:
-      ul
-        - @appointment.errors.full_messages.each do |message|
-          li
-            = message
-  .actions
-    = f.submit
+= simple_form_for(@appointment) do |f|
+  = f.error_notification
+
+  .row
+    .input-field.col.l2.s12
+      = f.input :attend_at, as: :date_time_picker
+
+  = fab_to_save(back_url: appointments_path)

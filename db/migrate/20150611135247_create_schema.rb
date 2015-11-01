@@ -1,6 +1,14 @@
 class CreateSchema < ActiveRecord::Migration
   def change
+    execute 'CREATE EXTENSION IF NOT EXISTS unaccent;'
+
     create_table :patients do |t|
+      t.date :birthday
+      t.string :nationality
+      t.string :naturalness
+      t.string :profile_image
+      t.string :profession
+      t.string :primary_document
       t.string :name
       t.string :email
       t.string :address
@@ -11,7 +19,10 @@ class CreateSchema < ActiveRecord::Migration
       t.string :number
       t.string :phone
       t.string :cellphone
-      t.integer :steps, default: 1
+      t.integer :step, default: 1
+      t.integer :sex, index: true
+      t.integer :ethnicity, index: true
+      t.integer :marital_status, index: true
 
       t.timestamps null: false
     end
@@ -32,5 +43,18 @@ class CreateSchema < ActiveRecord::Migration
     add_foreign_key :treatments, :patients
 
     add_index :treatments, [:basic_treatment_id, :patient_id], unique: true
+
+    create_table :appointments do |t|
+      t.datetime :attend_at
+      t.references :patient, index: true
+      t.references :treatment, index: true
+      t.integer :status
+      t.integer :kind
+
+      t.timestamps null: false
+    end
+
+    add_foreign_key :appointments, :patients
+    add_foreign_key :appointments, :treatments
   end
 end

@@ -1,0 +1,52 @@
+pt-BR:
+  historical_infos:
+    edit:
+      title_html: "Continuar cadastro sobre o(a): <b>%{patient}</b>"
+      back: Voltar
+      show: Visualizar
+  admin:
+    basic_treatments:
+      edit:
+        title: Editar Tratamento
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Novo Tratamento Básico
+        back: Voltar
+      index:
+        title: Tratamentos Básicos
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar
+  rapidfire:
+    question_groups:
+      edit:
+        title: Editar Grupo de Questões
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Novo Grupo de Questões
+        back: Voltar
+      index:
+        title: Grupos de Questões Básicas
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar
+    notices:
+      sucess: Todas as questões foram respondidas!
+      error: Algum problema ocorreu, verifique!
+    questions:
+      form:
+        other_options: Opções complementares das respostas
+      edit:
+        title: Editar Questão
+        back: Voltar
+        show: Visualizar
+      new:
+        title: Nova Questão
+        back: Voltar
+      index:
+        title: Questões
+        show: Visualizar
+        destroy: Apagar
+        edit: Editar

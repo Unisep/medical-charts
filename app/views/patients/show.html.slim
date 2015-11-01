@@ -1,58 +1,121 @@
-p
-  strong
-    = ta(Patient, :name)
-    | :
-  = @patient.name
-p
-  strong
-    = ta(Patient, :email)
-    | :
-  = @patient.email
-p
-  strong
-    = ta(Patient, :address)
-    | :
-  = @patient.address
-p
-  strong
-    = ta(Patient, :state)
-    | :
-  = @patient.state
-p
-  strong
-    = ta(Patient, :city)
-    | :
-  = @patient.city
-p
-  strong
-    = ta(Patient, :zip_code)
-    | :
-  = @patient.zip_code
-p
-  strong
-    = ta(Patient, :district)
-    | :
-  = @patient.district
-p
-  strong
-    = ta(Patient, :number)
-    | :
-  = @patient.number
-p
-  strong
-    = ta(Patient, :phone)
-    | :
-  = @patient.phone
-p
-  strong
-    = ta(Patient, :cellphone)
-    | :
-  = @patient.cellphone
-p
-  strong
-    = ta(Patient, :treatments)
-    | :
-  - @patient.treatments.each do |desc|
-    span
-      = desc.basic_treatment.description
+h3 = "#{tm(Patient)} ##{@patient.id}"
+
+.row
+  .col.s12.m7.l4
+    .col.s12
+      .card
+        .card-image
+          = image_tag @patient.profile_image_url(:big)
+
+    .col.s12
+      h5 = 'Informações Básicas'
+      .divider
+
+    .col
+      strong = "#{ta(Patient, :name)}: "
+      = @patient.name
+
+    - if @patient.sex?
+      .col.s12
+        strong = "#{ta(Patient, :sex)}: "
+        = @patient.sex_humanize
+
+    .col.s12
+      strong = "#{ta(Patient, :email)}: "
+      = @patient.email
+
+    .col.s12
+      strong = "#{ta(Patient, :address)}: "
+      = @patient.address
+
+    .col.s12
+      strong = "#{ta(Patient, :state)}: "
+      = @patient.state
+
+    .col.s12
+      strong = "#{ta(Patient, :city)}: "
+      = @patient.city
+
+    .col.s12
+      strong = "#{ta(Patient, :zip_code)}: "
+      = @patient.zip_code
+
+    .col.s12
+      strong = "#{ta(Patient, :district)}: "
+      = @patient.district
+
+    - if @patient.number?
+      .col.s12
+        strong = "#{ta(Patient, :number)}: "
+        = @patient.number
+
+    - if @patient.birthday?
+      .col.s12
+        strong = "#{ta(Patient, :age)}: "
+        = "#{@patient.age} anos"
+
+    - if @patient.phone?
+      .col.s12
+        strong = "#{ta(Patient, :phone)}: "
+        = @patient.phone
+
+    - if @patient.cellphone?
+      .col.s12
+        strong = "#{ta(Patient, :cellphone)}: "
+        = @patient.cellphone
+
+    .col.s12
+      strong = "#{ta(Patient, :treatments)}: "
+      br /
+      - @patient.treatments.map(&:basic_treatment).map(&:description).each do |item|
+        .chip
+          = item
+
+    - if @patient.step2?
+      .col.s12
+        br /
+        h5 = 'Infos. Complementares'
+        .divider
+
+      .col.s12
+        strong = "#{ta(Patient, :marital_status)}: "
+        = @patient.marital_status_humanize
+
+      .col.s12
+        strong = "#{ta(Patient, :ethnicity)}: "
+        = @patient.ethnicity_humanize
+
+      .col.s12
+        strong = "#{ta(Patient, :nationality)}: "
+        = @patient.nationality
+
+      .col.s12
+        strong = "#{ta(Patient, :naturalness)}: "
+        = @patient.naturalness
+
+      .col.s12
+        strong = "#{ta(Patient, :primary_document)}: "
+        = @patient.primary_document
+
+      .col.s12
+        strong = "#{ta(Patient, :profession)}: "
+        = @patient.profession
+
+  - if @patient.historical_answers.any?
+    .col.s12.l8
+      h5 = 'Avaliação Médica'
+      .divider
+
+      ul.collapsible.popout data-collapsible="accordion"
+        - @patient.historical_answers.each do |answer_group|
+          li
+            .collapsible-header
+              = answer_group.question_group.name
+            .collapsible-body
+              p
+                - answer_group.question_group.questions.each do |question|
+                  b = "#{question.question_text}: "
+                  = "#{question.answers.first.answer_text}"
+                  br /
+
 = fab_to_edit url: edit_patient_path(@patient), back_url: patients_path

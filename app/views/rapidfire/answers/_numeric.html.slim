@@ -1,4 +1,6 @@
-= render partial: 'rapidfire/answers/errors', locals: {answer: answer}
+- if answer.errors.any?
+  = render partial: 'rapidfire/answers/errors', locals: { answer: answer }
+
 .row
   .input-field.col.s6
     = f.input :answer_text, as: :integer, label: answer.question.question_text

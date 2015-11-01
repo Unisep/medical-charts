@@ -1,0 +1,7 @@
+pt-BR:
+  enumerations:
+    patient_marital_status:
+      single: Solteiro
+      married: Casado
+      divorced: Divorciado
+      widower: Viúvo

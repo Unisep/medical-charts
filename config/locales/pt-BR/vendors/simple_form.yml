@@ -19,7 +19,7 @@ pt-BR:
         placeholder: '__:__:__'
 
       datetime:
-        format: '00 00/0000 00:00:00'
+        format: '00/00/0000 00:00'
         placeholder: '__/__/____ __:__:__'
 
       cellphone:

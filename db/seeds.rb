@@ -23,32 +23,9 @@ module Rapidfire
 
   qg2 = QuestionGroup.create(name: 'História Médica')
 
-  options = <<-OPT
-Doenças Próprias da infância - sarampo, rubéola, parotidite, epidêmica-cachumba, coqueluche, escarlatina, varicela, poliomielite.\r\n
-Doenças Psiquiátricas e Psicológicas\r\n
-Acidentes e traumatismos\r\n
-Cirurgias\r\n
-Hospitalizações\r\n
-Infecções\r\n
-Dermatopatias\r\n
-Sistema Respiratório - tosse, escarro, asma brônquica, bronquite, enfisema, pneumonia, tuberculose, hemoptise, pleurite\r\n
-Sistema Cardiovascular - cardiopatias, hipertensão, febre reumática, sopros, anginas, palpitações, dispneia (paroxística noturna), ortopneia, edema, exames recentes, caludicação,
-dores ou edema nas extremidades, varicosidades e tromboflebite\r\n
-Sistema Gastrintestinal - disfagia, odinofagia, azia, úlceras, gastrites, náuseas, vômitos, regurgitação, hematêmese, dispepsia, constipação, diarreias, sangramento retal,
- melena, hemorroidas, flatluência excessiva, icterícia, hepatopatias\r\n
-Sistema Urinário - frequência das micções, poliúria, nictúria, ardência ou dor ao urinar, hematúria, incontinência, litíases, infecções\r\n
-Sistema Gênito-reprodutor masculino - hérnias, secreções e ulcerações penianas, dor ou nódulos testiculares, DST\r\n
-Sistema Gênito-reprodutor feminino - idade da menarca;\r\n
-Regularidade menstrual - dismenorreia, TPM, menopausa, reposição hormonal, DST, pruridos, nódulos ou ulcerações, uso de anticoncepcionais\r\n
-Sistema Musculoesquelético - desmaios, vertigens, convulções, paralisia, dormência, formigamento, tremores\r\n
-Sistema Hematológico - anemias, equimoses, hemorragias, transfusões, neoplasias\r\n
-Sistema Endócrino - hipertireoidismo, hipotireoidismo, hipoparatireoidismo, hiperparatireoidismo, diabetes (tipo 1, tipo 2, insípido)\r\n
-Sistema Nervoso Periférico - parestesias, hipofunções sensoriais ou motoras\r\n
-Sistema Nervoso Central - cefaleias, síncopes, vertigens, insônias, tremores, demência, sentil, depressão senil, Alzheimer, Parkinson\r\n
-Alergias
-OPT
-  qg2.questions << Question.create(question_text: 'Marque as doenças que já teve:', type: 'Rapidfire::Questions::Checkbox', answer_options: options)
-  qg2.questions << Question.create(question_text: 'Observações:', type: 'Rapidfire::Questions::Long')
+  options = "Doenças Próprias da infância - sarampo, rubéola, parotidite, epidêmica-cachumba, coqueluche, escarlatina, varicela, poliomielite.\r\nDoenças Psiquiátricas e Psicológicas\r\nAcidentes e traumatismos\r\nCirurgias\r\nHospitalizações\r\nInfecções\r\nDermatopatias\r\nSistema Respiratório - tosse, escarro, asma brônquica, bronquite, enfisema, pneumonia, tuberculose, hemoptise, pleurite\r\nSistema Cardiovascular - cardiopatias, hipertensão, febre reumática, sopros, anginas, palpitações, dispneia (paroxística noturna), ortopneia, edema, exames recentes, caludicação, dores ou edema nas extremidades, varicosidades e tromboflebite\r\nSistema Gastrintestinal - disfagia, odinofagia, azia, úlceras, gastrites, náuseas, vômitos, regurgitação, hematêmese, dispepsia, constipação, diarreias, sangramento retal, melena, hemorroidas, flatluência excessiva, icterícia, hepatopatias\r\nSistema Urinário - frequência das micções, poliúria, nictúria, ardência ou dor ao urinar, hematúria, incontinência, litíases, infecções\r\nSistema Gênito-reprodutor masculino - hérnias, secreções e ulcerações penianas, dor ou nódulos testiculares, DST\r\nSistema Gênito-reprodutor feminino - idade da menarca;\r\nRegularidade menstrual - dismenorreia, TPM, menopausa, reposição hormonal, DST, pruridos, nódulos ou ulcerações, uso de anticoncepcionais\r\nSistema Musculoesquelético - desmaios, vertigens, convulções, paralisia, dormência, formigamento, tremores\r\nSistema Hematológico - anemias, equimoses, hemorragias, transfusões, neoplasias\r\nSistema Endócrino - hipertireoidismo, hipotireoidismo, hipoparatireoidismo, hiperparatireoidismo, diabetes (tipo 1, tipo 2, insípido)\r\nSistema Nervoso Periférico - parestesias, hipofunções sensoriais ou motoras\r\nSistema Nervoso Central - cefaleias, síncopes, vertigens, insônias, tremores, demência, sentil, depressão senil, Alzheimer, Parkinson\r\nAlergias"
+  qg2.questions << Question.create(question_text: 'Marque as doenças que já teve', type: 'Rapidfire::Questions::Checkbox', answer_options: options)
+  qg2.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 
   qg3 = QuestionGroup.create(name: 'História Odontoestomatológica')
 
@@ -60,12 +37,12 @@ OPT
   brush_types = "Suave\r\nForte\r\nMediana"
   teeth_brush = "Macia\r\nMédia\r\nDura"
 
-  qg3.questions << Question.create(question_text: 'Quantas vezes ao ano vai ao dentista:', type: 'Rapidfire::Questions::Numeric')
-  qg3.questions << Question.create(question_text: 'Quando foi sua última visita ao dentista:', type: 'Rapidfire::Questions::Date')
+  qg3.questions << Question.create(question_text: 'Quantas vezes ao ano vai ao dentista', type: 'Rapidfire::Questions::Numeric')
+  qg3.questions << Question.create(question_text: 'Quando foi sua última visita ao dentista', type: 'Rapidfire::Questions::Date')
   qg3.questions << Question.create(question_text: 'Sente medo quando visita o dentista?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'O que lhe causa medo?', type: 'Rapidfire::Questions::Short')
   qg3.questions << Question.create(question_text: 'Já fez alguma cirurgia na boca?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
-  qg3.questions << Question.create(question_text: 'Motivo:', type: 'Rapidfire::Questions::Short')
+  qg3.questions << Question.create(question_text: 'Motivo', type: 'Rapidfire::Questions::Short')
   qg3.questions << Question.create(question_text: 'Teve inchaço ou hemorragia excessiva?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Já teve algum trauma na face ou cabeça?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Já usou aparelho ortodôntico?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
@@ -90,8 +67,8 @@ OPT
   qg3.questions << Question.create(question_text: 'Tem o hábito de morder o lábio ou a parte interna da bochecha?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Sua gengiva sangra facilmente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no_brush)
   qg3.questions << Question.create(question_text: 'Quantas vezes por dia você escova os dentes?', type: 'Rapidfire::Questions::Short')
-  qg3.questions << Question.create(question_text: 'Escova os dentes de forma:', type: 'Rapidfire::Questions::Radio', answer_options: brush_types)
-  qg3.questions << Question.create(question_text: 'Usa escova:', type: 'Rapidfire::Questions::Radio', answer_options: teeth_brush)
+  qg3.questions << Question.create(question_text: 'Escova os dentes de forma', type: 'Rapidfire::Questions::Radio', answer_options: brush_types)
+  qg3.questions << Question.create(question_text: 'Usa escova', type: 'Rapidfire::Questions::Radio', answer_options: teeth_brush)
   qg3.questions << Question.create(question_text: 'Já recebeu alguma vez, instruções sobre escovação dentária e uso do fio dental?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Usa o fio dental diariamente?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
   qg3.questions << Question.create(question_text: 'Tem algum dente que lhe parece ser amolecido ou móvel?', type: 'Rapidfire::Questions::Radio', answer_options: yes_or_no)
@@ -107,20 +84,17 @@ OPT
 
   addictions = "Etilismo\r\nTabagismo\r\nCanabismo\r\nUso de drogas ilícitas"
 
-  qg4.questions << Question.create(question_text: 'Marque todos os que já teve/tem:', type: 'Rapidfire::Questions::Radio', answer_options: addictions)
+  qg4.questions << Question.create(question_text: 'Marque todos os que já teve/tem', type: 'Rapidfire::Questions::Checkbox', answer_options: addictions)
   qg4.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 
   qg5 = QuestionGroup.create(name: 'Exame Físico Geral')
 
   qg5.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
   qg5.questions << Question.create(question_text: 'P.A', type: 'Rapidfire::Questions::Short')
-  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
   qg5.questions << Question.create(question_text: 'Pulso', type: 'Rapidfire::Questions::Numeric')
-  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
   qg5.questions << Question.create(question_text: 'Temperatura', type: 'Rapidfire::Questions::Numeric')
-  qg5.questions << Question.create(question_text: 'Data', type: 'Rapidfire::Questions::Date')
 
-  qg6 = QuestionGroup.create(name: 'Exame Físico Regional - "Extrabucal"')
+  qg6 = QuestionGroup.create(name: 'Exame - "Extrabucal"')
 
   qg6.questions << Question.create(question_text: 'Fácies', type: 'Rapidfire::Questions::Long')
   qg6.questions << Question.create(question_text: 'Cadeias ganglionares', type: 'Rapidfire::Questions::Long')
@@ -129,7 +103,7 @@ OPT
   qg6.questions << Question.create(question_text: 'Ossos, Músculos, Inervação', type: 'Rapidfire::Questions::Long')
 
 
-  qg7 = QuestionGroup.create(name: 'Exame Físico Regional - "Intrabucal"')
+  qg7 = QuestionGroup.create(name: 'Exame - "Intrabucal"')
 
   qg7.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 

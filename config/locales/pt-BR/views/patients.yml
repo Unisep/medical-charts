@@ -1,0 +1,20 @@
+pt-BR:
+  patients:
+    edit:
+      title: Editar Paciente
+      back: Voltar
+      show: Visualizar
+    new:
+      title: Novo Paciente
+      back: Voltar
+    index:
+      title: Pacientes
+      bio_html: "<em>%{name}</em>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}, e email: <a href='mailto:%{email}'>%{email}</a>."
+      show: Clique para visualizar +
+      short_infos_html: "%{naturalness}, %{age} anos"
+      waiting_step_html: '<span class="red-text">Aguardando avaliação</span>'
+      destroy: Apagar
+      edit: Editar
+    show:
+      back: Voltar
+      edit: Editar

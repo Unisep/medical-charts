@@ -12,3 +12,7 @@ $(document).ready(function() {
     var input = $('.mask');
     input.mask(input.data('maskFormat'), {reverse: input.data('maskReverse'), placeholder: input.data('maskPlaceholder'), mask_maxlength: input.data('maskMaxlength')});
 });
+
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+});

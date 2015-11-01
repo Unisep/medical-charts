@@ -1,0 +1,4 @@
+= simple_form_for @patient, url: historical_info_url, html: { class: 'col s12' } do |f|
+  = render 'patients/steps/page2', f: f, step: 2
+
+  = fab_to_save back_url: patients_path

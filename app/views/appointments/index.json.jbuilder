@@ -1,4 +1,4 @@
-json.array!(@appointments) do |consultation|
-  json.extract! consultation, :id
-  json.url consultation_url(consultation, format: :json)
+json.array!(@appointments) do |appointment|
+  json.extract! appointment, :id
+  json.url appointment_url(appointment, format: :json)
 end

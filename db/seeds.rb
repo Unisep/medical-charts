@@ -23,30 +23,7 @@ module Rapidfire
 
   qg2 = QuestionGroup.create(name: 'História Médica')
 
-  options = <<-OPT
-Doenças Próprias da infância - sarampo, rubéola, parotidite, epidêmica-cachumba, coqueluche, escarlatina, varicela, poliomielite.\r\n
-Doenças Psiquiátricas e Psicológicas\r\n
-Acidentes e traumatismos\r\n
-Cirurgias\r\n
-Hospitalizações\r\n
-Infecções\r\n
-Dermatopatias\r\n
-Sistema Respiratório - tosse, escarro, asma brônquica, bronquite, enfisema, pneumonia, tuberculose, hemoptise, pleurite\r\n
-Sistema Cardiovascular - cardiopatias, hipertensão, febre reumática, sopros, anginas, palpitações, dispneia (paroxística noturna), ortopneia, edema, exames recentes, caludicação,
-dores ou edema nas extremidades, varicosidades e tromboflebite\r\n
-Sistema Gastrintestinal - disfagia, odinofagia, azia, úlceras, gastrites, náuseas, vômitos, regurgitação, hematêmese, dispepsia, constipação, diarreias, sangramento retal,
- melena, hemorroidas, flatluência excessiva, icterícia, hepatopatias\r\n
-Sistema Urinário - frequência das micções, poliúria, nictúria, ardência ou dor ao urinar, hematúria, incontinência, litíases, infecções\r\n
-Sistema Gênito-reprodutor masculino - hérnias, secreções e ulcerações penianas, dor ou nódulos testiculares, DST\r\n
-Sistema Gênito-reprodutor feminino - idade da menarca;\r\n
-Regularidade menstrual - dismenorreia, TPM, menopausa, reposição hormonal, DST, pruridos, nódulos ou ulcerações, uso de anticoncepcionais\r\n
-Sistema Musculoesquelético - desmaios, vertigens, convulções, paralisia, dormência, formigamento, tremores\r\n
-Sistema Hematológico - anemias, equimoses, hemorragias, transfusões, neoplasias\r\n
-Sistema Endócrino - hipertireoidismo, hipotireoidismo, hipoparatireoidismo, hiperparatireoidismo, diabetes (tipo 1, tipo 2, insípido)\r\n
-Sistema Nervoso Periférico - parestesias, hipofunções sensoriais ou motoras\r\n
-Sistema Nervoso Central - cefaleias, síncopes, vertigens, insônias, tremores, demência, sentil, depressão senil, Alzheimer, Parkinson\r\n
-Alergias
-OPT
+  options = "Doenças Próprias da infância - sarampo, rubéola, parotidite, epidêmica-cachumba, coqueluche, escarlatina, varicela, poliomielite.\r\nDoenças Psiquiátricas e Psicológicas\r\nAcidentes e traumatismos\r\nCirurgias\r\nHospitalizações\r\nInfecções\r\nDermatopatias\r\nSistema Respiratório - tosse, escarro, asma brônquica, bronquite, enfisema, pneumonia, tuberculose, hemoptise, pleurite\r\nSistema Cardiovascular - cardiopatias, hipertensão, febre reumática, sopros, anginas, palpitações, dispneia (paroxística noturna), ortopneia, edema, exames recentes, caludicação, dores ou edema nas extremidades, varicosidades e tromboflebite\r\nSistema Gastrintestinal - disfagia, odinofagia, azia, úlceras, gastrites, náuseas, vômitos, regurgitação, hematêmese, dispepsia, constipação, diarreias, sangramento retal, melena, hemorroidas, flatluência excessiva, icterícia, hepatopatias\r\nSistema Urinário - frequência das micções, poliúria, nictúria, ardência ou dor ao urinar, hematúria, incontinência, litíases, infecções\r\nSistema Gênito-reprodutor masculino - hérnias, secreções e ulcerações penianas, dor ou nódulos testiculares, DST\r\nSistema Gênito-reprodutor feminino - idade da menarca;\r\nRegularidade menstrual - dismenorreia, TPM, menopausa, reposição hormonal, DST, pruridos, nódulos ou ulcerações, uso de anticoncepcionais\r\nSistema Musculoesquelético - desmaios, vertigens, convulções, paralisia, dormência, formigamento, tremores\r\nSistema Hematológico - anemias, equimoses, hemorragias, transfusões, neoplasias\r\nSistema Endócrino - hipertireoidismo, hipotireoidismo, hipoparatireoidismo, hiperparatireoidismo, diabetes (tipo 1, tipo 2, insípido)\r\nSistema Nervoso Periférico - parestesias, hipofunções sensoriais ou motoras\r\nSistema Nervoso Central - cefaleias, síncopes, vertigens, insônias, tremores, demência, sentil, depressão senil, Alzheimer, Parkinson\r\nAlergias"
   qg2.questions << Question.create(question_text: 'Marque as doenças que já teve', type: 'Rapidfire::Questions::Checkbox', answer_options: options)
   qg2.questions << Question.create(question_text: 'Observações', type: 'Rapidfire::Questions::Long')
 

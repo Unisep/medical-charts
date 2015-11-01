@@ -36,6 +36,8 @@ pt-BR:
       sucess: Todas as questões foram respondidas!
       error: Algum problema ocorreu, verifique!
     questions:
+      form:
+        other_options: Opções complementares das respostas
       edit:
         title: Editar Questão
         back: Voltar

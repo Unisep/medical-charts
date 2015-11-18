@@ -28,4 +28,4 @@ table.highlight.responsive-table
       th[colspan="2"]
         td
           span.red-text.lighten-2
-            = params[:q].present? ? t('.messages.search_no_items_html', q: params[:q]) : t('.messages.no_items')
+            = params[:query].present? ? t('app.messages.search_no_items_html', query: params[:query]) : t('app.messages.no_items')

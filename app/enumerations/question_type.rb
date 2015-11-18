@@ -8,4 +8,10 @@ class QuestionType
      ['Uma escolha (várias opções com formato de menu como este)', 'Rapidfire::Questions::Select'],
      ['Campo de Texto (uma linha)', 'Rapidfire::Questions::Short']]
   end
+
+  def self.match(item)
+    result = to_a.select { |k, v| v == item }
+
+    result[0][0]
+  end
 end

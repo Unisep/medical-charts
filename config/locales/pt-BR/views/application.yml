@@ -1,0 +1,5 @@
+pt-BR:
+  app:
+    messages:
+      search_no_items_html: 'Sua busca por "<b>%{query}</b>" não encontrou nenhum resultado!!'
+      no_items: Não há nenhum item ativo.

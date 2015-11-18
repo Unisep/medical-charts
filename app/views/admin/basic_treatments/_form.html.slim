@@ -1,15 +1,10 @@
 = simple_form_for([:admin, @basic_treatment]) do |f|
-  - if @basic_treatment.errors.any?
-    #error_explanation
-      h2
-        = pluralize(@basic_treatment.errors.count, "error")
-        |  prohibited this basic_treatment from being saved:
-      ul
-        - @basic_treatment.errors.full_messages.each do |message|
-          li
-            = message
-  .input-field
-    = f.input :description
-  .input-field
-    = f.input :common, as: :boolean
+  = f.error_notification
+
+  .row
+
+    .input-field.col.s8
+      = f.input :description
+    .input-field.col.s4
+      = f.input :common, as: :boolean
   = fab_to_save back_url: admin_basic_treatments_url

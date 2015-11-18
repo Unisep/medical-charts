@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:edit, :update, :cancel, :attend]
 
   def index
-    @appointments = Appointment.active.evaluation.page(params[:page])
+    @appointments = Appointment.active.search(params[:query]).page(params[:page])
 
     respond_with(@appointments)
   end
@@ -30,12 +30,6 @@ class AppointmentsController < ApplicationController
     service.attend!
 
     respond_with(@appointment.patient, location: edit_historical_info_url(@appointment.patient))
-  end
-
-  def search
-    @appointments = Appointment.active.evaluation.search(params[:q]).page(params[:page])
-
-    render :index
   end
 
   def create

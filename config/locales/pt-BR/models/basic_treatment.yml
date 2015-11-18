@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      basic_treatment:
+        one: Tratamento Básico
+        other: Tratamentos Básicos
+    attributes:
+      basic_treatment:
+        description: Descrição/Nome
+        common: Comum?

@@ -5,9 +5,6 @@ pt-BR:
       actions:
         cancel: Cancelar
         attend: Prosseguir
-      messages:
-        search_no_items_html: 'Sua busca por "<b>%{q}</b>" não encontrou nenhum resultado!!'
-        no_items: Não há nenhum agendamento ativo.
 
     new:
       title: Novo Agendamento

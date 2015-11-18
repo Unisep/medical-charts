@@ -1,13 +1,11 @@
 | <tr id="question_
 = question.id
-| "> 
+| ">
 td
   = question.question_text
 td
-  = question.type
+  = QuestionType.match(question.type)
 td
-  ul.horizontal-list
-    li
-      = link_to "Edit", [:edit, question.question_group, question]
-    li
-      = link_to "Delete", [question.question_group, question], method: :delete
+  = link_to "Editar", [:edit, question.question_group, question]
+  | &nbsp;&nbsp;
+  = link_to "Deletar", [question.question_group, question], method: :delete

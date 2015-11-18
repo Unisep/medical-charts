@@ -1,5 +1,7 @@
-- if exists?("#{request.env['PATH_INFO']}/search") || request.env['PATH_INFO'].match(/search/)
-  = simple_form_for :search, url: normalized_current_path, method: :get, input_html: { class: 'col s12' } do |s|
+- if action_name.eql? 'index'
+  = simple_form_for :search, url: normalized_current_path, method: :get, html: { class: 'left hide-on-med-and-down' } do |s|
     .input-field
-      input#q.validate.col.s11 type="text" name="q" /
-      i.small.mdi-action-search.black-text.prefix
+      input#query required="" name="query" type="search" /
+      label for="search"
+        i.mdi-action-search
+      i.mdi-navigation-close

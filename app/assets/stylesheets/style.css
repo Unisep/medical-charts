@@ -62,13 +62,6 @@ main {
     bottom: 0;
 }
 
-.clickable-2 {
-    cursor: pointer;
-    position: absolute;
-    left: 1.2em;
-    bottom: 0;
-}
-
 .relative-card {
     position: relative;
     height: 187px;

@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patients = Patient.all
+    @patients = Patient.search(params[:query]).page(params[:page])
 
     respond_with(@patients)
   end

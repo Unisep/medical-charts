@@ -36,9 +36,8 @@
     = f.input :number
   .input-field.col.s12
     br
-    = f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes,
-                    label_method: :description, item_wrapper_class: 'col l4 s12',
-                    checked: @patient.treatments.map(&:basic_treatment_id)
+    = f.association :basic_treatments, collection: BasicTreatment.all, as: :check_boxes, label_method: :description,
+                    item_wrapper_class: 'col l4 s12', checked: @patient.treatments.map(&:basic_treatment_id)
 - if @patient.new_record?
   br /
   h3 Próxima Consulta
@@ -46,6 +45,6 @@
   .row
     = f.simple_fields_for :appointments do |c|
       .input-field.col.l2.s12
-        = c.input :attend_at, as: :date_time_picker
+        = c.input :attend_at, as: :date_time_picker, input_html: { placeholder: t('simple_form.mask.datetime.placeholder') }
         = c.input :kind, as: :hidden, input_html: { value: AppointmentKind::EVALUATION }
         = c.input :status, as: :hidden, input_html: { value: AppointmentStatus::ACTIVE }

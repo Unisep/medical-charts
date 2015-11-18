@@ -16,5 +16,18 @@ module Rapidfire
         render :new
       end
     end
+
+    def edit
+      AnswerGroupBuilder.new(answer_group_params)
+    end
+
+    def update
+
+    end
+
+    def destroy
+
+    end
+
   end
 end

@@ -9,7 +9,7 @@ pt-BR:
       back: Voltar
     index:
       title: Pacientes
-      bio_html: "<em>%{name}</em>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}, e email: <a href='mailto:%{email}'>%{email}</a>."
+      bio_html: "<em>%{name}</em>, natural de <b>%{naturalness}</b>, mora na cidade <b>%{city}, %{state}</b>, seu telefone de contato é: %{cellphone}, e email: <a href='mailto:%{email}'>%{email}</a>."
       show: Clique para visualizar +
       short_infos_html: "%{naturalness}, %{age} anos"
       waiting_step_html: '<span class="red-text">Aguardando avaliação</span>'

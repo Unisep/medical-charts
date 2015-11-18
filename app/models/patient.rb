@@ -1,4 +1,6 @@
 class Patient < ActiveRecord::Base
+  include Searchable
+
   mount_base64_uploader :profile_image, AvatarUploader
 
   has_many :appointments, inverse_of: :patient, dependent: :delete_all
@@ -7,6 +9,7 @@ class Patient < ActiveRecord::Base
   has_many :treatments, dependent: :delete_all
 
   accepts_nested_attributes_for :appointments, reject_if: :all_blank, allow_destroy: true
+  searchable_by :cellphone, :name, :zip_code, :primary_document
 
   # TODO: Move to Form Objects
 

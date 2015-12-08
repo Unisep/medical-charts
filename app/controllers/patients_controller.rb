@@ -22,7 +22,6 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    binding.pry
     @patient.save
 
     respond_with(@patient, location: appointments_url)

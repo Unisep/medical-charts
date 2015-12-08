@@ -25,8 +25,8 @@ source 'https://rubygems.org' do
 
   gem 'carrierwave'
   gem 'carrierwave-base64'
-  gem 'rmagick'
-  gem 'carrierwave-dropbox'
+  # gem 'rmagick'
+  gem 'cloudinary'
 
   group :development, :test do
     gem 'parallel_tests'

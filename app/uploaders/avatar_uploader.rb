@@ -1,8 +1,7 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
-  # storage :dropbox
-  storage :file
+  storage :dropbox
 
   def store_dir
     "uploads-#{Rails.env}/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

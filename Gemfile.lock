@@ -87,6 +87,9 @@ GEM
       mime-types (>= 1.16)
     carrierwave-base64 (2.1.1)
       carrierwave (>= 0.8.0, < 0.11.0)
+    carrierwave-dropbox (1.2.1)
+      carrierwave (~> 0.9)
+      dropbox-sdk (~> 1.6)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -101,6 +104,8 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (2.0.2)
+    dropbox-sdk (1.6.5)
+      json
     enumerate_it (1.2.8)
       activesupport (>= 3.0.0)
     erubis (2.7.0)
@@ -267,6 +272,7 @@ DEPENDENCIES
   capybara!
   carrierwave!
   carrierwave-base64!
+  carrierwave-dropbox!
   codeclimate-test-reporter!
   database_cleaner!
   dotenv!

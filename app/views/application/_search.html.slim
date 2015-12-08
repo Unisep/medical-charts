@@ -1,4 +1,4 @@
-- if action_name.eql? 'index'
+- if action_name.eql? 'index' and !controller_name.in? %w(database home chips)
   = simple_form_for :search, url: normalized_current_path, method: :get, html: { class: 'left hide-on-med-and-down' } do |s|
     .input-field
       input#query required="" name="query" type="search" /

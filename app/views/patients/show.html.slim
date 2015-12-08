@@ -118,4 +118,8 @@ h3 = "#{tm(Patient)} ##{@patient.id}"
                   = "#{question.answers.first.answer_text}"
                   br /
 
+  .col.s12.l8
+    h5 = 'Evolução dos Tratamentos'
+    .divider
+
 = fab_to_edit url: edit_patient_path(@patient), back_url: patients_path

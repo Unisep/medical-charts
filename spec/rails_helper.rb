@@ -23,8 +23,8 @@ Forgery.load_from! "#{Forgery.rails_root}/spec/support/forgery"
 
 ActiveRecord::Migration.maintain_test_schema!
 
-include Warden::Test::Helpers
-Warden.test_mode!
+# include Warden::Test::Helpers
+# Warden.test_mode!
 
 Capybara.default_wait_time = 5
 Capybara.javascript_driver = :poltergeist
@@ -40,7 +40,7 @@ RSpec.configure do |config|
   config.after(:each) { DatabaseCleaner.clean }
 
   config.include FactoryGirl::Syntax::Methods
-  config.include Devise::TestHelpers, type: :controller
+  # config.include Devise::TestHelpers, type: :controller
 
   # config.before(:each, type: :controller) do
   #   @current_user = FactoryGirl.create(:user)

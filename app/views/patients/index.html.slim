@@ -19,6 +19,5 @@ h4 = t '.title'
           p = t('.bio_html', name: patient.name, city: patient.city, naturalness: patient.naturalness,
                              state: patient.state, cellphone: patient.cellphone, email: patient.email)
 
-  - if @patients.empty?
-    .col.s12
-      h6.red-text = params[:query].present? ? t('app.messages.search_no_items_html', query: params[:query]) : t('app.messages.no_items')
+  .col.s12
+    = render 'application/no_items', list: @patients

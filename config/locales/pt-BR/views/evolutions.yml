@@ -7,6 +7,6 @@ pt-BR:
         attend: Prosseguir
 
     new:
-      title: Novo Registro
+      title: Registrar Evolução de Paciente
     edit:
-      title: Editar Registro
+      title: Editar Registro de Evolução

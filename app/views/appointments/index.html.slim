@@ -22,8 +22,4 @@ table.highlight.responsive-table
           = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post
           = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post
 
-    - if @appointments.empty?
-      th[colspan="2"]
-        td
-          span.red-text.lighten-2
-            = params[:query].present? ? t('app.messages.search_no_items_html', query: params[:query]) : t('app.messages.no_items')
+    = render 'application/no_items', list: @appointments

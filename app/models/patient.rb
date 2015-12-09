@@ -38,13 +38,13 @@ class Patient < ActiveRecord::Base
   def age
     return if birthday.nil?
 
-    now = Time.now.utc.to_date
-    now.year - birthday.year - (today_is_birthday? ? 0 : 1)
+    Time.now.utc.to_date.year - birthday.year - (today_is_birthday? ? 0 : 1)
   end
 
   private
 
   def today_is_birthday?
+    now = Time.now.utc.to_date
     now.month > birthday.month || (now.month == birthday.month && now.day >= birthday.day)
   end
 end

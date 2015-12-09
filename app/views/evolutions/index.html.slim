@@ -1,0 +1,19 @@
+h1 Listing evolutions
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @evolutions.each do |evolution|
+      tr
+        td = link_to 'Show', evolution
+        td = link_to 'Edit', edit_evolution_path(evolution)
+        td = link_to 'Destroy', evolution, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Evolution', new_evolution_path

@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
     service = AppointmentService.new(@appointment)
     service.attend!
 
-    respond_with(@appointment.patient, location: edit_historical_info_url(@appointment.patient))
+    respond_with(@appointment.patient, location: find_location!)
   end
 
   def create
@@ -44,6 +44,14 @@ class AppointmentsController < ApplicationController
   end
 
   private
+
+  def find_location!
+    if @appointment.evaluation?
+      edit_historical_info_url(@appointment.patient)
+    elsif @appointment.execution?
+      appointment_evolutions_url(@appointment)
+    end
+  end
 
   def set_appointment
     @appointment = Appointment.find(params[:id])

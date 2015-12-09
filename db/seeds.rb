@@ -12,8 +12,17 @@ BasicTreatment.create!(description: 'Cirurgia II')
 BasicTreatment.create!(description: 'Outros')
 BasicTreatment.create!(description: 'Especialização - Implantodontia')
 
-# Rapidfire Questions
 
+# Odontogram
+
+(1..4).each do |quarter|
+  (1..8).each do |position|
+    Tooth.create(quarter: quarter, position: position, full: "#{quarter}#{position}")
+  end
+end
+
+
+# Rapidfire Questions
 module Rapidfire
   qg1 = QuestionGroup.create(name: 'Estado Atual')
 

@@ -4,6 +4,8 @@ class Appointment < ActiveRecord::Base
   belongs_to :patient, inverse_of: :appointments
   belongs_to :treatment
 
+  has_many :evolutions
+
   validates :patient, presence: true, associated: true
   validates :attend_at, presence: true
 

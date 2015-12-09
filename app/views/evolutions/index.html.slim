@@ -1,19 +1,29 @@
-h1 Listing evolutions
+.row
+  .col.l8.s12
+    h5
+      = t '.title_html', id: @appointment.id, date: @appointment.attend_at.strftime('%e de %b %H:%M')
 
-table
+table.highlight.responsive-table
   thead
     tr
+      th = ta(Appointment, :patient)
+      th = ta(Patient, :cellphone)
+      th = ta(Appointment, :attend_at)
       th
-      th
-      th
-
   tbody
     - @evolutions.each do |evolution|
       tr
-        td = link_to 'Show', evolution
-        td = link_to 'Edit', edit_evolution_path(evolution)
-        td = link_to 'Destroy', evolution, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = truncate(evolution.patient.name, length: 25)
+        td = evolution.patient.cellphone
+        td = l appointment.attend_at, format: :short
 
-br
+        td.center-btn
+          = link_to_edit edit_appointment_url(appointment)
+          = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post
+          = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post
 
-= link_to 'New Evolution', new_evolution_path
+    - if @evolutions.empty?
+      th[colspan="2"]
+        td
+          span.red-text.lighten-2
+            = params[:query].present? ? t('app.messages.search_no_items_html', query: params[:query]) : t('app.messages.no_items')

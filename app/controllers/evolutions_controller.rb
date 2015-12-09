@@ -1,8 +1,10 @@
 class EvolutionsController < ApplicationController
+  before_action :set_appointment
   before_action :set_evolution, only: [:show, :edit, :update, :destroy]
 
   def index
-    @evolutions = Evolution.all
+    @evolutions = @appointment.evolutions
+
     respond_with(@evolutions)
   end
 
@@ -15,8 +17,7 @@ class EvolutionsController < ApplicationController
     respond_with(@evolution)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @evolution = Evolution.new(evolution_params)
@@ -36,6 +37,10 @@ class EvolutionsController < ApplicationController
   end
 
   private
+
+  def set_appointment
+    @appointment = Appointment.find(params[:appointment_id])
+  end
 
   def set_evolution
     @evolution = Evolution.find(params[:id])

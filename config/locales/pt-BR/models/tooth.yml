@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      tooth:
+        one: Dente
+        other: Dentes
+    attributes:
+      tooth:
+        quarter: Quadrante
+        position: Posição
+        full: Notação Dentária

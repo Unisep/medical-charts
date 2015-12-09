@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      evolution:
+        one: Evolução
+        other: Evoluções
+    attributes:
+      evolution:
+        attend_at: Data
+        description: Descrição
+        appointment: Agendamento
+        teacher_name: Professor Responsável
+        student_name: Estudante Responsável
+        teeth: Dentes Relacionados

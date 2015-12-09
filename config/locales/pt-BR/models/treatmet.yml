@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      treatment:
+        one: Tratamento
+        other: Tratamentos
+    attributes:
+      treatment:
+        basic_treatment: Tratamento Base
+        patient: Paciente
+        completed: Finalizado

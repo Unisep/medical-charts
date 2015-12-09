@@ -2,6 +2,12 @@
   = f.error_notification
 
   .row
+    - if @appointment.evaluation?
+      label.right = '*Agendamento para executar procedimento de análise de história médica.'
+    - else
+      span = 'Agendamento para continuar tratamento de #{@appointment.treatment.basic_treatment.description}'  if @appointment.treatment.present?
+
+  .row
     .input-field.col.l2.s12
       = f.input :attend_at, as: :date_time_picker
 

@@ -3,6 +3,7 @@ class Patient < ActiveRecord::Base
 
   mount_base64_uploader :profile_image, AvatarUploader
 
+  has_many :evolutions, through: :appointments
   has_many :appointments, inverse_of: :patient, dependent: :delete_all
   has_many :basic_treatments, through: :treatments
   has_many :historical_answers, class_name: 'Rapidfire::AnswerGroup', dependent: :delete_all, foreign_key: :user_id

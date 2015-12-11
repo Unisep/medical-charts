@@ -10,12 +10,12 @@ h4 = t '.title'
         .card-content
           span.card-title.activator.grey-text.text-darken-4
             = truncate(patient.name, length: 14, separator: ' ').gsub('...', '')
-            i.material-icons.right.mdi-navigation-more-vert
+            i.material-icons.right more_vert
           p = patient.step2? ? truncate(t('.short_infos_html', age: patient.age, naturalness: patient.naturalness), length: 25) : t('.waiting_step_html')
         .card-reveal
           span.card-title.grey-text.text-darken-4
             | Bio
-            i.material-icons.right.mdi-navigation-close
+            i.material-icons.right close
           p = t('.bio_html', name: patient.name, city: patient.city, naturalness: patient.naturalness,
                              state: patient.state, cellphone: patient.cellphone, email: patient.email)
 

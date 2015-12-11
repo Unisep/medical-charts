@@ -122,4 +122,29 @@ h3 = "#{tm(Patient)} ##{@patient.id}"
     h5 = 'Evolução dos Tratamentos'
     .divider
 
-= fab_to_edit url: edit_patient_path(@patient), back_url: patients_path
+      - if @patient.evolutions.any?
+        ul.collapsible.popout data-collapsible="accordion"
+          - @patient.evolutions.each do |answer_group|
+            li
+              .collapsible-header
+                = answer_group.question_group.name
+              .collapsible-body
+                p
+                  - answer_group.question_group.questions.each do |question|
+                    b = "#{question.question_text}: "
+                    = "#{question.answers.first.answer_text}"
+                    br /
+      - else
+        p
+          | Nenhuma evolução em nenhum tratamento foi encontrado!
+
+.fixed-action-btn.horizontal style=("bottom: 45px; right: 24px;")
+  a.btn-floating.btn-large.blue
+    i.large.material-icons menu
+  ul
+    li
+      a.btn-floating.green title="Agendamento"
+        i.material-icons schedule
+    li
+      a.btn-floating.red title="Editar Perfil"
+        i.material-icons mode_edit

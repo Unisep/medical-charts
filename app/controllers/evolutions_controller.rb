@@ -20,7 +20,7 @@ class EvolutionsController < ApplicationController
   def edit; end
 
   def create
-    @evolution = Evolution.new(evolution_params)
+    @evolution = @appointment.evolutions.create(evolution_params)
     @evolution.save
 
     respond_with(@appointment, @evolution)

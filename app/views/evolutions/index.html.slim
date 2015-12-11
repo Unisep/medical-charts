@@ -1,12 +1,11 @@
 .row
-  .col.l8.s12
+  .col.l12.s12
     h5
       = t '.title_html', id: @appointment.id, date: @appointment.attend_at.strftime('%e de %b às %H:%M')
 
 table.highlight.responsive-table
   thead
     tr
-      th = ta(Evolution, :patient)
       th = ta(Evolution, :attend_at)
       th = ta(Evolution, :teacher_name)
       th = ta(Evolution, :student_name)
@@ -14,15 +13,12 @@ table.highlight.responsive-table
   tbody
     - @evolutions.each do |evolution|
       tr
-        td = truncate(evolution.patient.name, length: 25)
-        td = l evolution.attend_at, format: :short
+        td = l evolution.created_at, format: :short
         td = evolution.teacher_name
         td = evolution.student_name
 
         td.center-btn
-          = link_to_edit edit_appointment_url(appointment)
-          = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post
-          = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post
+          = link_to t('.actions.view'), appointment_evolution_url(@appointment, evolution)
 
     = render 'application/no_items', list: @evolutions
 

@@ -4,6 +4,7 @@ pt-BR:
       title_html: 'Evoluções do Paciente na consulta <b>#%{id}</b> em <em>%{date}</em>'
       actions:
         cancel: Cancelar
+        view: Detalhes
         attend: Prosseguir
 
     new:

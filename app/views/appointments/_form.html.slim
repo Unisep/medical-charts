@@ -18,7 +18,7 @@
         br
         = f.association :treatment, collection: @patient.treatments, input_html: { class: 'browser-default' }, selected: @appointment.treatment
 
-      = f.input :kind, as: :hidden, input_html: { value: AppointmentKind::EVALUATION }
+      = f.input :kind, as: :hidden, input_html: { value: AppointmentKind::EXECUTION }
       = f.input :status, as: :hidden, input_html: { value: AppointmentStatus::ACTIVE }
 
   = fab_to_save(back_url: appointments_path)

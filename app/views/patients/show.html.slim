@@ -122,21 +122,22 @@ h3 = "#{tm(Patient)} ##{@patient.id}"
     h5 = 'Evolução dos Tratamentos'
     .divider
 
-      - if @patient.evolutions.any?
-        ul.collapsible.popout data-collapsible="accordion"
-          - @patient.evolutions.each do |answer_group|
-            li
-              .collapsible-header
-                = answer_group.question_group.name
-              .collapsible-body
-                p
-                  - answer_group.question_group.questions.each do |question|
-                    b = "#{question.question_text}: "
-                    = "#{question.answers.first.answer_text}"
-                    br /
-      - else
-        p
-          | Nenhuma evolução em nenhum tratamento foi encontrado!
+    - if @patient.evolutions.any?
+      ul.collapsible.popout data-collapsible="accordion"
+        - @patient.treatments.each do |treatment|
+          li
+            .collapsible-header
+              = treatment
+            .collapsible-body
+              p
+                - if treatment.evolutions.any?
+                  - treatment.evolutions.each do |evolution|
+                    = raw("<b>#{l(evolution.created_at, format: :short)}: </b> #{truncate(evolution.description, length: 80)} <br>")
+                - else
+                  span Sem evoluções para esse tratamento.
+    - else
+      p
+        | Nenhuma evolução em nenhum tratamento foi encontrado!
 
 .fixed-action-btn.horizontal.click-to-toggle style=("bottom: 45px; right: 24px;")
   a.btn-floating.btn-large.blue

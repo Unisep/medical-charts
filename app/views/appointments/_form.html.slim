@@ -1,14 +1,24 @@
-= simple_form_for(@appointment) do |f|
+= simple_form_for([@patient, @appointment]) do |f|
   = f.error_notification
 
   .row
     - if @appointment.evaluation?
       label.right = '*Agendamento para executar procedimento de análise de história médica.'
     - else
-      span = 'Agendamento para continuar tratamento de #{@appointment.treatment.basic_treatment.description}'  if @appointment.treatment.present?
+      span = "Agendamento para continuar tratamento de #{@appointment.treatment.basic_treatment.description}"  if @appointment.treatment.present? && !@appointment.new_record?
 
   .row
-    .input-field.col.l2.s12
+    .input-field.col.l6.s12
       = f.input :attend_at, as: :date_time_picker
+
+  - if @patient.present?
+    .row
+      .input-field.col.l6.s12
+        br
+        br
+        = f.association :treatment, collection: @patient.treatments, input_html: { class: 'browser-default' }, selected: @appointment.treatment
+
+      = f.input :kind, as: :hidden, input_html: { value: AppointmentKind::EVALUATION }
+      = f.input :status, as: :hidden, input_html: { value: AppointmentStatus::ACTIVE }
 
   = fab_to_save(back_url: appointments_path)

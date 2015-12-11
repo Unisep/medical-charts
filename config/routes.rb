@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     resources :evolutions
   end
 
+  resources :patients, only: :none do
+    resources :appointments
+  end
+
   namespace :admin do
     resources :basic_treatments, except: :show
   end

@@ -18,8 +18,13 @@ table.highlight.responsive-table
         td = l appointment.attend_at, format: :short
 
         td.center-btn
-          = link_to_edit edit_appointment_url(appointment)
+          = link_to_edit(@patient.present? ? edit_patient_appointment_url(@patient, appointment) : edit_appointment_url(appointment))
           = link_to t('.actions.cancel'), cancel_appointment_url(appointment), method: :post
           = link_to t('.actions.attend'), attend_appointment_url(appointment), method: :post
 
     = render 'application/no_items', list: @appointments
+
+- if @patient.present?
+  .fixed-action-btn.horizontal.click-to-toggle style=("bottom: 45px; right: 24px;")
+    = link_to new_patient_appointment_url(@patient), class: 'a btn-floating btn-large red', title: 'Agendamentos' do
+      i.large.material-icons add

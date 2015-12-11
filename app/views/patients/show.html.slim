@@ -138,12 +138,12 @@ h3 = "#{tm(Patient)} ##{@patient.id}"
         p
           | Nenhuma evolução em nenhum tratamento foi encontrado!
 
-.fixed-action-btn.horizontal style=("bottom: 45px; right: 24px;")
+.fixed-action-btn.horizontal.click-to-toggle style=("bottom: 45px; right: 24px;")
   a.btn-floating.btn-large.blue
     i.large.material-icons menu
   ul
     li
-      a.btn-floating.green title="Agendamento"
+      = link_to patient_appointments_url(@patient), class: 'btn-floating green', title: 'Agendamentos' do
         i.material-icons schedule
     li
       a.btn-floating.red title="Editar Perfil"

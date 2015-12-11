@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe EvolutionsController, :type => :controller do
+RSpec.xdescribe EvolutionsController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Evolution. As you add validations to Evolution, be sure to
@@ -39,7 +39,9 @@ RSpec.describe EvolutionsController, :type => :controller do
   describe "GET index" do
     it "assigns all evolutions as @evolutions" do
       evolution = Evolution.create! valid_attributes
+
       get :index, {}, valid_session
+
       expect(assigns(:evolutions)).to eq([evolution])
     end
   end

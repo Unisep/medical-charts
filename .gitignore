@@ -24,3 +24,4 @@ stdout
 ### RubyMine ###
 ## Directory-based project format:
 .idea/
+vendor/bundle/

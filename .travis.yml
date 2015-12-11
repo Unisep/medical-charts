@@ -28,5 +28,5 @@ deploy:
   on:
     repo: Unisep/medical-charts
   run:
-      - "rake db:create db:migrate"
+      - "rake db:migrate"
       - restart

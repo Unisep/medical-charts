@@ -23,7 +23,7 @@ class EvolutionsController < ApplicationController
     @evolution = Evolution.new(evolution_params)
     @evolution.save
 
-    respond_with(@evolution, location: evolutions_path)
+    respond_with(@appointment, @evolution)
   end
 
   def update
@@ -47,6 +47,6 @@ class EvolutionsController < ApplicationController
   end
 
   def evolution_params
-    params.require(:evolution).permit()
+    params.require(:evolution).permit(:attend_at, :description, :teacher_name, :student_name, tooth_ids: [])
   end
 end

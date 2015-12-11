@@ -2,6 +2,7 @@
   = render partial: 'rapidfire/answers/errors', locals: { answer: answer }
 
 .row
-  .input-field.col.s12
-    = f.input :answer_text, as: :text,
-          label: answer.question.question_text, input_html: { rows: 5, class: 'materialize-textarea' }
+  .col.s12
+    .row
+      .input-field.col.s12
+        = f.input :answer_text, as: :text, label: answer.question.question_text, input_html: { class: 'materialize-textarea' }

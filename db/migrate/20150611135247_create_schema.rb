@@ -90,9 +90,9 @@ class CreateSchema < ActiveRecord::Migration
 
     create_table :evolutions_teeth, id: false do |t|
       t.integer :evolution_id
-      t.integer :teeth_id
+      t.integer :tooth_id
     end
 
-    add_index :evolutions_teeth, [:evolution_id, :teeth_id], unique: true
+    add_index :evolutions_teeth, [:evolution_id, :tooth_id], unique: true
   end
 end

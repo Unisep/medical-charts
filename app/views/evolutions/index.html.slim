@@ -1,7 +1,7 @@
 .row
   .col.l8.s12
     h5
-      = t '.title_html', id: @appointment.id, date: @appointment.attend_at.strftime('%e de %b %H:%M')
+      = t '.title_html', id: @appointment.id, date: @appointment.attend_at.strftime('%e de %b às %H:%M')
 
 table.highlight.responsive-table
   thead

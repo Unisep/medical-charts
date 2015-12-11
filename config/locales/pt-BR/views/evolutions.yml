@@ -10,3 +10,6 @@ pt-BR:
       title: Registrar Evolução de Paciente
     edit:
       title: Editar Registro de Evolução
+    show:
+      title_html: 'Registro de Evolução <b>#%{id}</b>'
+

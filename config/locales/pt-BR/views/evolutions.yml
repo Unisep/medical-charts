@@ -1,0 +1,16 @@
+pt-BR:
+  evolutions:
+    index:
+      title_html: 'Evoluções do Paciente na consulta <b>#%{id}</b> em <em>%{date}</em>'
+      actions:
+        cancel: Cancelar
+        view: Detalhes
+        attend: Prosseguir
+
+    new:
+      title: Registrar Evolução de Paciente
+    edit:
+      title: Editar Registro de Evolução
+    show:
+      title_html: 'Registro de Evolução <b>#%{id}</b>'
+

@@ -36,6 +36,8 @@ class CreateSchema < ActiveRecord::Migration
       t.references :basic_treatment, index: true
       t.references :patient, index: true
 
+      t.boolean :completed, default: false
+
       t.timestamps null: false
     end
 
@@ -56,5 +58,41 @@ class CreateSchema < ActiveRecord::Migration
 
     add_foreign_key :appointments, :patients
     add_foreign_key :appointments, :treatments
+
+    create_table :exams do |t|
+      t.string :file
+      t.datetime :added_time
+
+      t.references :treatment, index: true
+    end
+
+    add_foreign_key :exams, :treatments, column: :treatment_id
+
+    create_table :evolutions do |t|
+      t.text :description
+      t.datetime :attend_at
+      t.string :teacher_name
+      t.string :student_name
+      t.references :appointment, index: true
+
+      t.timestamps null: false
+    end
+
+    add_foreign_key :evolutions, :appointments, column: :appointment_id
+
+    create_table :teeth do |t|
+      t.integer :quarter
+      t.integer :position
+      t.integer :full
+    end
+
+    add_index :teeth, :full, unique: true
+
+    create_table :evolutions_teeth, id: false do |t|
+      t.integer :evolution_id
+      t.integer :tooth_id
+    end
+
+    add_index :evolutions_teeth, [:evolution_id, :tooth_id], unique: true
   end
 end

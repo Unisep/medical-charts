@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      exam:
+        one: Exame
+        other: Exames
+    attributes:
+      exam:
+        quarter: Quadrante
+        position: Posição
+        full: Notação Dentária

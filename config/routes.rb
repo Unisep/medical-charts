@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     get :search, on: :collection
     post :cancel, on: :member
     post :attend, on: :member
+
+    resources :evolutions
+  end
+
+  resources :patients, only: :none do
+    resources :appointments
   end
 
   namespace :admin do

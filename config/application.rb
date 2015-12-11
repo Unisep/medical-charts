@@ -21,6 +21,7 @@ module MedicalCharts
       g.helper false
       g.view_specs false
       g.route_specs false
+      g.request_specs false
     end
   end
 end

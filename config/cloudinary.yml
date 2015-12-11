@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: brunocasali
+  api_key: '773243957152949'
+  api_secret: mMsiq7QpCPgO_1Yu4Mb6BkQZjzc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: brunocasali
+  api_key: '773243957152949'
+  api_secret: mMsiq7QpCPgO_1Yu4Mb6BkQZjzc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: brunocasali
+  api_key: '773243957152949'
+  api_secret: mMsiq7QpCPgO_1Yu4Mb6BkQZjzc
+  enhance_image_tag: true
+  static_image_support: false

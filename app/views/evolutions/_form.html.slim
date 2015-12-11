@@ -1,0 +1,22 @@
+= simple_form_for([@appointment, @evolution]) do |f|
+  = f.error_notification
+
+  .row
+    .input-field.col.s2
+      = f.input :attend_at, as: :date_time_picker, disabled: true, input_html: { value: l(DateTime.now, format: :pickdatetime) }
+  .row
+    .input-field.col.s12
+      br
+      = f.association :teeth, as: :check_boxes, collection: Tooth.all, label_method: :full, item_wrapper_class: 'col s2', checked: @evolution.teeth.ids
+
+  .row
+    .input-field.col.s12
+      = f.input :description, as: :text, input_html: { class: 'materialize-textarea' }
+
+  .row
+    .input-field.col.s6
+      = f.input :student_name
+    .input-field.col.s6
+      = f.input :teacher_name
+
+  = fab_to_save back_url: appointment_evolutions_url(@appointment)

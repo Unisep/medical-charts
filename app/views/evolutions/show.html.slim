@@ -1,0 +1,22 @@
+h4
+  = t '.title_html', id: @evolution.id
+
+.divider
+.flow-text
+  p
+    strong = tas Evolution, :student_name
+    = @evolution.student_name
+  p
+    strong = tas Evolution, :teacher_name
+    = @evolution.teacher_name
+  p
+    strong = tas Evolution, :attend_at
+    = l @evolution.created_at, format: :long
+  p
+    strong = tas Evolution, :description
+    = @evolution.description
+  p
+    strong = tas Evolution, :teeth
+    = tooth_printer
+
+= fab_to_edit url: edit_appointment_evolution_url(@appointment, @evolution), back_url: appointment_evolutions_url(@appointment)

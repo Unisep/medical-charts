@@ -1,8 +1,10 @@
 class AppointmentsController < ApplicationController
+  before_action :set_patient, if: :has_patient_id?
   before_action :set_appointment, only: [:edit, :update, :cancel, :attend]
 
   def index
-    @appointments = Appointment.active.search(params[:query]).page(params[:page])
+    @appointments = @patient.present? ? @patient.appointments.active : Appointment.active
+    @appointments.search(params[:query]).page(params[:page])
 
     respond_with(@appointments)
   end
@@ -29,13 +31,14 @@ class AppointmentsController < ApplicationController
     service = AppointmentService.new(@appointment)
     service.attend!
 
-    respond_with(@appointment.patient, location: edit_historical_info_url(@appointment.patient))
+    respond_with(@appointment.patient, location: find_location!)
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = @patient.appointments.create(appointment_params)
     @appointment.save
-    respond_with(@appointment, location: appointments_path)
+
+    respond_with(@appointment, location: patient_appointments_path(@patient))
   end
 
   def update
@@ -45,11 +48,27 @@ class AppointmentsController < ApplicationController
 
   private
 
+  def has_patient_id?
+    params.key?(:patient_id)
+  end
+
+  def find_location!
+    if @appointment.evaluation?
+      edit_historical_info_url(@appointment.patient)
+    elsif @appointment.execution?
+      appointment_evolutions_url(@appointment)
+    end
+  end
+
   def set_appointment
     @appointment = Appointment.find(params[:id])
   end
 
+  def set_patient
+    @patient = Patient.find(params[:patient_id])
+  end
+
   def appointment_params
-    params.require(:appointment).permit()
+    params.require(:appointment).permit(:attend_at, :kind, :status, :treatment_id)
   end
 end

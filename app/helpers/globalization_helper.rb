@@ -11,7 +11,13 @@ module GlobalizationHelper
     model.human_attribute_name(attribute, count: count)
   end
 
+
+  def model_attribute_show(model, attribute, count = 1)
+    "#{model.human_attribute_name(attribute, count: count)}: "
+  end
+
   alias_method :tm, :model_name
   alias_method :tmp, :model_name_pluralized
   alias_method :ta, :model_attribute
+  alias_method :tas, :model_attribute_show
 end

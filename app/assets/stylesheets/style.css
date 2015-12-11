@@ -7,6 +7,10 @@ nav .brand-logo {
     margin: 5px;
 }
 
+.dente {
+    padding-left: 25px !important;
+}
+
 p {
     line-height: 2rem;
 }

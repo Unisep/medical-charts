@@ -1,0 +1,5 @@
+- if list.empty?
+  th
+    td.center-align[colspan="50"]
+      span.red-text.lighten-2
+        = params[:query].present? ? t('app.messages.search_no_items_html', query: params[:query]) : t('app.messages.no_items')
